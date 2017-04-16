@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031F11751EA3981D001F44A2 /* timetable.m in Sources */ = {isa = PBXBuildFile; fileRef = 031F11741EA3981D001F44A2 /* timetable.m */; };
 		4723DEA018E7485E00949B0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723DE9F18E7485E00949B0E /* Foundation.framework */; };
 		4723DEA218E7485E00949B0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723DEA118E7485E00949B0E /* CoreGraphics.framework */; };
 		4723DEA418E7485E00949B0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723DEA318E7485E00949B0E /* UIKit.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031F11731EA3981D001F44A2 /* timetable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timetable.h; sourceTree = "<group>"; };
+		031F11741EA3981D001F44A2 /* timetable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timetable.m; sourceTree = "<group>"; };
 		4723DE9C18E7485E00949B0E /* MyData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4723DE9F18E7485E00949B0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4723DEA118E7485E00949B0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -133,6 +136,8 @@
 				47E1577D1922FD2F00DB1E12 /* global.h */,
 				47E1577E1922FD2F00DB1E12 /* global.m */,
 				4723DEB418E7485E00949B0E /* ViewController.h */,
+				031F11731EA3981D001F44A2 /* timetable.h */,
+				031F11741EA3981D001F44A2 /* timetable.m */,
 				4723DEB518E7485E00949B0E /* ViewController.m */,
 				4723DEB718E7485E00949B0E /* Images.xcassets */,
 				4723DEA618E7485E00949B0E /* Supporting Files */,
@@ -270,6 +275,7 @@
 				4723DEB618E7485E00949B0E /* ViewController.m in Sources */,
 				47E1577F1922FD2F00DB1E12 /* global.m in Sources */,
 				4723DEB018E7485E00949B0E /* AppDelegate.m in Sources */,
+				031F11751EA3981D001F44A2 /* timetable.m in Sources */,
 				47E1577C1922FC4800DB1E12 /* variableVC.m in Sources */,
 				4723DEAC18E7485E00949B0E /* main.m in Sources */,
 			);
