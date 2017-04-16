@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController 
 
 
 
@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *email;
 
 
-- (IBAction)view:(id)sender;
+- (IBAction)view:(id)sender; // *
 
 - (IBAction)deleteName:(id)sender;
 
@@ -28,7 +28,7 @@
 
 - (IBAction)update:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UILabel *listNames;
+@property (weak, nonatomic) IBOutlet UILabel *listNames; // *
 
 
 @property (weak, nonatomic) IBOutlet UILabel *globVar;

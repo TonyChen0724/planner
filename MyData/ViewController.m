@@ -22,11 +22,11 @@ global *globalVar;
 @implementation ViewController
 @synthesize user;
 @synthesize email;
-@synthesize listNames;
+@synthesize listNames; // *
 @synthesize ider;
 @synthesize globVar;
 
-- (void)viewDidLoad
+- (void)viewDidLoad // *?
 {
     [super viewDidLoad];
    
@@ -41,13 +41,13 @@ global *globalVar;
     globVar.text=var3;//global var 1
 }
 
-- (void)didReceiveMemoryWarning
+- (void)didReceiveMemoryWarning // *?
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)view:(id)sender {//========================VIEW=========================
+- (IBAction)view:(id)sender {//========================VIEW========================= // ***
     
     NSString* emailN;
     NSString * theID;
@@ -97,7 +97,7 @@ global *globalVar;
     listNames.text=myLine;
 }
 
-- (IBAction)deleteName:(id)sender {//==============================DELETE=======================
+- (IBAction)deleteName:(id)sender {//==============================DELETE======================= // ***?
     
     // Copy the database if needed
     [self createEditableCopyOfDatabaseIfNeeded];
@@ -134,7 +134,7 @@ global *globalVar;
     [self saveUserInDatabase];
 }
 
-- (IBAction)update:(id)sender {//=======================UPDATE=================================
+- (IBAction)update:(id)sender {//=======================UPDATE================================= // *** ?
     
     // Copy the database if needed
     [self createEditableCopyOfDatabaseIfNeeded];
