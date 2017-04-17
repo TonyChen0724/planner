@@ -25,7 +25,7 @@ static global *shared = NULL;
         // initialize your singleton variable here (i.e. set to initial value that you require)
         
         var1s = @"My Singleton 1";
-        var2s = @"mydata.db"; // ***
+        var2s = @"newtimetable.db"; // ***
     }
     return self;
     

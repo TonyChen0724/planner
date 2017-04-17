@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0306631B1EA5275100EA4472 /* newtimetable.db in Resources */ = {isa = PBXBuildFile; fileRef = 0306631A1EA5275100EA4472 /* newtimetable.db */; };
 		031F11751EA3981D001F44A2 /* timetable.m in Sources */ = {isa = PBXBuildFile; fileRef = 031F11741EA3981D001F44A2 /* timetable.m */; };
 		031F11791EA4F88B001F44A2 /* timetable.db in Resources */ = {isa = PBXBuildFile; fileRef = 031F11781EA4F88B001F44A2 /* timetable.db */; };
 		4723DEA018E7485E00949B0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723DE9F18E7485E00949B0E /* Foundation.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0306631A1EA5275100EA4472 /* newtimetable.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = newtimetable.db; sourceTree = "<group>"; };
 		031F11731EA3981D001F44A2 /* timetable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timetable.h; sourceTree = "<group>"; };
 		031F11741EA3981D001F44A2 /* timetable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timetable.m; sourceTree = "<group>"; };
 		031F11781EA4F88B001F44A2 /* timetable.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = timetable.db; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				4723DED618E74AAA00949B0E /* mydata.db */,
 				031F11781EA4F88B001F44A2 /* timetable.db */,
+				0306631A1EA5275100EA4472 /* newtimetable.db */,
 				4723DEAE18E7485E00949B0E /* AppDelegate.h */,
 				4723DEAF18E7485E00949B0E /* AppDelegate.m */,
 				4723DEB118E7485E00949B0E /* Main.storyboard */,
@@ -257,6 +260,7 @@
 				4723DEB818E7485E00949B0E /* Images.xcassets in Resources */,
 				4723DED718E74AAA00949B0E /* mydata.db in Resources */,
 				4723DEAA18E7485E00949B0E /* InfoPlist.strings in Resources */,
+				0306631B1EA5275100EA4472 /* newtimetable.db in Resources */,
 				4723DEB318E7485E00949B0E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
