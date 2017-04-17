@@ -79,7 +79,7 @@ global *globalVar;
                 timesdu = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 emailN = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                  theID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
-               myLine= [NSString stringWithFormat:@"%@%@%@%@%@",myLine,userN, @":", timesdu, @"    "];
+               myLine= [NSString stringWithFormat:@"%@%@%@%@%@%@%@", myLine,userN, @":", timesdu, @"-", theID, @"   "];
 
                 
             }
@@ -205,7 +205,7 @@ global *globalVar;
 }
 
 //========================================WRITABLE DATABSE PATH=======================
-- (NSString *) getWritableDBPath {
+- (NSString *) getWritableDBPath { //***
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
     NSString *documentsDir = [paths objectAtIndex:0];
@@ -215,7 +215,7 @@ global *globalVar;
 
 //================================================Copies database to appropriate location============
 
--(void)createEditableCopyOfDatabaseIfNeeded
+-(void)createEditableCopyOfDatabaseIfNeeded // ***
 {
     // Testing for existence
     BOOL success;

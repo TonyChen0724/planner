@@ -31,7 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *listNames; // *
 
 
-@property (weak, nonatomic) IBOutlet UILabel *globVar;
+@property (weak, nonatomic) IBOutlet UILabel *globVar; // where is this label?
 
 
 
