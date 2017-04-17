@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		031F11751EA3981D001F44A2 /* timetable.m in Sources */ = {isa = PBXBuildFile; fileRef = 031F11741EA3981D001F44A2 /* timetable.m */; };
-		031F11771EA4F35C001F44A2 /* timetable.db in Resources */ = {isa = PBXBuildFile; fileRef = 031F11761EA4F35C001F44A2 /* timetable.db */; };
+		031F11791EA4F88B001F44A2 /* timetable.db in Resources */ = {isa = PBXBuildFile; fileRef = 031F11781EA4F88B001F44A2 /* timetable.db */; };
 		4723DEA018E7485E00949B0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723DE9F18E7485E00949B0E /* Foundation.framework */; };
 		4723DEA218E7485E00949B0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723DEA118E7485E00949B0E /* CoreGraphics.framework */; };
 		4723DEA418E7485E00949B0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723DEA318E7485E00949B0E /* UIKit.framework */; };
@@ -42,7 +42,7 @@
 /* Begin PBXFileReference section */
 		031F11731EA3981D001F44A2 /* timetable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timetable.h; sourceTree = "<group>"; };
 		031F11741EA3981D001F44A2 /* timetable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timetable.m; sourceTree = "<group>"; };
-		031F11761EA4F35C001F44A2 /* timetable.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = timetable.db; sourceTree = "<group>"; };
+		031F11781EA4F88B001F44A2 /* timetable.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = timetable.db; sourceTree = "<group>"; };
 		4723DE9C18E7485E00949B0E /* MyData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4723DE9F18E7485E00949B0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4723DEA118E7485E00949B0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -129,8 +129,8 @@
 		4723DEA518E7485E00949B0E /* MyData */ = {
 			isa = PBXGroup;
 			children = (
-				031F11761EA4F35C001F44A2 /* timetable.db */,
 				4723DED618E74AAA00949B0E /* mydata.db */,
+				031F11781EA4F88B001F44A2 /* timetable.db */,
 				4723DEAE18E7485E00949B0E /* AppDelegate.h */,
 				4723DEAF18E7485E00949B0E /* AppDelegate.m */,
 				4723DEB118E7485E00949B0E /* Main.storyboard */,
@@ -253,7 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				031F11771EA4F35C001F44A2 /* timetable.db in Resources */,
+				031F11791EA4F88B001F44A2 /* timetable.db in Resources */,
 				4723DEB818E7485E00949B0E /* Images.xcassets in Resources */,
 				4723DED718E74AAA00949B0E /* mydata.db in Resources */,
 				4723DEAA18E7485E00949B0E /* InfoPlist.strings in Resources */,

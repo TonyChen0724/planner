@@ -22,11 +22,11 @@ global *globalVar;
 @implementation ViewController
 @synthesize user;
 @synthesize email;
-@synthesize listNames; // *
+@synthesize listNames;
 @synthesize ider;
 @synthesize globVar;
 
-- (void)viewDidLoad // *?
+- (void)viewDidLoad
 {
     [super viewDidLoad];
    
@@ -41,13 +41,13 @@ global *globalVar;
     globVar.text=var3;//global var 1
 }
 
-- (void)didReceiveMemoryWarning // *?
+- (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)view:(id)sender {//========================VIEW========================= // ***
+- (IBAction)view:(id)sender {//========================VIEW=========================
     
     NSString* emailN;
     NSString * theID;
@@ -77,9 +77,17 @@ global *globalVar;
             {
                 userN = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
                 timesdu = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
-                emailN = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
-                 theID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
-               myLine= [NSString stringWithFormat:@"%@%@%@%@%@%@%@", myLine,userN, @":", timesdu, @"-", theID, @"   "];
+                
+                theID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)]; //* will change to:
+                
+                /* thePosition = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
+                 isMeeting = "true";
+                 theID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 4)];
+                 */
+                 
+               myLine= [NSString stringWithFormat:@"%@%@%@%@%@%@%@", myLine,userN, @":", timesdu, @"-", theID, @"   "]; // * will change to:
+                /*
+                 myLine= [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@", myLine,userN, @":", timesdu, @" position:", thePosition, @"-", theID, @"   "]; */
 
                 
             }
@@ -97,7 +105,7 @@ global *globalVar;
     listNames.text=myLine;
 }
 
-- (IBAction)deleteName:(id)sender {//==============================DELETE======================= // ***?
+- (IBAction)deleteName:(id)sender {//==============================DELETE=======================
     
     // Copy the database if needed
     [self createEditableCopyOfDatabaseIfNeeded];
@@ -134,7 +142,7 @@ global *globalVar;
     [self saveUserInDatabase];
 }
 
-- (IBAction)update:(id)sender {//=======================UPDATE================================= // *** ?
+- (IBAction)update:(id)sender {//=======================UPDATE=================================
     
     // Copy the database if needed
     [self createEditableCopyOfDatabaseIfNeeded];
@@ -205,7 +213,7 @@ global *globalVar;
 }
 
 //========================================WRITABLE DATABSE PATH=======================
-- (NSString *) getWritableDBPath { //***
+- (NSString *) getWritableDBPath {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
     NSString *documentsDir = [paths objectAtIndex:0];
@@ -215,7 +223,7 @@ global *globalVar;
 
 //================================================Copies database to appropriate location============
 
--(void)createEditableCopyOfDatabaseIfNeeded // ***
+-(void)createEditableCopyOfDatabaseIfNeeded 
 {
     // Testing for existence
     BOOL success;

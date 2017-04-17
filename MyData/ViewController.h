@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *email;
 
 
-- (IBAction)view:(id)sender; // *
+- (IBAction)view:(id)sender;
 
 - (IBAction)deleteName:(id)sender;
 
@@ -27,8 +27,9 @@
 - (IBAction)addName:(id)sender;
 
 - (IBAction)update:(id)sender;
+/*** have to add one more text field (position) */
 
-@property (weak, nonatomic) IBOutlet UILabel *listNames; // *
+@property (weak, nonatomic) IBOutlet UILabel *listNames;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *globVar; // where is this label?
