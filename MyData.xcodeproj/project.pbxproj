@@ -10,6 +10,7 @@
 		0306631B1EA5275100EA4472 /* newtimetable.db in Resources */ = {isa = PBXBuildFile; fileRef = 0306631A1EA5275100EA4472 /* newtimetable.db */; };
 		0306631D1EA72DF500EA4472 /* newData.db in Resources */ = {isa = PBXBuildFile; fileRef = 0306631C1EA72DF500EA4472 /* newData.db */; };
 		030663211EA7318000EA4472 /* sstep.db in Resources */ = {isa = PBXBuildFile; fileRef = 030663201EA7318000EA4472 /* sstep.db */; };
+		030663231EA733B900EA4472 /* formalData.db in Resources */ = {isa = PBXBuildFile; fileRef = 030663221EA733B900EA4472 /* formalData.db */; };
 		031F11751EA3981D001F44A2 /* timetable.m in Sources */ = {isa = PBXBuildFile; fileRef = 031F11741EA3981D001F44A2 /* timetable.m */; };
 		031F11791EA4F88B001F44A2 /* timetable.db in Resources */ = {isa = PBXBuildFile; fileRef = 031F11781EA4F88B001F44A2 /* timetable.db */; };
 		4723DEA018E7485E00949B0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4723DE9F18E7485E00949B0E /* Foundation.framework */; };
@@ -46,6 +47,7 @@
 		0306631A1EA5275100EA4472 /* newtimetable.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = newtimetable.db; sourceTree = "<group>"; };
 		0306631C1EA72DF500EA4472 /* newData.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = newData.db; sourceTree = "<group>"; };
 		030663201EA7318000EA4472 /* sstep.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sstep.db; sourceTree = "<group>"; };
+		030663221EA733B900EA4472 /* formalData.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = formalData.db; sourceTree = "<group>"; };
 		031F11731EA3981D001F44A2 /* timetable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timetable.h; sourceTree = "<group>"; };
 		031F11741EA3981D001F44A2 /* timetable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = timetable.m; sourceTree = "<group>"; };
 		031F11781EA4F88B001F44A2 /* timetable.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = timetable.db; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				031F11781EA4F88B001F44A2 /* timetable.db */,
 				030663201EA7318000EA4472 /* sstep.db */,
 				0306631A1EA5275100EA4472 /* newtimetable.db */,
+				030663221EA733B900EA4472 /* formalData.db */,
 				4723DEAE18E7485E00949B0E /* AppDelegate.h */,
 				4723DEAF18E7485E00949B0E /* AppDelegate.m */,
 				4723DEB118E7485E00949B0E /* Main.storyboard */,
@@ -268,6 +271,7 @@
 				030663211EA7318000EA4472 /* sstep.db in Resources */,
 				4723DED718E74AAA00949B0E /* mydata.db in Resources */,
 				4723DEAA18E7485E00949B0E /* InfoPlist.strings in Resources */,
+				030663231EA733B900EA4472 /* formalData.db in Resources */,
 				0306631B1EA5275100EA4472 /* newtimetable.db in Resources */,
 				4723DEB318E7485E00949B0E /* Main.storyboard in Resources */,
 			);

@@ -13,7 +13,7 @@
 
 @end
 
-NSString * myDB = @"sstep.db";
+NSString * myDB = @"formalData.db";
 global *globalVar;
 
  //table name is users
@@ -53,6 +53,7 @@ global *globalVar;
     NSString * theID;
     NSString* userN;
     NSString* timesdu;
+    NSString* position;
     NSString * myLine=@" ";
     NSString * paths=[self getWritableDBPath];
     
