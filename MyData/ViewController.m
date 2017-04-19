@@ -69,11 +69,11 @@ global *globalVar;
                 userN = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
                 timesdu = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
-                /*
-                 position = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];*/
+                
+                position = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
                 theID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 3)];
                  
-               myLine= [NSString stringWithFormat:@"%@%@%@%@%@%@%@", myLine,userN, @":", timesdu, @"-", theID, @"   "];
+               myLine= [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@%@", myLine,userN, @":", timesdu, @"-",@"position:", position, @"-", theID, @"   "];
 
                 
             }
@@ -131,14 +131,16 @@ global *globalVar;
     sqlite3 *database;
     NSString * theU=user.text;
     NSString * theE=email.text;
+    NSString * theP=pos.text;
      NSString * theID=ider.text;
     
     if(sqlite3_open([filePath UTF8String], &database) == SQLITE_OK) {
          NSString * sState=@"UPDATE users SET lecture='";
         NSString * sState2=@"', time='";
+        NSString * sState5=@"', position='";
         NSString * sState3=@"' WHERE id='";
         NSString * sState4=@"';";
-        NSString * s=  [NSString stringWithFormat:@"%@%@%@%@%@%@%@",sState,theU,sState2,theE,sState3,theID,sState4];
+        NSString * s=  [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@",sState,theU,sState2,theE,sState5,theP,sState3,theID,sState4];
         
         const char *sqlStatement =[s cStringUsingEncoding:NSUTF8StringEncoding];
         sqlite3_stmt *compiledStatement;
@@ -165,15 +167,17 @@ global *globalVar;
     sqlite3 *database;
     NSString * theU=user.text;
     NSString * theE=email.text;
+    NSString * theP = pos.text;
     
     if(sqlite3_open([filePath UTF8String], &database) == SQLITE_OK) {
         
     
-        const char *sqlStatement = "insert into users (lecture,time) VALUES (?,?)";
+        const char *sqlStatement = "insert into users (lecture,time,position) VALUES (?,?,?)";
         sqlite3_stmt *compiledStatement;
         if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK)    {
             sqlite3_bind_text( compiledStatement, 1,[theU UTF8String], -1, SQLITE_TRANSIENT);
             sqlite3_bind_text( compiledStatement, 2,[theE UTF8String], -1, SQLITE_TRANSIENT);
+            sqlite3_bind_text( compiledStatement, 3,[theP UTF8String], -1, SQLITE_TRANSIENT);
             
             
         }
