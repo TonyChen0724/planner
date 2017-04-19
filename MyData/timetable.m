@@ -62,7 +62,7 @@ global *globalVar;
     
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *querySQL = [NSString stringWithFormat: @"SELECT username, email, id FROM users",nil];
+        NSString *querySQL = [NSString stringWithFormat: @"SELECT lecture, time, id FROM users",nil];
         
         const char *query_stmt = [querySQL UTF8String];
         

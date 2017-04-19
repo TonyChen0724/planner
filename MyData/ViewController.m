@@ -13,7 +13,7 @@
 
 @end
 
-NSString * myDB;
+NSString * myDB = @"sstep.db";
 global *globalVar;
 
  //table name is users
@@ -62,7 +62,7 @@ global *globalVar;
     
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *querySQL = [NSString stringWithFormat: @"SELECT username, email, id FROM users",nil];
+        NSString *querySQL = [NSString stringWithFormat: @"SELECT lecture, time, id FROM users",nil];
         
         const char *query_stmt = [querySQL UTF8String];
         
@@ -155,8 +155,8 @@ global *globalVar;
      NSString * theID=ider.text;
     
     if(sqlite3_open([filePath UTF8String], &database) == SQLITE_OK) {
-         NSString * sState=@"UPDATE users SET username='";
-        NSString * sState2=@"', email='";
+         NSString * sState=@"UPDATE users SET lecture='";
+        NSString * sState2=@"', time='";
         NSString * sState3=@"' WHERE id='";
         NSString * sState4=@"';";
         NSString * s=  [NSString stringWithFormat:@"%@%@%@%@%@%@%@",sState,theU,sState2,theE,sState3,theID,sState4];
@@ -196,7 +196,7 @@ global *globalVar;
     if(sqlite3_open([filePath UTF8String], &database) == SQLITE_OK) {
         
         //NSString *temp = [NSString stringWithFormat:@"insert into allusers (user_id,user_name) VALUES (%@,%@)",user_id,user_name];
-        const char *sqlStatement = "insert into users (username,email) VALUES (?,?)";
+        const char *sqlStatement = "insert into users (lecture,time) VALUES (?,?)";
         sqlite3_stmt *compiledStatement;
         if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK)    {
             sqlite3_bind_text( compiledStatement, 1,[theU UTF8String], -1, SQLITE_TRANSIENT);
