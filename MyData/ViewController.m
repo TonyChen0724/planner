@@ -22,7 +22,7 @@ global *globalVar;
 @synthesize listNames;
 @synthesize ider;
 @synthesize globVar;
-
+@synthesize pos;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -56,7 +56,7 @@ global *globalVar;
     
     if (sqlite3_open(dbpath, &database) == SQLITE_OK)
     {
-        NSString *querySQL = [NSString stringWithFormat: @"SELECT lecture, time, id FROM users",nil];
+        NSString *querySQL = [NSString stringWithFormat: @"SELECT lecture, time, position, id FROM users",nil];
         
         const char *query_stmt = [querySQL UTF8String];
         
@@ -69,7 +69,9 @@ global *globalVar;
                 userN = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
                 timesdu = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
-                theID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
+                /*
+                 position = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];*/
+                theID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 3)];
                  
                myLine= [NSString stringWithFormat:@"%@%@%@%@%@%@%@", myLine,userN, @":", timesdu, @"-", theID, @"   "];
 

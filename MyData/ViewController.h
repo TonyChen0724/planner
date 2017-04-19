@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *email;
 
+@property (weak, nonatomic) IBOutlet UITextField *pos;
 
 - (IBAction)view:(id)sender;
 
