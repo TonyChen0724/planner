@@ -16,9 +16,6 @@
 NSString * myDB = @"formalData.db";
 global *globalVar;
 
- //table name is users
-//fields are id, username, email
-
 @implementation ViewController
 @synthesize user;
 @synthesize email;
@@ -29,27 +26,23 @@ global *globalVar;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
-    
-	// Do any additional setup after loading the view, typically from a nib.
     
     global * myVar = [global sharedSingleton];
-    listNames.text = myVar.var1s;//show the start value of singleton 1
-    myVar.var1s=@"Change Var";//singleton 1 - we change the value for demonstration purposes.
-    myDB= myVar.var2s;//singleton 2 holds the databasae name
-    var3=@"Screen 1";//global var
-    globVar.text=var3;//global var 1
+    listNames.text = myVar.var1s;
+    myVar.var1s=@"Change Var";
+    myDB= myVar.var2s;
+    var3=@"Screen 1";
+    globVar.text=var3;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
-- (IBAction)view:(id)sender {//========================VIEW=========================
+- (IBAction)view:(id)sender {
     
-    NSString* emailN;
     NSString * theID;
     NSString* userN;
     NSString* timesdu;
@@ -67,48 +60,33 @@ global *globalVar;
         
         const char *query_stmt = [querySQL UTF8String];
         
-        //  NSLog(@"Databasae opened = %@", userN);
-        
         if (sqlite3_prepare_v2(database,
                                query_stmt, -1, &statement, NULL) == SQLITE_OK)
         {
-           int rows = sqlite3_column_int(statement, 0);
             
             while(sqlite3_step(statement) == SQLITE_ROW)
             {
                 userN = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 0)];
                 timesdu = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 1)];
                 
-                theID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)]; //* will change to:
-                
-                /* thePosition = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
-                 isMeeting = "true";
-                 theID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 4)];
-                 */
+                theID = [[NSString alloc]initWithUTF8String:(const char *) sqlite3_column_text(statement, 2)];
                  
-               myLine= [NSString stringWithFormat:@"%@%@%@%@%@%@%@", myLine,userN, @":", timesdu, @"-", theID, @"   "]; // * will change to:
-                /*
-                 myLine= [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@", myLine,userN, @":", timesdu, @" position:", thePosition, @"-", theID, @"   "]; */
+               myLine= [NSString stringWithFormat:@"%@%@%@%@%@%@%@", myLine,userN, @":", timesdu, @"-", theID, @"   "];
 
                 
             }
-            //  username.text=@"No Username";
             
             
             sqlite3_finalize(statement);
         }
-      //  NSLog( @"Save Error: %s", sqlite3_errmsg(database) );
         
         sqlite3_close(database);
     }
-  //  NSLog(@"user = %@", userN);
     
     listNames.text=myLine;
 }
 
-- (IBAction)deleteName:(id)sender {//==============================DELETE=======================
-    
-    // Copy the database if needed
+- (IBAction)deleteName:(id)sender {
     [self createEditableCopyOfDatabaseIfNeeded];
     
     NSString *filePath = [self getWritableDBPath];
@@ -124,7 +102,7 @@ global *globalVar;
         
       NSString * s=  [NSString stringWithFormat:@"%@%@%@",sState,theID,@"';"];
         
-        const char *sqlStatement = [s cStringUsingEncoding:NSUTF8StringEncoding];//"DELETE FROM users WHERE id='3';";
+        const char *sqlStatement = [s cStringUsingEncoding:NSUTF8StringEncoding];
         sqlite3_stmt *compiledStatement;
         sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL);
            
@@ -143,9 +121,7 @@ global *globalVar;
     [self saveUserInDatabase];
 }
 
-- (IBAction)update:(id)sender {//=======================UPDATE=================================
-    
-    // Copy the database if needed
+- (IBAction)update:(id)sender {
     [self createEditableCopyOfDatabaseIfNeeded];
     
     NSString *filePath = [self getWritableDBPath];
@@ -163,12 +139,8 @@ global *globalVar;
         NSString * s=  [NSString stringWithFormat:@"%@%@%@%@%@%@%@",sState,theU,sState2,theE,sState3,theID,sState4];
         
         const char *sqlStatement =[s cStringUsingEncoding:NSUTF8StringEncoding];
-        //"UPDATE users SET username='?', email='?' WHERE id='3';";
         sqlite3_stmt *compiledStatement;
         if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK)    {
-           // sqlite3_bind_text( compiledStatement, 1,[theU UTF8String], -1, SQLITE_TRANSIENT);
-           // sqlite3_bind_text( compiledStatement, 2,[theE UTF8String], -1, SQLITE_TRANSIENT);
-            //sqlite3_bind_text( compiledStatement, 3,[theID UTF8String], -1, SQLITE_TRANSIENT);
 
             
         }
@@ -178,14 +150,12 @@ global *globalVar;
         sqlite3_finalize(compiledStatement);
     }
     sqlite3_close(database);
-   // UPDATE users SET username='?', email='?' WHERE id='1';
+   
 }
 
 
 
--(void)saveUserInDatabase { //========================SAVE==============================
-    
-    // Copy the database if needed
+-(void)saveUserInDatabase {
     [self createEditableCopyOfDatabaseIfNeeded];
     
     NSString *filePath = [self getWritableDBPath];
@@ -196,7 +166,7 @@ global *globalVar;
     
     if(sqlite3_open([filePath UTF8String], &database) == SQLITE_OK) {
         
-        //NSString *temp = [NSString stringWithFormat:@"insert into allusers (user_id,user_name) VALUES (%@,%@)",user_id,user_name];
+    
         const char *sqlStatement = "insert into users (lecture,time) VALUES (?,?)";
         sqlite3_stmt *compiledStatement;
         if(sqlite3_prepare_v2(database, sqlStatement, -1, &compiledStatement, NULL) == SQLITE_OK)    {
@@ -213,7 +183,6 @@ global *globalVar;
     sqlite3_close(database);
 }
 
-//========================================WRITABLE DATABSE PATH=======================
 - (NSString *) getWritableDBPath {
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
@@ -222,11 +191,9 @@ global *globalVar;
     
 }
 
-//================================================Copies database to appropriate location============
 
 -(void)createEditableCopyOfDatabaseIfNeeded 
 {
-    // Testing for existence
     BOOL success;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
@@ -239,8 +206,7 @@ global *globalVar;
     if (success)
         return;
     
-    // The writable database does not exist, so copy the default to
-    // the appropriate location.
+
     NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath]
                                stringByAppendingPathComponent:myDB];
     success = [fileManager copyItemAtPath:defaultDBPath

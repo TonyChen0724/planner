@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *var3; //global variable
+extern NSString *var3; 
 
 
 @interface global : NSObject{

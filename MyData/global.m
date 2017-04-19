@@ -22,10 +22,9 @@ static global *shared = NULL;
 {
     if ( self = [super init] )
     {
-        // initialize your singleton variable here (i.e. set to initial value that you require)
         
         var1s = @"My Singleton 1";
-        var2s = @"formalData.db"; // ***
+        var2s = @"formalData.db"; 
     }
     return self;
     
@@ -38,7 +37,7 @@ static global *shared = NULL;
     {
         if ( !shared || shared == NULL )
         {
-            // allocate the shared instance, because it hasn't been done yet
+            
             shared = [[global alloc] init];
         }
         

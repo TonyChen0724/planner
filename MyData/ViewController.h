@@ -27,12 +27,11 @@
 - (IBAction)addName:(id)sender;
 
 - (IBAction)update:(id)sender;
-/*** have to add one more text field (position) */
 
 @property (weak, nonatomic) IBOutlet UILabel *listNames;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *globVar; // where is this label?
+@property (weak, nonatomic) IBOutlet UILabel *globVar; 
 
 
 
