@@ -11,6 +11,7 @@
 		47FBBE871ED2AD8D000BE2B1 /* MeetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */; };
 		47FBBE891ED2C12F000BE2B1 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */; };
 		47FBBE8B1ED2C141000BE2B1 /* DeadlinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE8A1ED2C141000BE2B1 /* DeadlinesViewController.swift */; };
+		47FBBE911ED2F807000BE2B1 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE901ED2F807000BE2B1 /* MyCollectionViewCell.swift */; };
 		88F4CBC81ED14A130057E45B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBC71ED14A130057E45B /* AppDelegate.swift */; };
 		88F4CBCA1ED14A130057E45B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBC91ED14A130057E45B /* FirstViewController.swift */; };
 		88F4CBCC1ED14A130057E45B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBCB1ED14A130057E45B /* SecondViewController.swift */; };
@@ -47,6 +48,7 @@
 		47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsViewController.swift; sourceTree = "<group>"; };
 		47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		47FBBE8A1ED2C141000BE2B1 /* DeadlinesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeadlinesViewController.swift; sourceTree = "<group>"; };
+		47FBBE901ED2F807000BE2B1 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		88F4CBC41ED14A130057E45B /* PlannerUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlannerUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F4CBC71ED14A130057E45B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88F4CBC91ED14A130057E45B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */,
 				47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */,
 				47FBBE8A1ED2C141000BE2B1 /* DeadlinesViewController.swift */,
+				47FBBE901ED2F807000BE2B1 /* MyCollectionViewCell.swift */,
 			);
 			path = PlannerUI;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			files = (
 				47FBBE871ED2AD8D000BE2B1 /* MeetingsViewController.swift in Sources */,
 				88F4CBCC1ED14A130057E45B /* SecondViewController.swift in Sources */,
+				47FBBE911ED2F807000BE2B1 /* MyCollectionViewCell.swift in Sources */,
 				47FBBE891ED2C12F000BE2B1 /* TimeTableViewController.swift in Sources */,
 				88F4CBC81ED14A130057E45B /* AppDelegate.swift in Sources */,
 				88F4CBCA1ED14A130057E45B /* FirstViewController.swift in Sources */,
