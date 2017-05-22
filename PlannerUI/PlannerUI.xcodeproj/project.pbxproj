@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47FBBE851ED2AD78000BE2B1 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE841ED2AD78000BE2B1 /* TasksViewController.swift */; };
+		47FBBE871ED2AD8D000BE2B1 /* MeetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */; };
+		47FBBE891ED2C12F000BE2B1 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */; };
+		47FBBE8B1ED2C141000BE2B1 /* DeadlinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE8A1ED2C141000BE2B1 /* DeadlinesViewController.swift */; };
 		88F4CBC81ED14A130057E45B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBC71ED14A130057E45B /* AppDelegate.swift */; };
 		88F4CBCA1ED14A130057E45B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBC91ED14A130057E45B /* FirstViewController.swift */; };
 		88F4CBCC1ED14A130057E45B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBCB1ED14A130057E45B /* SecondViewController.swift */; };
@@ -15,10 +19,6 @@
 		88F4CBD41ED14A130057E45B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F4CBD21ED14A130057E45B /* LaunchScreen.storyboard */; };
 		88F4CBDF1ED14A130057E45B /* PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBDE1ED14A130057E45B /* PlannerUITests.swift */; };
 		88F4CBEA1ED14A140057E45B /* PlannerUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBE91ED14A140057E45B /* PlannerUIUITests.swift */; };
-		88F4CBF81ED14A9B0057E45B /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBF71ED14A9B0057E45B /* Calendar.swift */; };
-		88F4CBFA1ED14AB20057E45B /* Meetings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBF91ED14AB20057E45B /* Meetings.swift */; };
-		88F4CBFC1ED14AC10057E45B /* Deadlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBFB1ED14AC10057E45B /* Deadlines.swift */; };
-		88F4CBFE1ED14ACC0057E45B /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBFD1ED14ACC0057E45B /* Tasks.swift */; };
 		88F4CC001ED14BDB0057E45B /* calendarImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F4CBFF1ED14BDB0057E45B /* calendarImage.png */; };
 		88F4CC021ED14BE30057E45B /* deadlines_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F4CC011ED14BE30057E45B /* deadlines_image.png */; };
 		88F4CC041ED14BEB0057E45B /* meeting_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F4CC031ED14BEB0057E45B /* meeting_Image.png */; };
@@ -43,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47FBBE841ED2AD78000BE2B1 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsViewController.swift; sourceTree = "<group>"; };
+		47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
+		47FBBE8A1ED2C141000BE2B1 /* DeadlinesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeadlinesViewController.swift; sourceTree = "<group>"; };
 		88F4CBC41ED14A130057E45B /* PlannerUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlannerUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F4CBC71ED14A130057E45B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88F4CBC91ED14A130057E45B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -57,10 +61,6 @@
 		88F4CBE51ED14A140057E45B /* PlannerUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlannerUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F4CBE91ED14A140057E45B /* PlannerUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerUIUITests.swift; sourceTree = "<group>"; };
 		88F4CBEB1ED14A140057E45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		88F4CBF71ED14A9B0057E45B /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = SOURCE_ROOT; };
-		88F4CBF91ED14AB20057E45B /* Meetings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meetings.swift; sourceTree = SOURCE_ROOT; };
-		88F4CBFB1ED14AC10057E45B /* Deadlines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deadlines.swift; sourceTree = SOURCE_ROOT; };
-		88F4CBFD1ED14ACC0057E45B /* Tasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = SOURCE_ROOT; };
 		88F4CBFF1ED14BDB0057E45B /* calendarImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendarImage.png; sourceTree = "<group>"; };
 		88F4CC011ED14BE30057E45B /* deadlines_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deadlines_image.png; sourceTree = "<group>"; };
 		88F4CC031ED14BEB0057E45B /* meeting_Image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meeting_Image.png; sourceTree = "<group>"; };
@@ -119,10 +119,6 @@
 		88F4CBC61ED14A130057E45B /* PlannerUI */ = {
 			isa = PBXGroup;
 			children = (
-				88F4CBFD1ED14ACC0057E45B /* Tasks.swift */,
-				88F4CBFB1ED14AC10057E45B /* Deadlines.swift */,
-				88F4CBF91ED14AB20057E45B /* Meetings.swift */,
-				88F4CBF71ED14A9B0057E45B /* Calendar.swift */,
 				88F4CBC71ED14A130057E45B /* AppDelegate.swift */,
 				88F4CBC91ED14A130057E45B /* FirstViewController.swift */,
 				88F4CBCB1ED14A130057E45B /* SecondViewController.swift */,
@@ -130,6 +126,10 @@
 				88F4CBD01ED14A130057E45B /* Assets.xcassets */,
 				88F4CBD21ED14A130057E45B /* LaunchScreen.storyboard */,
 				88F4CBD51ED14A130057E45B /* Info.plist */,
+				47FBBE841ED2AD78000BE2B1 /* TasksViewController.swift */,
+				47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */,
+				47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */,
+				47FBBE8A1ED2C141000BE2B1 /* DeadlinesViewController.swift */,
 			);
 			path = PlannerUI;
 			sourceTree = "<group>";
@@ -290,13 +290,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88F4CBFE1ED14ACC0057E45B /* Tasks.swift in Sources */,
+				47FBBE871ED2AD8D000BE2B1 /* MeetingsViewController.swift in Sources */,
 				88F4CBCC1ED14A130057E45B /* SecondViewController.swift in Sources */,
-				88F4CBFC1ED14AC10057E45B /* Deadlines.swift in Sources */,
+				47FBBE891ED2C12F000BE2B1 /* TimeTableViewController.swift in Sources */,
 				88F4CBC81ED14A130057E45B /* AppDelegate.swift in Sources */,
 				88F4CBCA1ED14A130057E45B /* FirstViewController.swift in Sources */,
-				88F4CBFA1ED14AB20057E45B /* Meetings.swift in Sources */,
-				88F4CBF81ED14A9B0057E45B /* Calendar.swift in Sources */,
+				47FBBE851ED2AD78000BE2B1 /* TasksViewController.swift in Sources */,
+				47FBBE8B1ED2C141000BE2B1 /* DeadlinesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +447,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlannerUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Molly.PlannerUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -459,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PlannerUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Molly.PlannerUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
