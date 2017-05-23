@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24A3AB461ED3E5D600D87978 /* AddDeadLineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A3AB451ED3E5D600D87978 /* AddDeadLineController.swift */; };
+		24E9E14C1ED434F40045EC54 /* navbarbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 24E9E14B1ED434F40045EC54 /* navbarbackground.png */; };
 		47FBBE851ED2AD78000BE2B1 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE841ED2AD78000BE2B1 /* TasksViewController.swift */; };
 		47FBBE871ED2AD8D000BE2B1 /* MeetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */; };
 		47FBBE891ED2C12F000BE2B1 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		24A3AB451ED3E5D600D87978 /* AddDeadLineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeadLineController.swift; sourceTree = "<group>"; };
+		24E9E14B1ED434F40045EC54 /* navbarbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbarbackground.png; sourceTree = "<group>"; };
 		47FBBE841ED2AD78000BE2B1 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsViewController.swift; sourceTree = "<group>"; };
 		47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		88F4CBC61ED14A130057E45B /* PlannerUI */ = {
 			isa = PBXGroup;
 			children = (
+				24E9E14B1ED434F40045EC54 /* navbarbackground.png */,
 				88F4CBC71ED14A130057E45B /* AppDelegate.swift */,
 				88F4CBC91ED14A130057E45B /* FirstViewController.swift */,
 				88F4CBCB1ED14A130057E45B /* SecondViewController.swift */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88F4CC021ED14BE30057E45B /* deadlines_image.png in Resources */,
+				24E9E14C1ED434F40045EC54 /* navbarbackground.png in Resources */,
 				88F4CBD41ED14A130057E45B /* LaunchScreen.storyboard in Resources */,
 				88F4CC001ED14BDB0057E45B /* calendarImage.png in Resources */,
 				88F4CC041ED14BEB0057E45B /* meeting_Image.png in Resources */,
