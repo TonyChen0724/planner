@@ -147,7 +147,7 @@
             </objects>
             <point key="canvasLocation" x="1876" y="-0.44977511244377816"/>
         </scene>
-        <!--Add Dead Line Controller-->
+        <!--Add Deadlines-->
         <scene sceneID="aUU-sh-3ct">
             <objects>
                 <viewController id="NA5-0f-s2c" customClass="AddDeadLineController" customModule="PlannerUI" customModuleProvider="target" sceneMemberID="viewController">
@@ -201,6 +201,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Add Deadlines" id="9GZ-3N-H9O"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="deadlineTime" destination="pai-Ai-OVt" id="w6E-3r-6TK"/>
                         <outlet property="input" destination="LAj-T0-CNR" id="L2V-ll-Zrf"/>
