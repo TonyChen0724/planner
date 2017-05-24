@@ -11,10 +11,12 @@
 		24A3AB461ED3E5D600D87978 /* AddDeadLineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A3AB451ED3E5D600D87978 /* AddDeadLineController.swift */; };
 		24E9E14C1ED434F40045EC54 /* navbarbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 24E9E14B1ED434F40045EC54 /* navbarbackground.png */; };
 		47FBBE851ED2AD78000BE2B1 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE841ED2AD78000BE2B1 /* TasksViewController.swift */; };
-		47FBBE871ED2AD8D000BE2B1 /* MeetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */; };
 		47FBBE891ED2C12F000BE2B1 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */; };
 		47FBBE8B1ED2C141000BE2B1 /* DeadlinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE8A1ED2C141000BE2B1 /* DeadlinesViewController.swift */; };
 		47FBBE911ED2F807000BE2B1 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE901ED2F807000BE2B1 /* MyCollectionViewCell.swift */; };
+		47FBBE971ED5586A000BE2B1 /* MeetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE961ED5586A000BE2B1 /* MeetingsViewController.swift */; };
+		47FBBE9B1ED558AB000BE2B1 /* addButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FBBE9A1ED558AB000BE2B1 /* addButton.png */; };
+		47FBBE9C1ED5625D000BE2B1 /* MeetingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE981ED5588F000BE2B1 /* MeetingPopUpViewController.swift */; };
 		88F4CBC81ED14A130057E45B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBC71ED14A130057E45B /* AppDelegate.swift */; };
 		88F4CBCA1ED14A130057E45B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBC91ED14A130057E45B /* FirstViewController.swift */; };
 		88F4CBCC1ED14A130057E45B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBCB1ED14A130057E45B /* SecondViewController.swift */; };
@@ -51,10 +53,12 @@
 		24A3AB451ED3E5D600D87978 /* AddDeadLineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeadLineController.swift; sourceTree = "<group>"; };
 		24E9E14B1ED434F40045EC54 /* navbarbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbarbackground.png; sourceTree = "<group>"; };
 		47FBBE841ED2AD78000BE2B1 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
-		47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsViewController.swift; sourceTree = "<group>"; };
 		47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		47FBBE8A1ED2C141000BE2B1 /* DeadlinesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeadlinesViewController.swift; sourceTree = "<group>"; };
 		47FBBE901ED2F807000BE2B1 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		47FBBE961ED5586A000BE2B1 /* MeetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsViewController.swift; sourceTree = "<group>"; };
+		47FBBE981ED5588F000BE2B1 /* MeetingPopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingPopUpViewController.swift; sourceTree = "<group>"; };
+		47FBBE9A1ED558AB000BE2B1 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
 		88F4CBC41ED14A130057E45B /* PlannerUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlannerUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F4CBC71ED14A130057E45B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88F4CBC91ED14A130057E45B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				88F4CC011ED14BE30057E45B /* deadlines_image.png */,
 				88F4CC031ED14BEB0057E45B /* meeting_Image.png */,
 				88F4CC051ED14C020057E45B /* task_image.png */,
+				47FBBE9A1ED558AB000BE2B1 /* addButton.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +140,10 @@
 				88F4CBD01ED14A130057E45B /* Assets.xcassets */,
 				88F4CBD21ED14A130057E45B /* LaunchScreen.storyboard */,
 				88F4CBD51ED14A130057E45B /* Info.plist */,
+				47FBBE981ED5588F000BE2B1 /* MeetingPopUpViewController.swift */,
 				47FBBE841ED2AD78000BE2B1 /* TasksViewController.swift */,
-				47FBBE861ED2AD8D000BE2B1 /* MeetingsViewController.swift */,
 				47FBBE881ED2C12F000BE2B1 /* TimeTableViewController.swift */,
+				47FBBE961ED5586A000BE2B1 /* MeetingsViewController.swift */,
 				47FBBE8A1ED2C141000BE2B1 /* DeadlinesViewController.swift */,
 				2489DCE51ED5083D00E2B3D4 /* DeadlinesTableCell.swift */,
 				24A3AB451ED3E5D600D87978 /* AddDeadLineController.swift */,
@@ -276,6 +282,7 @@
 				88F4CBD41ED14A130057E45B /* LaunchScreen.storyboard in Resources */,
 				88F4CC001ED14BDB0057E45B /* calendarImage.png in Resources */,
 				88F4CC041ED14BEB0057E45B /* meeting_Image.png in Resources */,
+				47FBBE9B1ED558AB000BE2B1 /* addButton.png in Resources */,
 				88F4CC061ED14C020057E45B /* task_image.png in Resources */,
 				88F4CBD11ED14A130057E45B /* Assets.xcassets in Resources */,
 				88F4CBCF1ED14A130057E45B /* Main.storyboard in Resources */,
@@ -303,11 +310,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47FBBE9C1ED5625D000BE2B1 /* MeetingPopUpViewController.swift in Sources */,
 				2489DCE61ED5083D00E2B3D4 /* DeadlinesTableCell.swift in Sources */,
-				47FBBE871ED2AD8D000BE2B1 /* MeetingsViewController.swift in Sources */,
 				88F4CBCC1ED14A130057E45B /* SecondViewController.swift in Sources */,
 				47FBBE911ED2F807000BE2B1 /* MyCollectionViewCell.swift in Sources */,
 				47FBBE891ED2C12F000BE2B1 /* TimeTableViewController.swift in Sources */,
+				47FBBE971ED5586A000BE2B1 /* MeetingsViewController.swift in Sources */,
 				88F4CBC81ED14A130057E45B /* AppDelegate.swift in Sources */,
 				24A3AB461ED3E5D600D87978 /* AddDeadLineController.swift in Sources */,
 				88F4CBCA1ED14A130057E45B /* FirstViewController.swift in Sources */,

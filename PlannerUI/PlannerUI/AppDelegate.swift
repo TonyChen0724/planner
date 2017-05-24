@@ -9,7 +9,8 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate
+    {
 
     var window: UIWindow?
 
@@ -19,10 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //UINavigationBar.appearance().barTintColor = UIColor.blue
         //UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        //let img = UIImage(named: "navbarbackground.png")!
+       // let img = UIImage(named: "navbarbackground.png")!
         //UINavigationBar.appearance().setBackgroundImage(img, for: .default)
         return true
+        
     }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
