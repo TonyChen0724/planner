@@ -16,10 +16,12 @@ class AddDeadLineController: UIViewController {
     
     @IBAction func addDeadLine(_ sender: Any)
     {
-        if (input.text != "")
+        if (input.text != "" && deadlineTime.text != "")
         {
             deadlines.append(input.text!)
             input.text = ""
+            deadlineTimes.append(deadlineTime.text!)
+            deadlineTime.text = ""
         }
     }
     func createDatePicker()

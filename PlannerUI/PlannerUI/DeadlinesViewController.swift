@@ -9,6 +9,7 @@
 import UIKit
 
 var deadlines = ["COSC343", "COSC345", "COSC243"]
+var deadlineTimes = ["13/01/17, 12:00", "13/01/17, 12:00", "13/01/17, 12:00"]
 
 class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -21,10 +22,11 @@ class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "deadline")
-        cell.textLabel?.text = deadlines[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "deadline", for: indexPath) as! DeadlinesTableCell
+        cell.deadLineName.text = deadlines[indexPath.row]
+        cell.deadLineDate.text = deadlineTimes[indexPath.row]
         
-        return cell
+        return (cell)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
