@@ -15,10 +15,13 @@ class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableVie
 
     @IBOutlet weak var deadLineList: UITableView!
     
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return (deadlines.count)
     }
+    
+   
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {

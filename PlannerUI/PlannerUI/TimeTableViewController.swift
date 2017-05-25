@@ -14,8 +14,8 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
         
         let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
         var items = ["", "", "", "", "", "", "", "COSC343\nBurns7", "INFO351\n530C1", "COSC343\nBurns7", "", "COSC345\nSDAV2", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "INFO351\nRAG11", "", "", "", "", "", "", "", "", "", "", "", "", "COSC343\nOWG06", "", "", "", "", "", "", "", "", "", "", "", "", "COSC345", "", "", "", "", "", "" ,"", "", ""]
-        
-        
+    
+    
         // MARK: - UICollectionViewDataSource protocol
         
         // tell the collection view how many cells to make

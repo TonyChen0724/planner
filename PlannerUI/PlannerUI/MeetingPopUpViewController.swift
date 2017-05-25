@@ -11,6 +11,63 @@ import UIKit
 class MeetingPopUpViewController: UIViewController {
     
 
+    @IBOutlet weak var group: UILabel!
+    
+ 
+    
+    @IBOutlet weak var timeAndDate: UITextField!
+    @IBOutlet weak var groupText: UITextField!
+ 
+    
+    @IBOutlet weak var locationText: UITextField!
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    let datePicker = UIDatePicker()
+    
+    @IBAction func submit(_ sender: Any) {
+        if (groupText.text != "" && timeAndDate.text != "" && locationText.text != "")
+        {
+            meetings.append(groupText.text!)
+            //groupText.text = ""
+            print(groupText.text!)
+            meetingTimes.append(timeAndDate.text!)
+            //timeAndDate.text = ""
+            print (timeAndDate.text!)
+            meetingLoc.append(locationText.text!)
+            //locationText.text = ""
+            print(locationText.text!)
+        }
+    
+        self.view.removeFromSuperview()
+        self.removeAnimate()
+    }
+    
+    func createDatePicker()
+    {
+        //format picker
+        datePicker.datePickerMode = .dateAndTime
+        //toolbar
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        //bar button item
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
+        toolbar.setItems([doneButton], animated:false)
+        
+        timeAndDate.inputAccessoryView = toolbar
+        
+        //assigning date picker to text field
+        timeAndDate.inputView = datePicker
+    }
+    func donePressed() {
+        //format date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        
+        timeAndDate.text = dateFormatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
     
     @IBAction func close(_ sender: Any) {
         self.view.removeFromSuperview()
@@ -20,6 +77,7 @@ class MeetingPopUpViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         self.showAnimate()
+        createDatePicker()
         // Do any additional setup after loading the view.
     }
 
