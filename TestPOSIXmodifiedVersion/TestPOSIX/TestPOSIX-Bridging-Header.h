@@ -9,4 +9,6 @@
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
 
++ (BOOL)deleteAssignmentById:(NSNumber *)pkid;
+
 @end

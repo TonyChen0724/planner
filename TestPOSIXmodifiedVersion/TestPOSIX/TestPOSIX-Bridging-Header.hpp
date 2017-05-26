@@ -24,6 +24,8 @@ AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc);
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
 
++ (BOOL)deleteAssignmentById:(NSNumber *)pkid;
+
 @end
 
 #endif /* TestPOSIX_Bridging_Header_h */

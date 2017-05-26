@@ -45,6 +45,10 @@ using namespace std;
     [Bridging insertNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
 
++ (BOOL)deleteAssignmentById:(NSNumber *)pkid {
+    return deleteAssignmentById([pkid intValue]);
+}
+
 @end
 
 AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc) {

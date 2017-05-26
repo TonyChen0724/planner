@@ -39,5 +39,6 @@ public:
 };
 extern std::vector<AssignmentCpp> queryForAllAssignments();
 extern void insertNewAssignmentCpp(AssignmentCpp asscpp);
+extern bool deleteAssignmentById(int pkid);
 
 #endif /* sqlite_operations_hpp */

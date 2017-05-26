@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <functional>
+#include <sstream>
 
 using namespace std;
 sqlite3 *db;
@@ -171,3 +172,8 @@ vector<AssignmentCpp> queryForAllAssignments() {
     return t_res;
 }
 
+bool deleteAssignmentById(int pkid) {
+    ostringstream os;
+    os << "DELETE FROM users WHERE id = " << pkid;
+    return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
+}
