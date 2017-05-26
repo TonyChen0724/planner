@@ -18,12 +18,13 @@ class AddDeadLineController: UIViewController {
     {
         if (input.text != "" && deadlineTime.text != "")
         {
-            AssignmentObjc *ass = AssignmentObjc.init(pkid: -1, lecture: input.text!, time: deadlineTime.text!, position: "");
-            // 
+            let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: input.text!, time: deadlineTime.text!, position: "");
+            //
 //            deadlines.append(input.text!)
             input.text = ""
 //            deadlineTimes.append(deadlineTime.text!)
             deadlineTime.text = ""
+            Bridging.insertNewAssignmentObjc(ass);
         }
     }
     func createDatePicker()

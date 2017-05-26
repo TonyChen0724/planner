@@ -43,6 +43,7 @@ class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        assignmentArr = NSMutableArray(array:Bridging.queryForAllAssignments());
         deadLineList.reloadData()
     }
     
@@ -50,7 +51,6 @@ class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        assignmentArr = NSMutableArray(array:Bridging.queryForAllAssignments());
     }
 
     override func didReceiveMemoryWarning() {

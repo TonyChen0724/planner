@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TestPOSIX-Bridging-Header.hpp"
+#import "AssignmentObjc.h"
 #import "sqlite_operations.hpp"
 
 #import "vector"
@@ -36,8 +37,17 @@ using namespace std;
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
 
-+ (void)insertNewAssignment:(AssignmentObjc *)ass {
-    
++ (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp {
+    insert(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
+}
+
++ (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc {
+    [Bridging insertNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
 
 @end
+
+AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc) {
+    return AssignmentCpp([assobjc.pkid intValue], [assobjc.lecture cStringUsingEncoding:NSASCIIStringEncoding], [assobjc.time cStringUsingEncoding:NSASCIIStringEncoding], [assobjc.position cStringUsingEncoding:NSASCIIStringEncoding]);
+}
+

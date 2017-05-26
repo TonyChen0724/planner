@@ -13,8 +13,6 @@
 #include <vector>
 #include <string>
 
-#import "AssignmentObjc.h"
-
 extern sqlite3 *db;
 extern char *zErrMsg;
 extern int rc;
@@ -38,9 +36,8 @@ public:
     std::string position;
     
     AssignmentCpp(int pkid, std::string lecture, std::string time, std::string position);
-    AssignmentCpp(AssignemtnObjc *assobjc);
 };
 extern std::vector<AssignmentCpp> queryForAllAssignments();
-extern void insertNewAssignment(AssignmentCpp asscpp);
+extern void insertNewAssignmentCpp(AssignmentCpp asscpp);
 
 #endif /* sqlite_operations_hpp */

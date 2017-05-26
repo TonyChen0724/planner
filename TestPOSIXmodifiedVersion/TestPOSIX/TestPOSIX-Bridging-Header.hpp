@@ -12,13 +12,17 @@
 #import "AssignmentObjc.h"
 #import "vector"
 
+AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc);
+
 @interface Bridging : NSObject
 
 + (NSArray *)convertToAssignmentObjcArrayWithAssignmentCppVector:(std::vector<AssignmentCpp>)vasscpp;
 
 + (NSArray *)queryForAllAssignments;
 
-+ (void)insertNewAssignment:(AssignmentObjc *)ass;
++ (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp;
+
++ (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
 
 @end
 

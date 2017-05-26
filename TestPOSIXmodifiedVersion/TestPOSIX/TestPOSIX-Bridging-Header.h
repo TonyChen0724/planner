@@ -7,6 +7,6 @@
 
 + (NSArray *)queryForAllAssignments;
 
-+ (void)insertNewAssignment:(AssignmentObjc *)ass;
++ (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
 
 @end
