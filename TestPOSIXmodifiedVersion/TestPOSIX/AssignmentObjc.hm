@@ -1,0 +1,35 @@
+//
+//  AssignmentObjc.hm.h
+//  TestPOSIX
+//
+//  Created by Xinru Chen on 5/25/17.
+//  Copyright © 2017 Xinru Chen. All rights reserved.
+//
+
+#ifndef AssignmentObjc_hm_h
+#define AssignmentObjc_hm_h
+
+//
+//  Assignment.h
+//  TestPOSIX
+//
+//  Created by Xinru Chen on 5/24/17.
+//  Copyright © 2017 Xinru Chen. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface AssignmentObjc : NSObject
+
+@property (readonly) NSNumber *pkid;
+@property (readonly) NSString *lecture;
+@property (readonly) NSString *time;
+@property (readonly) NSString *position;
+
+- (instancetype)initWithPkid:(NSNumber *)pkid lecture:(NSString *)lecture time:(NSString *)time position:(NSString *)position;
+
++ (instancetype)assignmentObjcWithPkid:(NSNumber *)pkid lecture:(NSString *)lecture time:(NSString *)time position:(NSString *)position;
+
+@end
+
+#endif /* AssignmentObjc_hm_h */
