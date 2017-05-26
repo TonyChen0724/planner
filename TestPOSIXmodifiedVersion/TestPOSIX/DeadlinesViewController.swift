@@ -26,20 +26,24 @@ class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "deadline", for: indexPath) as! DeadlinesTableCell
 //        cell.deadLineName.text = deadlines[indexPath.row]
 //        cell.deadLineDate.text = deadlineTimes[indexPath.row]
-        cell.deadLineName.text = assignmentArr[indexPath.row] as? String  // Cannot assign value of type 'Any' to type 'String?'
-        cell.deadLineDate.text = assignmentArr[indexPath.row] as? String
+        cell.deadLineName.text = (assignmentArr[indexPath.row] as! AssignmentObjc).lecture;
+        cell.deadLineDate.text = (assignmentArr[indexPath.row] as! AssignmentObjc).time;
         
         return (cell)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
-    {
-        if editingStyle == UITableViewCellEditingStyle.delete
-        {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            let target: AssignmentObjc = assignmentArr[indexPath.row] as! AssignmentObjc;
             assignmentArr.remove(at: indexPath.row)
-            deadLineList.reloadData()
+            assignmentArr = NSMutableArray(array:Bridging.queryForAllAssignments());
+            Bridging.deleteAssignment(byId: target.pkid);
         }
-        
+        deadLineList.reloadData() // FIXME
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true;
     }
     
     override func viewDidAppear(_ animated: Bool) {
