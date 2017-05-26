@@ -28,10 +28,13 @@
                                 <color key="textColor" white="0.96999999999999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-JA-Vle">
-                                <rect key="frame" x="16" y="63" width="343" height="529"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-JA-Vle">
+                                <rect key="frame" x="16" y="69" width="343" height="529"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="529" id="S4e-uJ-hXp"/>
+                                    <constraint firstAttribute="width" constant="343" id="bYi-65-6AR"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="WcI-Wi-N0z">
                                     <size key="itemSize" width="49" height="60"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -79,6 +82,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fBd-JA-Vle" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="JzF-xu-vcx"/>
+                            <constraint firstItem="fBd-JA-Vle" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="ouQ-BB-pzP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="calendarImage.png" selectedImage="calendarImage.png" id="acW-dT-cKf"/>
                     <connections>

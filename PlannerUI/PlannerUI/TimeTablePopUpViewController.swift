@@ -26,7 +26,11 @@ class TimeTablePopUpViewController: UIViewController {
     
     @IBOutlet weak var locationText: UITextField!
     
-    var add: String!
+    var monday: BooleanLiteralType!
+    var tuesday: BooleanLiteralType!
+    var wednesday: BooleanLiteralType!
+    var thursday : BooleanLiteralType!
+    var friday : BooleanLiteralType!
     
     let datePicker = UIDatePicker()
     
@@ -35,6 +39,19 @@ class TimeTablePopUpViewController: UIViewController {
         if (sender.isSelected == true)
         {
             print(sender.titleLabel!.text!)
+            if (sender.titleLabel!.text! == "Monday"){
+                monday = false
+            }else if (sender.titleLabel!.text == "Tuesday"){
+                tuesday = false
+            } else if (sender.titleLabel!.text! == "Wednesday"){
+                wednesday = false
+                
+            }else if (sender.titleLabel!.text! == "Thursday"){
+                thursday = false
+                
+            }else if (sender.titleLabel!.text! == "Friday"){
+                friday = false
+            }
           
             sender.setBackgroundImage(UIImage(named: "uncheckedBox.png"), for: UIControlState.normal)
             sender.isSelected = false;
@@ -42,6 +59,19 @@ class TimeTablePopUpViewController: UIViewController {
         }
         else
         {
+            if (sender.titleLabel!.text! == "Monday"){
+                monday = true
+            }else if (sender.titleLabel!.text == "Tuesday"){
+                tuesday = true
+            } else if (sender.titleLabel!.text! == "Wednesday"){
+                wednesday = true
+                
+            }else if (sender.titleLabel!.text! == "Thursday"){
+                thursday = true
+                
+            }else if (sender.titleLabel!.text! == "Friday"){
+                friday = true
+            }
             sender.setBackgroundImage(UIImage(named: "checkbox.png"), for: UIControlState.normal)
             sender.isSelected = true;
             schedule.append(" " + sender.titleLabel!.text!)
@@ -54,6 +84,10 @@ class TimeTablePopUpViewController: UIViewController {
     }
     
     @IBAction func submit(_ sender: Any) {
+        
+        if (monday == true){
+            print("monday is true")
+        }
         
         if (classText.text != "" && locationText.text != "" && startTime.text != "")
      {
