@@ -33,9 +33,10 @@
 		03C788351ED6B7C400C643A9 /* meeting_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C788311ED6B7C400C643A9 /* meeting_Image.png */; };
 		03C788361ED6B7C400C643A9 /* task_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C788321ED6B7C400C643A9 /* task_image.png */; };
 		03C788381ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03C788371ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm */; };
-		03C7883C1ED6CADA00C643A9 /* sqlite_operations.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03C7883B1ED6CADA00C643A9 /* sqlite_operations.mm */; };
 		03D5B7801ED494D50024740C /* AssignmentCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03D5B77F1ED494D50024740C /* AssignmentCell.mm */; };
 		6429A2AE2D4859363B840DEC /* libPods-TestPOSIX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 388500103F1737A9058A9A4F /* libPods-TestPOSIX.a */; };
+		FDBFAF5B1ED87AAE00C33278 /* CalendarObjc.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDBFAF5A1ED87AAE00C33278 /* CalendarObjc.mm */; };
+		FDBFAF5D1ED8890400C33278 /* CalendarObjc.hm in Resources */ = {isa = PBXBuildFile; fileRef = FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,12 +77,14 @@
 		03C788371ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "TestPOSIX-Bridging-Header.mm"; sourceTree = "<group>"; };
 		03C788391ED6BCA500C643A9 /* TestPOSIX-Bridging-Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "TestPOSIX-Bridging-Header.hpp"; sourceTree = "<group>"; };
 		03C7883A1ED6BE5E00C643A9 /* AssignmentObjc.hm */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssignmentObjc.hm; sourceTree = "<group>"; };
-		03C7883B1ED6CADA00C643A9 /* sqlite_operations.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sqlite_operations.mm; sourceTree = "<group>"; };
 		03D5B77E1ED494D50024740C /* AssignmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentCell.h; sourceTree = "<group>"; };
 		03D5B77F1ED494D50024740C /* AssignmentCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssignmentCell.mm; sourceTree = "<group>"; };
 		388500103F1737A9058A9A4F /* libPods-TestPOSIX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestPOSIX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F73A8DF3069A7F8C13FAA40 /* Pods-TestPOSIX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPOSIX.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPOSIX/Pods-TestPOSIX.release.xcconfig"; sourceTree = "<group>"; };
 		C1A5B0ACD6CDFED638BDCD17 /* Pods-TestPOSIX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPOSIX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPOSIX/Pods-TestPOSIX.debug.xcconfig"; sourceTree = "<group>"; };
+		FDBFAF591ED87AAE00C33278 /* CalendarObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarObjc.h; sourceTree = "<group>"; };
+		FDBFAF5A1ED87AAE00C33278 /* CalendarObjc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CalendarObjc.mm; sourceTree = "<group>"; };
+		FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CalendarObjc.hm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,7 @@
 		0349AF481ED16CE200CF3FC7 /* TestPOSIX */ = {
 			isa = PBXGroup;
 			children = (
+				FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */,
 				03C7882D1ED6B54400C643A9 /* MainSwift.storyboard */,
 				03C788191ED6B51D00C643A9 /* AddDeadLineController.swift */,
 				03C7881A1ED6B51D00C643A9 /* AppDelegateSwift.swift */,
@@ -155,7 +159,8 @@
 				03C788371ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm */,
 				03C788391ED6BCA500C643A9 /* TestPOSIX-Bridging-Header.hpp */,
 				03C7883A1ED6BE5E00C643A9 /* AssignmentObjc.hm */,
-				03C7883B1ED6CADA00C643A9 /* sqlite_operations.mm */,
+				FDBFAF591ED87AAE00C33278 /* CalendarObjc.h */,
+				FDBFAF5A1ED87AAE00C33278 /* CalendarObjc.mm */,
 			);
 			path = TestPOSIX;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 			files = (
 				0349AF591ED16CE200CF3FC7 /* LaunchScreen.storyboard in Resources */,
 				03C7882E1ED6B54400C643A9 /* MainSwift.storyboard in Resources */,
+				FDBFAF5D1ED8890400C33278 /* CalendarObjc.hm in Resources */,
 				03C788351ED6B7C400C643A9 /* meeting_Image.png in Resources */,
 				0349AF561ED16CE200CF3FC7 /* Assets.xcassets in Resources */,
 				03C788341ED6B7C400C643A9 /* deadlines_image.png in Resources */,
@@ -323,12 +329,12 @@
 				03C788271ED6B51D00C643A9 /* FirstViewController.swift in Sources */,
 				03A25C5C1ED3133F00B9332B /* TableViewController.m in Sources */,
 				03C7882C1ED6B51D00C643A9 /* TimeTableViewController.swift in Sources */,
+				FDBFAF5B1ED87AAE00C33278 /* CalendarObjc.mm in Sources */,
 				03D5B7801ED494D50024740C /* AssignmentCell.mm in Sources */,
 				03C788231ED6B51D00C643A9 /* AddDeadLineController.swift in Sources */,
 				03A25C641ED45F3D00B9332B /* AssignmentObjc.mm in Sources */,
 				03C788281ED6B51D00C643A9 /* MeetingsViewController.swift in Sources */,
 				03C7882B1ED6B51D00C643A9 /* TasksViewController.swift in Sources */,
-				03C7883C1ED6CADA00C643A9 /* sqlite_operations.mm in Sources */,
 				03C788291ED6B51D00C643A9 /* MyCollectionViewCell.swift in Sources */,
 				03A25C591ED2BE0300B9332B /* sqlite_operations.cpp in Sources */,
 				03C788241ED6B51D00C643A9 /* AppDelegateSwift.swift in Sources */,

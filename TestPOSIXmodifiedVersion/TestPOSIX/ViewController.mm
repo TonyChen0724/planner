@@ -35,7 +35,7 @@
     
 }
 - (IBAction)store:(id)sender {
-    insert(
+    insertAssignment(
            [self.lecture.text cStringUsingEncoding: NSASCIIStringEncoding],
            [self.time.text cStringUsingEncoding:NSASCIIStringEncoding],
            [self.location.text cStringUsingEncoding:NSASCIIStringEncoding]

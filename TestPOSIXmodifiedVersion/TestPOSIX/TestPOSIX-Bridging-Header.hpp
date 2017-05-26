@@ -10,7 +10,11 @@
 #define TestPOSIX_Bridging_Header_h
 
 #import "AssignmentObjc.h"
+#import "CalendarObjc.h"
 #import "vector"
+
+AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc);
+CalendarCpp calendarCppFromCalendarObjc(CalendarObjc *calobjc);
 
 @interface Bridging : NSObject
 
@@ -18,7 +22,21 @@
 
 + (NSArray *)queryForAllAssignments;
 
-+ (void)insertNewAssignment:(AssignmentObjc *)ass;
++ (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp;
+
++ (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
+
++ (BOOL)deleteAssignmentById:(NSNumber *)pkid;
+
++ (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(std::vector<CalendarCpp>)vcalcpp;
+
++ (NSArray *)queryForAllCalendars;
+
++ (void)insertNewCalendarCpp:(CalendarCpp)calcpp;
+
++ (void)insertNewCalendarObjc:(CalendarObjc *)calobjc;
+
++ (BOOL)deleteCalendarById:(NSNumber *)pkid;
 
 @end
 

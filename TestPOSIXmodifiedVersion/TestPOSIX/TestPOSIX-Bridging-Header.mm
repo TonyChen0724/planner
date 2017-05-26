@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TestPOSIX-Bridging-Header.hpp"
+#import "AssignmentObjc.h"
 #import "sqlite_operations.hpp"
 
 #import "vector"
@@ -36,8 +37,42 @@ using namespace std;
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
 
-+ (void)insertNewAssignment:(AssignmentObjc *)ass {
-    
++ (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp {
+    insertNewAssignmentCpp(asscpp);
+}
+
++ (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc {
+    [Bridging insertNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
+}
+
++ (BOOL)deleteAssignmentById:(NSNumber *)pkid {
+    return deleteAssignmentById([pkid intValue]);
+}
+
++ (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(std::vector<CalendarCpp>)vcalcpp {
+    vector<CalendarObjc *> outVec;
+    outVec.resize(vcalcpp.size());
+    transform(vcalcpp.begin(), vcalcpp.end(), outVec.begin(), [](CalendarCpp calcpp){
+        return [CalendarObjc calendarObjcWithCalendarCpp:calcpp];
+    });
+    return [NSArray arrayWithObjects:&outVec[0] count:outVec.size()];
+}
+
++ (NSArray *)queryForAllCalendars {
+    auto calVec = queryForAllCalendarCpp();
+    return [Bridging convertToCalendarObjcArrayWithCalendarCppVector:calVec];
+}
+
++ (void)insertNewCalendarCpp:(CalendarCpp)calcpp {
+    insertNewCalendarCpp(calcpp);
+}
+
++ (void)insertNewCalendarObjc:(CalendarObjc *)calobjc {
+    [Bridging insertNewCalendarCpp:calendarCppFromCalendarObjc(calobjc)];
+}
+
++ (BOOL)deleteCalendarById:(NSNumber *)pkid {
+    return deleteCalendarById([pkid intValue]);
 }
 
 @end

@@ -24,4 +24,8 @@
 
 + (instancetype)assignmentObjcWithAssignmentCpp:(AssignmentCpp)assCpp;
 
+- (AssignmentCpp)toAssignmentCpp;
+
 @end
+
+AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc);
