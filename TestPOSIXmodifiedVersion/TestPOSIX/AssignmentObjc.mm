@@ -8,6 +8,10 @@
 
 #import "AssignmentObjc.h"
 
+AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc) {
+    return AssignmentCpp([assobjc.pkid intValue], [assobjc.lecture cStringUsingEncoding:NSASCIIStringEncoding], [assobjc.time cStringUsingEncoding:NSASCIIStringEncoding], [assobjc.position cStringUsingEncoding:NSASCIIStringEncoding]);
+}
+
 @implementation AssignmentObjc
 
 - (instancetype)initWithPkid:(NSNumber *)pkid lecture:(NSString *)lecture time:(NSString *)time position:(NSString *)position {
@@ -28,6 +32,10 @@
 
 + (instancetype)assignmentObjcWithAssignmentCpp:(AssignmentCpp)assCpp {
     return [[AssignmentObjc alloc] initWithAssignmentCpp:assCpp];
+}
+
+- (AssignmentCpp)toAssignmentCpp {
+    return assignmentCppFromAssignmentObjc(self);
 }
 
 @end

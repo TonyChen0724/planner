@@ -132,7 +132,7 @@ void updatePosition(char* timer, char* positioner) {
 
 
 
-void insert(const char* lectures, const char* times, const char* positions) {
+void insertAssignment(const char* lectures, const char* times, const char* positions) {
     string insertInto = "INSERT INTO users (lecture, time, position) VALUES ('";
     string topcomma = "'";
     string comma = ",";
@@ -151,6 +151,10 @@ void insert(const char* lectures, const char* times, const char* positions) {
     
 }
 
+void insertCalendar(const char *row, const char *col, const char *content, const char *color) {
+    // TODO: Mr. Chen, I will leave this to you. You'll implement it in sqlite_operations.cpp file, just like insertAssignment. I'm too lazy to write those boilerplate codes. -- Yutong Zhang
+}
+
 AssignmentCpp::AssignmentCpp(int pkid, string lecture, string time, string position): pkid(pkid), lecture(lecture), time(time), position(position) {}
 
 static long t_rowNum;
@@ -161,19 +165,46 @@ long rowNumberInAssignmentsTable() {
     }, NULL, NULL) == SQLITE_OK ? t_rowNum : -1;
 }
 
-vector<AssignmentCpp> t_res{};
+vector<AssignmentCpp> t_assres{};
 vector<AssignmentCpp> queryForAllAssignments() {
-    t_res.clear();
+    t_assres.clear();
     sqlite3_exec(db, "SELECT * FROM users", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
         auto vec = vector<string>{columnTexts, columnTexts + columnNum};
-        t_res.push_back(AssignmentCpp{stoi(vec[0]), vec[1], vec[2], vec[3]});
+        t_assres.push_back(AssignmentCpp{stoi(vec[0]), vec[1], vec[2], vec[3]});
         return 0;
     }, NULL, NULL);
-    return t_res;
+    return t_assres;
+}
+
+void insertNewAssignmentCpp(AssignmentCpp asscpp) {
+    insertAssignment(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
 
 bool deleteAssignmentById(int pkid) {
     ostringstream os;
     os << "DELETE FROM users WHERE id = " << pkid;
+    return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
+}
+
+CalendarCpp::CalendarCpp(int pkid, std::string row, std::string col, std::string content, std::string color): pkid(pkid), row(row), col(col), content(content), color(color) {}
+
+vector<CalendarCpp> t_calres{};
+std::vector<CalendarCpp> queryForAllCalendarCpp() {
+    t_calres.clear();
+    sqlite3_exec(db, "SELECT * FROM calendar", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
+        auto vec = vector<string>{columnTexts, columnTexts + columnNum};
+        t_calres.push_back(CalendarCpp{stoi(vec[0]), vec[1], vec[2], vec[3], vec[4]});
+        return 0;
+    }, NULL, NULL);
+    return t_calres;
+}
+
+void insertNewCalendarCpp(CalendarCpp calcpp) {
+    insertCalendar(calcpp.row.c_str(), calcpp.col.c_str(), calcpp.content.c_str(), calcpp.color.c_str());
+}
+
+bool deleteCalendarById(int pkid) {
+    ostringstream os;
+    os << "DELETE FROM calendar WHERE id = " << pkid;
     return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
 }

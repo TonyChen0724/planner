@@ -38,7 +38,7 @@ using namespace std;
 }
 
 + (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp {
-    insert(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
+    insertNewAssignmentCpp(asscpp);
 }
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc {
@@ -49,9 +49,30 @@ using namespace std;
     return deleteAssignmentById([pkid intValue]);
 }
 
-@end
-
-AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc) {
-    return AssignmentCpp([assobjc.pkid intValue], [assobjc.lecture cStringUsingEncoding:NSASCIIStringEncoding], [assobjc.time cStringUsingEncoding:NSASCIIStringEncoding], [assobjc.position cStringUsingEncoding:NSASCIIStringEncoding]);
++ (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(std::vector<CalendarCpp>)vcalcpp {
+    vector<CalendarObjc *> outVec;
+    outVec.resize(vcalcpp.size());
+    transform(vcalcpp.begin(), vcalcpp.end(), outVec.begin(), [](CalendarCpp calcpp){
+        return [CalendarObjc calendarObjcWithCalendarCpp:calcpp];
+    });
+    return [NSArray arrayWithObjects:&outVec[0] count:outVec.size()];
 }
 
++ (NSArray *)queryForAllCalendars {
+    auto calVec = queryForAllCalendarCpp();
+    return [Bridging convertToCalendarObjcArrayWithCalendarCppVector:calVec];
+}
+
++ (void)insertNewCalendarCpp:(CalendarCpp)calcpp {
+    insertNewCalendarCpp(calcpp);
+}
+
++ (void)insertNewCalendarObjc:(CalendarObjc *)calobjc {
+    [Bridging insertNewCalendarCpp:calendarCppFromCalendarObjc(calobjc)];
+}
+
++ (BOOL)deleteCalendarById:(NSNumber *)pkid {
+    return deleteCalendarById([pkid intValue]);
+}
+
+@end

@@ -1,0 +1,33 @@
+//
+//  CalendarObjc.h
+//  TestPOSIX
+//
+//  Created by zhangyutong926 on Friday, 26 May, 2017 AD.
+//  Copyright © 2017 Xinru Chen. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+#import "sqlite_operations.hpp"
+
+@interface CalendarObjc : NSObject
+
+@property (readonly) NSNumber *pkid;
+@property (readonly) NSNumber *row;
+@property (readonly) NSNumber *col;
+@property (readonly) NSString *content;
+@property (readonly) UIColor *color;
+@property (readwrite) NSString *colorName;
+
+- (instancetype)initWithPkid:(NSNumber *)pkid row:(NSNumber *)row col:(NSNumber *)col content:(NSString *)content color:(UIColor *)color;
+
+- (instancetype)initWithCalendarCpp:(CalendarCpp)calcpp;
+
++ (instancetype)calendarObjcWithPkid:(NSNumber *)pkid row:(NSNumber *)row col:(NSNumber *)col content:(NSString *)content color:(UIColor *)color;
+
++ (instancetype)calendarObjcWithCalendarCpp:(CalendarCpp)calcpp;
+
+- (CalendarCpp)toCalendarCpp;
+
+@end
