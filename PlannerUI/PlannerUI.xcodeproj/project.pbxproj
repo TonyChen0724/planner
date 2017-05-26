@@ -19,6 +19,9 @@
 		47FBBE9C1ED5625D000BE2B1 /* MeetingPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE981ED5588F000BE2B1 /* MeetingPopUpViewController.swift */; };
 		47FBBE9E1ED56C02000BE2B1 /* TableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE9D1ED56C02000BE2B1 /* TableSectionHeader.swift */; };
 		47FBBEA01ED6C379000BE2B1 /* MeetingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBE9F1ED6C379000BE2B1 /* MeetingsTableViewCell.swift */; };
+		47FBBEA21ED7914E000BE2B1 /* TimeTablePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FBBEA11ED7914E000BE2B1 /* TimeTablePopUpViewController.swift */; };
+		47FBBEA41ED82F1B000BE2B1 /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FBBEA31ED82F1B000BE2B1 /* checkbox.png */; };
+		47FBBEA61ED82F59000BE2B1 /* uncheckedBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 47FBBEA51ED82F59000BE2B1 /* uncheckedBox.png */; };
 		88F4CBC81ED14A130057E45B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBC71ED14A130057E45B /* AppDelegate.swift */; };
 		88F4CBCA1ED14A130057E45B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBC91ED14A130057E45B /* FirstViewController.swift */; };
 		88F4CBCC1ED14A130057E45B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F4CBCB1ED14A130057E45B /* SecondViewController.swift */; };
@@ -63,6 +66,9 @@
 		47FBBE9A1ED558AB000BE2B1 /* addButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addButton.png; sourceTree = "<group>"; };
 		47FBBE9D1ED56C02000BE2B1 /* TableSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSectionHeader.swift; sourceTree = "<group>"; };
 		47FBBE9F1ED6C379000BE2B1 /* MeetingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingsTableViewCell.swift; sourceTree = "<group>"; };
+		47FBBEA11ED7914E000BE2B1 /* TimeTablePopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTablePopUpViewController.swift; sourceTree = "<group>"; };
+		47FBBEA31ED82F1B000BE2B1 /* checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox.png; sourceTree = "<group>"; };
+		47FBBEA51ED82F59000BE2B1 /* uncheckedBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uncheckedBox.png; sourceTree = "<group>"; };
 		88F4CBC41ED14A130057E45B /* PlannerUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlannerUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F4CBC71ED14A130057E45B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88F4CBC91ED14A130057E45B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 				88F4CC031ED14BEB0057E45B /* meeting_Image.png */,
 				88F4CC051ED14C020057E45B /* task_image.png */,
 				47FBBE9A1ED558AB000BE2B1 /* addButton.png */,
+				47FBBEA31ED82F1B000BE2B1 /* checkbox.png */,
+				47FBBEA51ED82F59000BE2B1 /* uncheckedBox.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +162,7 @@
 				24A3AB451ED3E5D600D87978 /* AddDeadLineController.swift */,
 				47FBBE901ED2F807000BE2B1 /* MyCollectionViewCell.swift */,
 				47FBBE9D1ED56C02000BE2B1 /* TableSectionHeader.swift */,
+				47FBBEA11ED7914E000BE2B1 /* TimeTablePopUpViewController.swift */,
 			);
 			path = PlannerUI;
 			sourceTree = "<group>";
@@ -284,6 +293,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				88F4CC021ED14BE30057E45B /* deadlines_image.png in Resources */,
+				47FBBEA41ED82F1B000BE2B1 /* checkbox.png in Resources */,
+				47FBBEA61ED82F59000BE2B1 /* uncheckedBox.png in Resources */,
 				24E9E14C1ED434F40045EC54 /* navbarbackground.png in Resources */,
 				88F4CBD41ED14A130057E45B /* LaunchScreen.storyboard in Resources */,
 				88F4CC001ED14BDB0057E45B /* calendarImage.png in Resources */,
@@ -321,6 +332,7 @@
 				2489DCE61ED5083D00E2B3D4 /* DeadlinesTableCell.swift in Sources */,
 				88F4CBCC1ED14A130057E45B /* SecondViewController.swift in Sources */,
 				47FBBE911ED2F807000BE2B1 /* MyCollectionViewCell.swift in Sources */,
+				47FBBEA21ED7914E000BE2B1 /* TimeTablePopUpViewController.swift in Sources */,
 				47FBBE891ED2C12F000BE2B1 /* TimeTableViewController.swift in Sources */,
 				47FBBE971ED5586A000BE2B1 /* MeetingsViewController.swift in Sources */,
 				88F4CBC81ED14A130057E45B /* AppDelegate.swift in Sources */,

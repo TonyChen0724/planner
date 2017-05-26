@@ -1,42 +1,68 @@
 //
-//  MeetingPopUpViewController.swift
+//  TimeTablePopUpViewController.swift
 //  PlannerUI
 //
-//  Created by Molly Patterson on 23/05/17.
+//  Created by Molly Patterson on 26/05/17.
 //  Copyright © 2017 Molly Patterson. All rights reserved.
 //
 
 import UIKit
 
-class MeetingPopUpViewController: UIViewController {
+class TimeTablePopUpViewController: UIViewController {
     
+    @IBOutlet weak var addToTimeTable: UIView!
+    
+    @IBOutlet weak var classLabel: UILabel!
 
-    @IBOutlet weak var group: UILabel!
+    @IBOutlet weak var classText: UITextField!
   
-    @IBOutlet weak var timeAndDate: UITextField!
+    @IBOutlet weak var startTime: UITextField!
     
-    @IBOutlet weak var groupText: UITextField!
+    @IBOutlet weak var daysLabel: UILabel!
+    
+    @IBOutlet weak var finishTime: UITextField!
+    
+    @IBOutlet weak var locationLable: UILabel!
     
     @IBOutlet weak var locationText: UITextField!
     
-    @IBOutlet weak var locationLabel: UILabel!
+    var add: String!
     
     let datePicker = UIDatePicker()
     
-    @IBAction func submit(_ sender: Any) {
-        if (groupText.text != "" && timeAndDate.text != "" && locationText.text != "")
+    @IBAction func daycheckbox(_ sender: UIButton) {
+        // Instead of specifying each button we are just using the sender (button that invoked) the method
+        if (sender.isSelected == true)
         {
-            meetings.append(groupText.text!)
-            //groupText.text = ""
-            print(groupText.text!)
-            meetingTimes.append(timeAndDate.text!)
-            //timeAndDate.text = ""
-            print (timeAndDate.text!)
-            meetingLoc.append(locationText.text!)
-            //locationText.text = ""
-            print(locationText.text!)
+            print(sender.titleLabel!.text!)
+          
+            sender.setBackgroundImage(UIImage(named: "uncheckedBox.png"), for: UIControlState.normal)
+            sender.isSelected = false;
+            //need to remove if already selected day
         }
+        else
+        {
+            sender.setBackgroundImage(UIImage(named: "checkbox.png"), for: UIControlState.normal)
+            sender.isSelected = true;
+            schedule.append(" " + sender.titleLabel!.text!)
+        }
+    }
     
+    @IBAction func close(_ sender: Any) {
+        self.view.removeFromSuperview()
+        self.removeAnimate()
+    }
+    
+    @IBAction func submit(_ sender: Any) {
+        
+        if (classText.text != "" && locationText.text != "" && startTime.text != "")
+     {
+        
+        schedule.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+        print(classText.text! + " " + locationText.text! + "" + startTime.text!)
+        print (schedule)
+        }
+        
         self.view.removeFromSuperview()
         self.removeAnimate()
     }
@@ -53,30 +79,27 @@ class MeetingPopUpViewController: UIViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([doneButton], animated:false)
         
-        timeAndDate.inputAccessoryView = toolbar
+        startTime.inputAccessoryView = toolbar
         
         //assigning date picker to text field
-        timeAndDate.inputView = datePicker
+        startTime.inputView = datePicker
     }
     func donePressed() {
         //format date
         let dateFormatter = DateFormatter()
-       // dateFormatter.dateStyle = .short
+        
         dateFormatter.timeStyle = .short
         
-        timeAndDate.text = dateFormatter.string(from: datePicker.date)
+        startTime.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
     
-    @IBAction func close(_ sender: Any) {
-        self.view.removeFromSuperview()
-        self.removeAnimate()
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         self.showAnimate()
         createDatePicker()
+
         // Do any additional setup after loading the view.
     }
 

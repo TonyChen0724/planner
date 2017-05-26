@@ -30,7 +30,6 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.meetingLabel.text = meetings[indexPath.row]
         cell.dateAndTime.text = meetingTimes[indexPath.row]
         cell.location.text = meetingLoc[indexPath.row]
-        
         return (cell)
     }
     
@@ -63,8 +62,7 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
- 
- 
+
     
     /*
     // MARK: - Navigation
