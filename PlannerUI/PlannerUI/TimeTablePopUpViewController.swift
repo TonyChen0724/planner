@@ -26,13 +26,16 @@ class TimeTablePopUpViewController: UIViewController {
     
     @IBOutlet weak var locationText: UITextField!
     
-    var monday: BooleanLiteralType!
-    var tuesday: BooleanLiteralType!
-    var wednesday: BooleanLiteralType!
-    var thursday : BooleanLiteralType!
-    var friday : BooleanLiteralType!
+    var monday: BooleanLiteralType! = false
+    var tuesday: BooleanLiteralType! = false
+    var wednesday: BooleanLiteralType! = false
+    var thursday : BooleanLiteralType! = false
+    var friday : BooleanLiteralType! = false
     
     let datePicker = UIDatePicker()
+    
+    var column: Int!
+    var row: Int!
     
     @IBAction func daycheckbox(_ sender: UIButton) {
         // Instead of specifying each button we are just using the sender (button that invoked) the method
@@ -60,17 +63,22 @@ class TimeTablePopUpViewController: UIViewController {
         else
         {
             if (sender.titleLabel!.text! == "Monday"){
+                print("mon")
                 monday = true
             }else if (sender.titleLabel!.text == "Tuesday"){
                 tuesday = true
+                print("tues")
             } else if (sender.titleLabel!.text! == "Wednesday"){
                 wednesday = true
+                print("wednesday")
                 
             }else if (sender.titleLabel!.text! == "Thursday"){
                 thursday = true
+                print("thurs")
                 
             }else if (sender.titleLabel!.text! == "Friday"){
                 friday = true
+                print ("fri")
             }
             sender.setBackgroundImage(UIImage(named: "checkbox.png"), for: UIControlState.normal)
             sender.isSelected = true;
@@ -85,16 +93,30 @@ class TimeTablePopUpViewController: UIViewController {
     
     @IBAction func submit(_ sender: Any) {
         
-        if (monday == true){
-            print("monday is true")
-        }
+    
+     
+        
         
         if (classText.text != "" && locationText.text != "" && startTime.text != "")
      {
         
+        if (monday == true){
+            column = 1
+        }else if (tuesday == true){
+            column = 2
+        }else if (wednesday == true){
+            column = 3
+        }else if (thursday == true){
+            column = 4
+        }else{
+            column = 5
+        }
+        
         schedule.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
         print(classText.text! + " " + locationText.text! + "" + startTime.text!)
         print (schedule)
+        print(column)
+        items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column-1)
         }
         
         self.view.removeFromSuperview()
