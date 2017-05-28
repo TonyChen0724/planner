@@ -10,7 +10,7 @@ import UIKit
 
 var schedule = ["TestCell","","class"]
 
-      var items = ["", "", "", "", "", "", "", "COSC343\nBurns7", "INFO351\n530C1", "COSC343\nBurns7", "", "COSC345\nSDAV2", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "INFO351\nRAG11", "", "", "", "", "", "", "", "", "", "", "", "", "COSC343\nOWG06", "", "", "", "", "", "", "", "", "", "", "", "", "COSC345", "", "", "", "", "", "" ,"", "", ""]
+      var items = ["", "", "", "", "", "", "", "COSC343\nBurns7", "INFO351\n530C1", "COSC343\nBurns7", "", "COSC345\nSDAV2", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "INFO351\nRAG11", "", "", "", "", "", "", "", "", "", "", "", "", "COSC343\nOWG06", "", "", "", "", "", "", "", "", "", "", "", "", "COSC345", "", ""]
 
 class TimeTableViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
    
