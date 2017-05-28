@@ -76,7 +76,7 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
         }
     
   
-
+    /*
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -87,6 +87,7 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
         
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
+ */
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
