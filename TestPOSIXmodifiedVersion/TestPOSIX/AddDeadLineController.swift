@@ -32,6 +32,14 @@ class AddDeadLineController: UIViewController {
             var stimeArrArr = stimeArr[1].components(separatedBy: " ")
             var afterevening = stimeArrArr[1]
             
+            var month = timerArr[0]
+            var year = restArr[0]
+            
+            var total = "20" + year + "-" + month + "-" + day;
+            var week = getDayOfWeek(today: total)
+            
+            
+            
             print(afterevening)
             if (afterevening == "PM") {
                 clock = clock + 12
@@ -39,7 +47,8 @@ class AddDeadLineController: UIViewController {
             if (remainder == 0 || remainder == 6) {
                 
             } else {
-                items.insert(input.text!, at: (remainder-1) * 5 + (clock-8));
+                print((remainder-1) * 5 + (clock-8))
+                items.insert(input.text!, at: (week-1) * 5 + (clock-8));
             }
                 
             // items.insert(input.text!, at: deadlineTime.text!(days) * 5 + (oclock - 8))
@@ -48,6 +57,20 @@ class AddDeadLineController: UIViewController {
             Bridging.insertNewAssignmentObjc(ass);
         }
     }
+    
+    func getDayOfWeek(today:String)->Int {
+        
+        let formatter  = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let todayDate = formatter.date(from: today)!
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        let myComponents = myCalendar.components(.weekday, from: todayDate)
+        let weekDay = myComponents.weekday
+        return weekDay!
+    }
+    
+    
+    
     func createDatePicker()
     {
         //format picker
