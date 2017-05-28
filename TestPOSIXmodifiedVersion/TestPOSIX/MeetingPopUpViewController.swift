@@ -39,7 +39,17 @@ class MeetingPopUpViewController: UIViewController {
     
         self.view.removeFromSuperview()
         self.removeAnimate()
+        NotificationCenter.default.post(name: .reload, object: nil)
+        
+//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! MeetingsViewController
+//        self.present(nextViewController, animated:true, completion:nil)
+        
+    
     }
+    
+   
     
     func createDatePicker()
     {
@@ -109,14 +119,7 @@ class MeetingPopUpViewController: UIViewController {
         });
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+}
+extension Notification.Name {
+    static let reload = Notification.Name("reload")
 }

@@ -141,6 +141,7 @@
 			children = (
 				03CE8BD51EDA6B6A0004A336 /* MeetingPopUpViewController.swift */,
 				03CE8BD61EDA6B6A0004A336 /* MeetingsTableViewCell.swift */,
+				03C7881E1ED6B51D00C643A9 /* MeetingsViewController.swift */,
 				03CE8BCB1EDA61640004A336 /* TableSectionHeader.swift */,
 				03CE8BCC1EDA61640004A336 /* TimeTablePopUpViewController.swift */,
 				FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */,
@@ -150,7 +151,6 @@
 				03C7881B1ED6B51D00C643A9 /* DeadlinesTableCell.swift */,
 				03C7881C1ED6B51D00C643A9 /* DeadlinesViewController.swift */,
 				03C7881D1ED6B51D00C643A9 /* FirstViewController.swift */,
-				03C7881E1ED6B51D00C643A9 /* MeetingsViewController.swift */,
 				03C7881F1ED6B51D00C643A9 /* MyCollectionViewCell.swift */,
 				03C788201ED6B51D00C643A9 /* SecondViewController.swift */,
 				03C788211ED6B51D00C643A9 /* TasksViewController.swift */,

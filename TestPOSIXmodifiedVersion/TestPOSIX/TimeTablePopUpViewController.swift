@@ -136,7 +136,8 @@ class TimeTablePopUpViewController: UIViewController {
             row = row + 12
         }
         
-        items.insert(classText.text!, at: column + row*5)
+        items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column + row*5)
+        items.remove(at: 60)
         
         
         
@@ -156,6 +157,7 @@ class TimeTablePopUpViewController: UIViewController {
         }
         self.view.removeFromSuperview()
         self.removeAnimate()
+        NotificationCenter.default.post(name: .reload, object: nil)
     }
     
     func createDatePicker()

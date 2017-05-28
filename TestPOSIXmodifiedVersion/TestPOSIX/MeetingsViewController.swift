@@ -8,9 +8,9 @@
 
 import UIKit
 
-var meetings = [""]
-var meetingTimes = [""]
-var meetingLoc = [""]
+var meetings: [String] = []
+var meetingTimes: [String] = []
+var meetingLoc: [String] = []
 
 
 class MeetingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -37,9 +37,15 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         meetingsList.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .reload, object: nil)
+        
 
         // Do any additional setup after loading the view.
     }
+    func reloadTableData(_ notification: Notification) {
+        meetingsList.reloadData()
+    }
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
