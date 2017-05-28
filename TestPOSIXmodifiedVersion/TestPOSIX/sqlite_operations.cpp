@@ -145,6 +145,7 @@ void insertAssignment(const char* lectures, const char* times, const char* posit
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
     }else{
+        printf(times);
         fprintf(stdout, "Records created successfully\n");
     }
     

@@ -61,6 +61,9 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
                 cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
 
             }
+            else {
+                cell.backgroundColor = UIColor.white
+            }
             cell.myLabel.font = UIFont(name: cell.myLabel.font.fontName, size: 7)
             cell.layer.borderColor = UIColor.black.cgColor
             cell.layer.borderWidth = 0.5

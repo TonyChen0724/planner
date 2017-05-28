@@ -101,24 +101,59 @@ class TimeTablePopUpViewController: UIViewController {
      {
         
         if (monday == true){
-            column = 1
+            column = 0
         }else if (tuesday == true){
-            column = 2
+            column = 1
         }else if (wednesday == true){
-            column = 3
+            column = 2
         }else if (thursday == true){
-            column = 4
+            column = 3
         }else{
-            column = 5
+            column = 4
         }
         
         schedule.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-        print(classText.text! + " " + locationText.text! + "" + startTime.text!)
-        print (schedule)
-        print(column)
-        items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column-1)
+        /*let index = startTime.text!.index(startTime.text!.startIndex, offsetBy: 1)
+        if (startTime.text!.substring(to: index) == ":"){
+            
+            row = Int(startTime.text!.substring(to: index))
+        }else{
+            let index = startTime.text!.index(startTime.text!.startIndex, offsetBy: 2)
+            row = Int(startTime.text!.substring(to: index))
+        }*/
+        //print(startTime.text!)
+        
+        
+        var ttime = startTime.text
+        var ttimeArr = ttime!.components(separatedBy: ":")
+        var clock = ttimeArr[0]
+        var row = Int(clock)! - 8
+        var rest = ttimeArr[1]
+        var restArr = rest.components(separatedBy: " ")
+        var afterevening = restArr[1]
+        
+        if (afterevening == "PM") {
+            row = row + 12
         }
         
+        items.insert(classText.text!, at: column + row*5)
+        
+        
+        
+        
+//        print (schedule)
+//        //        print(column)
+//        print(row)
+//        if (row>0 && row<9){
+//            row = row + 4
+//            items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column + (row*5))
+//        }
+//        else{
+//            row = row - 8
+//            items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column + (row*5))
+//        }
+//        }
+        }
         self.view.removeFromSuperview()
         self.removeAnimate()
     }

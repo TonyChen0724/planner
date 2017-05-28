@@ -8,9 +8,9 @@
 
 import UIKit
 
-var meetings = ["cosc345","cosc343","info351"]
-var meetingTimes = ["1","1","1"]
-var meetingLoc = ["burns","labA","LabB"]
+var meetings = [""]
+var meetingTimes = [""]
+var meetingLoc = [""]
 
 
 class MeetingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
@@ -41,6 +41,20 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            // remove the item from the data model
+            meetings.remove(at: indexPath.row)
+            meetingTimes.remove(at: indexPath.row)
+            meetingLoc.remove(at: indexPath.row)
+            
+            // delete the table view row
+            tableView.deleteRows(at: [indexPath], with: .fade)
+
+            
+        }
+        meetingsList.reloadData() // FIXME
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         meetingsList.reloadData()

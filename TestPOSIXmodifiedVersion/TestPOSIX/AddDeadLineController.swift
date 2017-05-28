@@ -19,10 +19,31 @@ class AddDeadLineController: UIViewController {
         if (input.text != "" && deadlineTime.text != "")
         {
             let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: input.text!, time: deadlineTime.text!, position: "");
-            //
-//            deadlines.append(input.text!)
+            var timer = deadlineTime.text!;
+            var timerArr = timer.components(separatedBy: "/")
+            var day = timerArr[1]
+            var substitution = Int(day)! - 21;
+            var remainder = substitution % 7
+            var restInfo = timerArr[2]
+            var restArr = restInfo.components(separatedBy: ", ")
+            var specificTime = restArr[1]
+            var stimeArr = specificTime.components(separatedBy: ":")
+            var clock = Int(stimeArr[0])!
+            var stimeArrArr = stimeArr[1].components(separatedBy: " ")
+            var afterevening = stimeArrArr[1]
+            
+            print(afterevening)
+            if (afterevening == "PM") {
+                clock = clock + 12
+            }
+            if (remainder == 0 || remainder == 6) {
+                
+            } else {
+                items.insert(input.text!, at: (remainder-1) * 5 + (clock-8));
+            }
+                
+            // items.insert(input.text!, at: deadlineTime.text!(days) * 5 + (oclock - 8))
             input.text = ""
-//            deadlineTimes.append(deadlineTime.text!)
             deadlineTime.text = ""
             Bridging.insertNewAssignmentObjc(ass);
         }
