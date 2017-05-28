@@ -63,9 +63,9 @@ using namespace std;
     return [Bridging convertToCalendarObjcArrayWithCalendarCppVector:calVec];
 }
 
-+ (void)insertNewCalendarCpp:(CalendarCpp)calcpp {
+/*+ (void)insertNewCalendarCpp:(CalendarCpp)calcpp {
     insertNewCalendarCpp(calcpp);
-}
+}*/
 
 + (void)insertNewCalendarObjc:(CalendarObjc *)calobjc {
     [Bridging insertNewCalendarCpp:calendarCppFromCalendarObjc(calobjc)];
@@ -74,5 +74,7 @@ using namespace std;
 + (BOOL)deleteCalendarById:(NSNumber *)pkid {
     return deleteCalendarById([pkid intValue]);
 }
+
+
 
 @end

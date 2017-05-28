@@ -24,8 +24,7 @@ class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableVie
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "deadline", for: indexPath) as! DeadlinesTableCell
-//        cell.deadLineName.text = deadlines[indexPath.row]
-//        cell.deadLineDate.text = deadlineTimes[indexPath.row]
+
         cell.deadLineName.text = (assignmentArr[indexPath.row] as! AssignmentObjc).lecture;
         cell.deadLineDate.text = (assignmentArr[indexPath.row] as! AssignmentObjc).time;
         

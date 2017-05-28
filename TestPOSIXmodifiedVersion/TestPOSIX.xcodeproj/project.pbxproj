@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0349AF4B1ED16CE200CF3FC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349AF4A1ED16CE200CF3FC7 /* main.m */; };
 		0349AF511ED16CE200CF3FC7 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0349AF501ED16CE200CF3FC7 /* ViewController.mm */; };
-		0349AF541ED16CE200CF3FC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0349AF521ED16CE200CF3FC7 /* Main.storyboard */; };
 		0349AF561ED16CE200CF3FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0349AF551ED16CE200CF3FC7 /* Assets.xcassets */; };
 		0349AF591ED16CE200CF3FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0349AF571ED16CE200CF3FC7 /* LaunchScreen.storyboard */; };
 		0349AF641ED1898D00CF3FC7 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0349AF631ED1898D00CF3FC7 /* AppDelegate.mm */; };
@@ -33,6 +32,8 @@
 		03C788351ED6B7C400C643A9 /* meeting_Image.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C788311ED6B7C400C643A9 /* meeting_Image.png */; };
 		03C788361ED6B7C400C643A9 /* task_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C788321ED6B7C400C643A9 /* task_image.png */; };
 		03C788381ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03C788371ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm */; };
+		03CE8BCD1EDA61640004A336 /* TableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE8BCB1EDA61640004A336 /* TableSectionHeader.swift */; };
+		03CE8BCE1EDA61640004A336 /* TimeTablePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE8BCC1EDA61640004A336 /* TimeTablePopUpViewController.swift */; };
 		03D5B7801ED494D50024740C /* AssignmentCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03D5B77F1ED494D50024740C /* AssignmentCell.mm */; };
 		6429A2AE2D4859363B840DEC /* libPods-TestPOSIX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 388500103F1737A9058A9A4F /* libPods-TestPOSIX.a */; };
 		FDBFAF5B1ED87AAE00C33278 /* CalendarObjc.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDBFAF5A1ED87AAE00C33278 /* CalendarObjc.mm */; };
@@ -45,7 +46,6 @@
 		0349AF4C1ED16CE200CF3FC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0349AF4F1ED16CE200CF3FC7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0349AF501ED16CE200CF3FC7 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
-		0349AF531ED16CE200CF3FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0349AF551ED16CE200CF3FC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0349AF581ED16CE200CF3FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0349AF5A1ED16CE200CF3FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +77,8 @@
 		03C788371ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "TestPOSIX-Bridging-Header.mm"; sourceTree = "<group>"; };
 		03C788391ED6BCA500C643A9 /* TestPOSIX-Bridging-Header.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = "TestPOSIX-Bridging-Header.hpp"; sourceTree = "<group>"; };
 		03C7883A1ED6BE5E00C643A9 /* AssignmentObjc.hm */ = {isa = PBXFileReference; lastKnownFileType = text; path = AssignmentObjc.hm; sourceTree = "<group>"; };
+		03CE8BCB1EDA61640004A336 /* TableSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableSectionHeader.swift; sourceTree = "<group>"; };
+		03CE8BCC1EDA61640004A336 /* TimeTablePopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTablePopUpViewController.swift; sourceTree = "<group>"; };
 		03D5B77E1ED494D50024740C /* AssignmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentCell.h; sourceTree = "<group>"; };
 		03D5B77F1ED494D50024740C /* AssignmentCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AssignmentCell.mm; sourceTree = "<group>"; };
 		388500103F1737A9058A9A4F /* libPods-TestPOSIX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestPOSIX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,8 @@
 		0349AF481ED16CE200CF3FC7 /* TestPOSIX */ = {
 			isa = PBXGroup;
 			children = (
+				03CE8BCB1EDA61640004A336 /* TableSectionHeader.swift */,
+				03CE8BCC1EDA61640004A336 /* TimeTablePopUpViewController.swift */,
 				FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */,
 				03C7882D1ED6B54400C643A9 /* MainSwift.storyboard */,
 				03C788191ED6B51D00C643A9 /* AddDeadLineController.swift */,
@@ -140,7 +144,6 @@
 				0349AF4C1ED16CE200CF3FC7 /* AppDelegate.h */,
 				0349AF4F1ED16CE200CF3FC7 /* ViewController.h */,
 				0349AF501ED16CE200CF3FC7 /* ViewController.mm */,
-				0349AF521ED16CE200CF3FC7 /* Main.storyboard */,
 				0349AF551ED16CE200CF3FC7 /* Assets.xcassets */,
 				0349AF571ED16CE200CF3FC7 /* LaunchScreen.storyboard */,
 				0349AF5A1ED16CE200CF3FC7 /* Info.plist */,
@@ -260,7 +263,6 @@
 				03C788341ED6B7C400C643A9 /* deadlines_image.png in Resources */,
 				03C788331ED6B7C400C643A9 /* calendarImage.png in Resources */,
 				03C788361ED6B7C400C643A9 /* task_image.png in Resources */,
-				0349AF541ED16CE200CF3FC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +336,9 @@
 				03C788231ED6B51D00C643A9 /* AddDeadLineController.swift in Sources */,
 				03A25C641ED45F3D00B9332B /* AssignmentObjc.mm in Sources */,
 				03C788281ED6B51D00C643A9 /* MeetingsViewController.swift in Sources */,
+				03CE8BCE1EDA61640004A336 /* TimeTablePopUpViewController.swift in Sources */,
 				03C7882B1ED6B51D00C643A9 /* TasksViewController.swift in Sources */,
+				03CE8BCD1EDA61640004A336 /* TableSectionHeader.swift in Sources */,
 				03C788291ED6B51D00C643A9 /* MyCollectionViewCell.swift in Sources */,
 				03A25C591ED2BE0300B9332B /* sqlite_operations.cpp in Sources */,
 				03C788241ED6B51D00C643A9 /* AppDelegateSwift.swift in Sources */,
@@ -345,14 +349,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0349AF521ED16CE200CF3FC7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0349AF531ED16CE200CF3FC7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0349AF571ED16CE200CF3FC7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -52,7 +52,7 @@ public:
     CalendarCpp(int pkid, std::string row, std::string col, std::string content, std::string color);
 };
 extern std::vector<CalendarCpp> queryForAllCalendarCpp();
-extern void insertNewCalendarCpp(CalendarCpp calcpp);
+//extern void insertNewCalendarCpp(CalendarCpp calcpp);
 extern bool deleteCalendarById(int pkid);
 
 #endif /* sqlite_operations_hpp */

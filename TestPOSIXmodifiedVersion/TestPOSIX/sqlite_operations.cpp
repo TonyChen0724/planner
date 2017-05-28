@@ -151,9 +151,25 @@ void insertAssignment(const char* lectures, const char* times, const char* posit
     
 }
 
-void insertCalendar(const char *row, const char *col, const char *content, const char *color) {
+
+
+/*void insertCalendar(const char *rows, const char *cols, const char *contents) {
     // TODO: Mr. Chen, I will leave this to you. You'll implement it in sqlite_operations.cpp file, just like insertAssignment. I'm too lazy to write those boilerplate codes. -- Yutong Zhang
-}
+    string insertInto = "INSERT INTO calendar (row, col, content) VALUES ('";
+    string topcomma = "'";
+    string comma = ",";
+    string bracelet = ");";
+    string sqlinfo = insertInto + rows + topcomma + comma + topcomma + cols + topcomma + comma + topcomma + contents + topcomma + bracelet;
+    sql = &sqlinfo[0u];
+    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ){
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    }else{
+        fprintf(stdout, "Records created successfully\n");
+    }
+
+}*/
 
 AssignmentCpp::AssignmentCpp(int pkid, string lecture, string time, string position): pkid(pkid), lecture(lecture), time(time), position(position) {}
 
@@ -199,9 +215,9 @@ std::vector<CalendarCpp> queryForAllCalendarCpp() {
     return t_calres;
 }
 
-void insertNewCalendarCpp(CalendarCpp calcpp) {
+/*void insertNewCalendarCpp(CalendarCpp calcpp) {
     insertCalendar(calcpp.row.c_str(), calcpp.col.c_str(), calcpp.content.c_str(), calcpp.color.c_str());
-}
+}*/
 
 bool deleteCalendarById(int pkid) {
     ostringstream os;
