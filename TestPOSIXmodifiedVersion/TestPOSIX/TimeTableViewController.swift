@@ -30,7 +30,7 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
     //add class popup
 
     @IBAction func addClass(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle:
+        let popOverVC = UIStoryboard(name: "MainSwift", bundle:
             nil).instantiateViewController(withIdentifier:"timeTablePopUpID") as! TimeTablePopUpViewController
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame

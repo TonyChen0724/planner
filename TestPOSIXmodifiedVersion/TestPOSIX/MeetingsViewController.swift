@@ -53,7 +53,7 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
    
     @IBAction func addMeetingsPopUp(_ sender: Any) {
-        let popOverVC = UIStoryboard(name: "Main", bundle:
+        let popOverVC = UIStoryboard(name: "MainSwift", bundle:
             nil).instantiateViewController(withIdentifier:"meetingsPopUpID") as! MeetingPopUpViewController
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame
