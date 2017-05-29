@@ -63,22 +63,21 @@ class TimeTablePopUpViewController: UIViewController {
         else
         {
             if (sender.titleLabel!.text! == "Monday"){
-                print("mon")
                 monday = true
             }else if (sender.titleLabel!.text == "Tuesday"){
                 tuesday = true
-                print("tues")
+                
             } else if (sender.titleLabel!.text! == "Wednesday"){
                 wednesday = true
-                print("wednesday")
+               
                 
             }else if (sender.titleLabel!.text! == "Thursday"){
                 thursday = true
-                print("thurs")
+                
                 
             }else if (sender.titleLabel!.text! == "Friday"){
                 friday = true
-                print ("fri")
+               
             }
             sender.setBackgroundImage(UIImage(named: "checkbox.png"), for: UIControlState.normal)
             sender.isSelected = true;
@@ -100,28 +99,8 @@ class TimeTablePopUpViewController: UIViewController {
         if (classText.text != "" && locationText.text != "" && startTime.text != "")
      {
         
-        if (monday == true){
-            column = 0
-        }else if (tuesday == true){
-            column = 1
-        }else if (wednesday == true){
-            column = 2
-        }else if (thursday == true){
-            column = 3
-        }else{
-            column = 4
-        }
-        
+   
         schedule.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
-        /*let index = startTime.text!.index(startTime.text!.startIndex, offsetBy: 1)
-        if (startTime.text!.substring(to: index) == ":"){
-            
-            row = Int(startTime.text!.substring(to: index))
-        }else{
-            let index = startTime.text!.index(startTime.text!.startIndex, offsetBy: 2)
-            row = Int(startTime.text!.substring(to: index))
-        }*/
-        //print(startTime.text!)
         
         
         var ttime = startTime.text
@@ -136,9 +115,29 @@ class TimeTablePopUpViewController: UIViewController {
             row = row + 12
         }
         
-        //items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column + row*5)
-        items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-        //items.remove(at: 60)
+        if (monday == true){
+            column = 0
+                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+        }
+        if (tuesday == true){
+            column = 1
+                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+        }
+        if (wednesday == true){
+            column = 2
+                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+        }
+        if (thursday == true){
+            column = 3
+                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+        }
+        if (friday == true){
+            column = 4
+                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+        }
+        
+   
+      
         
         
         
