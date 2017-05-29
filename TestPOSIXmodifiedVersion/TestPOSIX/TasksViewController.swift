@@ -14,7 +14,7 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     var tasks: [String] = []
     
     @IBOutlet weak var listTableView: UITableView!
-    @IBAction func addItem(_ sender: Any) {
+    @IBAction func addTask(_ sender: Any) {
         alert()
     }
     
