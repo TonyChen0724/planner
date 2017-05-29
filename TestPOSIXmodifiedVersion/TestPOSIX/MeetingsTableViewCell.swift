@@ -1,10 +1,10 @@
-//
-//  MeetingsTableViewCell.swift
-//  PlannerUI
-//
-//  Created by Molly Patterson on 25/05/17.
-//  Copyright © 2017 Molly Patterson. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, MeetingsTableViewCell.swift
+ Purpose: Each cell inside MeetingsViewController.
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 import UIKit
 
@@ -24,9 +24,9 @@ class MeetingsTableViewCell: UITableViewCell {
 
     }
     
-    
-    
-    
+    /*
+     when user select the cell
+     */
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

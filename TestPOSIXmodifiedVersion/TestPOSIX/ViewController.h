@@ -1,10 +1,9 @@
-//
-//  ViewController.h
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/21/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, ViewController.h
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #import <UIKit/UIKit.h>
 

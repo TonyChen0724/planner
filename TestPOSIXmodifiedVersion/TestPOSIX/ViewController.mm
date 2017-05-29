@@ -1,10 +1,9 @@
-//
-//  ViewController.m
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/21/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, ViewController.mm
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #import "ViewController.h"
 #import "sqlite_operations.hpp"

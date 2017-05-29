@@ -1,10 +1,10 @@
-//
-//  MeetingsViewController.swift
-//  PlannerUI
-//
-//  Created by Molly Patterson on 22/05/17.
-//  Copyright © 2017 Molly Patterson. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, MeetingsViewController.swift
+ Purpose: the Meeting UI.
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 import UIKit
 
@@ -18,11 +18,12 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var meetingsList: UITableView!
   
-    
+    /*
+     get the number of items inside meetings array.
+     */
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return(meetings.count)
     }
-    
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
@@ -33,21 +34,23 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
         return (cell)
     }
     
-
+    /*
+     everytime the MeetingViewController shows.
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         meetingsList.reloadData()
         UITextField.appearance().tintColor = .black 
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .reload, object: nil)
-        
 
-        // Do any additional setup after loading the view.
     }
+    /* part of code to solve tab view disappearing problem. */
+ 
     func reloadTableData(_ notification: Notification) {
         meetingsList.reloadData()
     }
     
-    
+    /* delete function */
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             // remove the item from the data model
@@ -62,17 +65,17 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         meetingsList.reloadData() // FIXME
     }
-    
+    /* reload data of meetingList */
     override func viewDidAppear(_ animated: Bool) {
         meetingsList.reloadData()
         
     }
-
+    /* check if it received memory warning */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
+   /* when user hits add button it goes to addMeetingsPopUp */
     @IBAction func addMeetingsPopUp(_ sender: Any) {
         let popOverVC = UIStoryboard(name: "MainSwift", bundle:
             nil).instantiateViewController(withIdentifier:"meetingsPopUpID") as! MeetingPopUpViewController

@@ -1,10 +1,9 @@
-//
-//  TestPOSIX-Bridging.m
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/25/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, TestPOSIX-Bridging-Header.mm
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #import <Foundation/Foundation.h>
 #import "TestPOSIX-Bridging-Header.hpp"
@@ -63,9 +62,9 @@ using namespace std;
     return [Bridging convertToCalendarObjcArrayWithCalendarCppVector:calVec];
 }
 
-+ (void)insertNewCalendarCpp:(CalendarCpp)calcpp {
-    //insertNewCalendarCpp(calcpp);
-}
+/*+ (void)insertNewCalendarCpp:(CalendarCpp)calcpp {
+    insertNewCalendarCpp(calcpp);
+}*/
 
 + (void)insertNewCalendarObjc:(CalendarObjc *)calobjc {
     [Bridging insertNewCalendarCpp:calendarCppFromCalendarObjc(calobjc)];

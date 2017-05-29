@@ -1,10 +1,9 @@
-//
-//  Assignment.h
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/24/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, AssignmentObjc.h
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #import <Foundation/Foundation.h>
 #import "sqlite_operations.hpp"

@@ -1,10 +1,9 @@
-//
-//  AssignmentCell.m
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/24/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, AssignmentCell.mm
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #import "AssignmentCell.h"
 

@@ -1,11 +1,9 @@
-//
-//  AssignmentsViewController.m
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/24/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
-
+/**
+ Cosc345 Asn 2, AssignmentsViewController.mm
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 #import "AssignmentsViewController.h"
 #import "AssignmentObjc.h"
 #import "AssignmentCell.h"

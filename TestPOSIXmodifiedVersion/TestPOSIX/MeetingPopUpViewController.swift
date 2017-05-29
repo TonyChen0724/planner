@@ -1,10 +1,10 @@
-//
-//  MeetingPopUpViewController.swift
-//  PlannerUI
-//
-//  Created by Molly Patterson on 23/05/17.
-//  Copyright © 2017 Molly Patterson. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, MeetingPopUpViewController.swift
+ Purpose: After user hits Add button this UI will show.
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 import UIKit
 
@@ -22,7 +22,9 @@ class MeetingPopUpViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     
     let datePicker = UIDatePicker()
-    
+/*
+    action after user hits the submit.
+*/
     @IBAction func submit(_ sender: Any) {
         if (groupText.text != "" && timeAndDate.text != "" && locationText.text != "")
         {
@@ -40,17 +42,10 @@ class MeetingPopUpViewController: UIViewController {
         self.view.removeFromSuperview()
         self.removeAnimate()
         NotificationCenter.default.post(name: .reload, object: nil)
-        
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "nextView") as! MeetingsViewController
-//        self.present(nextViewController, animated:true, completion:nil)
-        
-    
     }
-    
-   
-    
+/*
+    a small object which enable users to pick a date instead of inputing one.
+*/
     func createDatePicker()
     {
         //format picker
@@ -68,6 +63,10 @@ class MeetingPopUpViewController: UIViewController {
         //assigning date picker to text field
         timeAndDate.inputView = datePicker
     }
+/*
+    actions after the user pressed done
+*/
+    
     func donePressed() {
         //format date
         let dateFormatter = DateFormatter()
@@ -78,10 +77,16 @@ class MeetingPopUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+/*
+    close the MeetingPopUI.
+*/
     @IBAction func close(_ sender: Any) {
         self.view.removeFromSuperview()
         self.removeAnimate()
     }
+/*
+    everytime the UI showed.
+*/
     override func viewDidLoad() {
         super.viewDidLoad()
         UITextField.appearance().tintColor = .black 
@@ -90,13 +95,17 @@ class MeetingPopUpViewController: UIViewController {
         createDatePicker()
         // Do any additional setup after loading the view.
     }
-
+/*
+    check if it received memory warning.
+*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //github.com/awseeley/Swift-Pop-Up-View-Tutorial/blob/master/PopUp/PopUpViewController.swift
+/*
+    show the animation.
+    reference: github.com/awseeley/Swift-Pop-Up-View-Tutorial/blob/master/PopUp/PopUpViewController.swift.
+*/
     func showAnimate()
     {
         self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
@@ -106,7 +115,9 @@ class MeetingPopUpViewController: UIViewController {
             self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         });
     }
-    
+/*
+    animation when remove something.
+*/
     func removeAnimate()
     {
         UIView.animate(withDuration: 0.25, animations: {
@@ -121,6 +132,9 @@ class MeetingPopUpViewController: UIViewController {
     }
 
 }
+/*
+    part of methods to solve tab bar disappearing problems.
+ */
 extension Notification.Name {
     static let reload = Notification.Name("reload")
 }

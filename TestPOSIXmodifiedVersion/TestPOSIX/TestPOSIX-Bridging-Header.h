@@ -1,6 +1,9 @@
-//
-//  Use this file to import your target's public headers that you would like to expose to Swift.
-//
+/**
+ Cosc345 Asn 2, TestPOSIX-Bridging-Header.h
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 #import "AssignmentObjc.hm"
 #import "CalendarObjc.hm"
 

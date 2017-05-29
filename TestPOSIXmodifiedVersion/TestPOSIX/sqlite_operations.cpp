@@ -1,10 +1,10 @@
-//
-//  sqlite_operations.cpp
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/22/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, sqlite_operations.cpp
+ Purpose: provide a database to interact with the UI.
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #include "sqlite_operations.hpp"
 #include <stdio.h>
@@ -14,12 +14,17 @@
 #include <sstream>
 
 using namespace std;
+
+
 sqlite3 *db;
 char *zErrMsg = 0;
 int rc;
 const char *sql;
 const char* data = "Callback function called";
 
+/*
+ printf information we need to check.
+ */
 int callback(void *data, int argc, char **argv, char **azColName){
     int i;
     fprintf(stderr, "%s: ", (const char*)data);
@@ -30,6 +35,9 @@ int callback(void *data, int argc, char **argv, char **azColName){
     return 0;
 }
 
+/*
+ delete a record based on the times.
+ */
 void deleter (char* times) {
     string sqlhead = "DELETE FROM users;";
     string topcomma = "'";
@@ -47,7 +55,9 @@ void deleter (char* times) {
     
     
 }
-
+/*
+ select a record based on the times.
+ */
 void selectBytime(char* times) {
     //    sql = "SELECT * from users";
     string select = "SELECT lecture, time, position";
@@ -69,7 +79,9 @@ void selectBytime(char* times) {
     
 }
 
-
+/*
+ view records from first to last.
+ */
 void view () {
     sql = "SELECT * from users";
     
@@ -84,7 +96,9 @@ void view () {
     //    sqlite3_close(db);
     
 }
-
+/*
+ update a name of record based on the times.
+ */
 void updateName(char* timer, char* name) {
     string updateusers = "UPDATE users SET lecture = '";
     string where = " WHERE time = '";
@@ -107,6 +121,9 @@ void updateName(char* timer, char* name) {
     
 }
 
+/*
+ update a name of record based on the times.
+ */
 void updatePosition(char* timer, char* positioner) {
     string updateusers = "UPDATE users SET position = '";
     string where = " WHERE time = '";
@@ -130,8 +147,9 @@ void updatePosition(char* timer, char* positioner) {
 }
 
 
-
-
+/*
+ insert a record to the database.
+ */
 void insertAssignment(const char* lectures, const char* times, const char* positions) {
     string insertInto = "INSERT INTO users (lecture, time, position) VALUES ('";
     string topcomma = "'";
@@ -145,33 +163,15 @@ void insertAssignment(const char* lectures, const char* times, const char* posit
         fprintf(stderr, "SQL error: %s\n", zErrMsg);
         sqlite3_free(zErrMsg);
     }else{
-        printf("%s", times);
         fprintf(stdout, "Records created successfully\n");
     }
     
     
 }
 
-
-
-/*void insertCalendar(const char *rows, const char *cols, const char *contents) {
-    // TODO: Mr. Chen, I will leave this to you. You'll implement it in sqlite_operations.cpp file, just like insertAssignment. I'm too lazy to write those boilerplate codes. -- Yutong Zhang
-    string insertInto = "INSERT INTO calendar (row, col, content) VALUES ('";
-    string topcomma = "'";
-    string comma = ",";
-    string bracelet = ");";
-    string sqlinfo = insertInto + rows + topcomma + comma + topcomma + cols + topcomma + comma + topcomma + contents + topcomma + bracelet;
-    sql = &sqlinfo[0u];
-    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-    if( rc != SQLITE_OK ){
-        fprintf(stderr, "SQL error: %s\n", zErrMsg);
-        sqlite3_free(zErrMsg);
-    }else{
-        fprintf(stdout, "Records created successfully\n");
-    }
-
-}*/
-
+/* 
+ a new sqlite query for conenct with the swift code. 
+ */
 AssignmentCpp::AssignmentCpp(int pkid, string lecture, string time, string position): pkid(pkid), lecture(lecture), time(time), position(position) {}
 
 static long t_rowNum;
@@ -192,11 +192,15 @@ vector<AssignmentCpp> queryForAllAssignments() {
     }, NULL, NULL);
     return t_assres;
 }
-
+/*
+ add new assignment to the app.
+ */
 void insertNewAssignmentCpp(AssignmentCpp asscpp) {
     insertAssignment(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
-
+/*
+ delete assignment by pkid.
+ */
 bool deleteAssignmentById(int pkid) {
     ostringstream os;
     os << "DELETE FROM users WHERE id = " << pkid;
@@ -216,10 +220,9 @@ std::vector<CalendarCpp> queryForAllCalendarCpp() {
     return t_calres;
 }
 
-/*void insertNewCalendarCpp(CalendarCpp calcpp) {
-    insertCalendar(calcpp.row.c_str(), calcpp.col.c_str(), calcpp.content.c_str(), calcpp.color.c_str());
-}*/
-
+/*
+ delete the record by ID
+ */
 bool deleteCalendarById(int pkid) {
     ostringstream os;
     os << "DELETE FROM calendar WHERE id = " << pkid;

@@ -1,10 +1,10 @@
-//
-//  AddDeadLineController.swift
-//  PlannerUI
-//
-//  Created by Luke on 23/05/17.
-//  Copyright © 2017 Molly Patterson. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, AddDeadLineController.swift
+ Purpose: the UI when users add deadline record.
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 import UIKit
 
@@ -14,6 +14,7 @@ class AddDeadLineController: UIViewController {
     @IBOutlet weak var deadlineTime: UITextField!
     let datePicker = UIDatePicker()
     
+    /* when user add a deadline record to the list, we store it in the database */
     @IBAction func addDeadLine(_ sender: Any)
     {
         if (input.text != "" && deadlineTime.text != "")
@@ -48,8 +49,8 @@ class AddDeadLineController: UIViewController {
                 
             } else {
                 print((remainder-1) * 5 + (clock-8))
-                
-                items[(week-2) + (clock-8) * 5] = "Due: " + input.text!
+                //items.insert(input.text!, at: (week-2) + (clock-8) * 5);
+                items[(week-2) + (clock-8) * 5] = input.text!
             }
                 
             // items.insert(input.text!, at: deadlineTime.text!(days) * 5 + (oclock - 8))
@@ -58,7 +59,7 @@ class AddDeadLineController: UIViewController {
             Bridging.insertNewAssignmentObjc(ass);
         }
     }
-    
+    /* get day (in a week) from the time input in a form(yyyy-MM-dd) */
     func getDayOfWeek(today:String)->Int {
         
         let formatter  = DateFormatter()
@@ -71,7 +72,7 @@ class AddDeadLineController: UIViewController {
     }
     
     
-    
+    /* a object which enables user to select a time rather than inputing one */
     func createDatePicker()
     {
         //format picker
@@ -89,6 +90,7 @@ class AddDeadLineController: UIViewController {
         //assigning date picker to text field
         deadlineTime.inputView = datePicker
     }
+    /* when user finished select and hit the done button. */
     func donePressed() {
         //format date
         let dateFormatter = DateFormatter()
@@ -100,7 +102,7 @@ class AddDeadLineController: UIViewController {
     }
     
     
-    
+    /* action happens after everytime the AddDeadLineController shows */
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
@@ -109,7 +111,8 @@ class AddDeadLineController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    /* check if it receives any memory warning. */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -1,26 +1,24 @@
-//
-//  DeadlinesViewController.swift
-//  PlannerUI
-//
-//  Created by Molly Patterson on 22/05/17.
-//  Copyright © 2017 Molly Patterson. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, DeadlinesViewController.swift
+ Purpose: the Deadline UI.
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 import UIKit
 
-//var deadlines = ["COSC343", "COSC345", "COSC243"]
-//var deadlineTimes = ["13/01/17, 12:00", "13/01/17, 12:00", "13/01/17, 12:00"]
 var assignmentArr : NSMutableArray = [];
 
 class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var deadLineList: UITableView!
-    
+    /* return the number of items in assignmentArr array */
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return (assignmentArr.count)
     }
-    
+    /* present the records from database in DeadlineViewController */
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "deadline", for: indexPath) as! DeadlinesTableCell
@@ -30,7 +28,7 @@ class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         return (cell)
     }
-    
+    /* add delete function to deadline UI */
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             let target: AssignmentObjc = assignmentArr[indexPath.row] as! AssignmentObjc;
@@ -45,18 +43,19 @@ class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableVie
         return true;
     }
     
+    /* check if the view appears or not */
     override func viewDidAppear(_ animated: Bool) {
         assignmentArr = NSMutableArray(array:Bridging.queryForAllAssignments());
         deadLineList.reloadData()
     }
-    
+    /* actions after everytime the DeadlinesViewController is called */
     override func viewDidLoad() {
         super.viewDidLoad()
         UITextField.appearance().tintColor = .black 
 
         // Do any additional setup after loading the view.
     }
-
+    /* check if the UI received any memory warning */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

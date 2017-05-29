@@ -1,10 +1,9 @@
-//
-//  TableViewController.m
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/23/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, TableViewController.m
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #import "TableViewController.h"
 
@@ -40,7 +39,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Incomplete implementation, return the number of sections
+#warning Incomplete implementation, return the number of sections
     return 0;
 }
 

@@ -1,10 +1,10 @@
-//
-//  AppDelegate.m
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/21/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, AppDelegate.mm
+ purpose: specify the database we use and solve the app sandbox problem.
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #import "AppDelegate.h"
 #import "stdio.h"

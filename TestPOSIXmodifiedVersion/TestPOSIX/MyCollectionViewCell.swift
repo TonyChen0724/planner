@@ -1,10 +1,9 @@
-//
-//  MyCollectionViewCell.swift
-//  PlannerUI
-//
-//  Created by Molly Patterson on 22/05/17.
-//  Copyright © 2017 Molly Patterson. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, MyCollectionViewCell.swift
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 import UIKit
 

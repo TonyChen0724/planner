@@ -1,10 +1,9 @@
-//
-//  TestPOSIX-Bridging-Header.hpp
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/25/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, TestPOSIX-Bridging-Header.hpp
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #ifndef TestPOSIX_Bridging_Header_h
 #define TestPOSIX_Bridging_Header_h

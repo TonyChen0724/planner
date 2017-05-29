@@ -1,10 +1,9 @@
-//
-//  CalendarObjc.m
-//  TestPOSIX
-//
-//  Created by zhangyutong926 on Friday, 26 May, 2017 AD.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, CalendarObjc.mm
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #import "CalendarObjc.h"
 

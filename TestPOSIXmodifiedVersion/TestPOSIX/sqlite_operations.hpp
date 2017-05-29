@@ -1,10 +1,10 @@
-//
-//  sqlite_operations.hpp
-//  TestPOSIX
-//
-//  Created by Xinru Chen on 5/22/17.
-//  Copyright © 2017 Xinru Chen. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, sqlite_operations.hpp
+ Purpose: provide a database to interact with the UI.
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 #ifndef sqlite_operations_hpp
 #define sqlite_operations_hpp
