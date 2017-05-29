@@ -1,10 +1,9 @@
-//
-//  TimeTablePopUpViewController.swift
-//  PlannerUI
-//
-//  Created by Molly Patterson on 26/05/17.
-//  Copyright © 2017 Molly Patterson. All rights reserved.
-//
+/**
+ Cosc345 Asn 2, TimeTablePopUpViewController.swift
+ 
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 
 import UIKit
 
@@ -37,6 +36,7 @@ class TimeTablePopUpViewController: UIViewController {
     var column: Int!
     var row: Int!
     
+    /* checkboxes for user to check a day */
     @IBAction func daycheckbox(_ sender: UIButton) {
         // Instead of specifying each button we are just using the sender (button that invoked) the method
         if (sender.isSelected == true)
@@ -84,12 +84,12 @@ class TimeTablePopUpViewController: UIViewController {
             schedule.append(" " + sender.titleLabel!.text!)
         }
     }
-    
+    /* when user closes the Pop up UI.*/
     @IBAction func close(_ sender: Any) {
         self.view.removeFromSuperview()
         self.removeAnimate()
     }
-    
+    /* if user wants to insert a record into a block that already have the record, the overide warning will show. */
     func alertMessage (title: String, alert: String, location: Int, content: String){
         let alert = UIAlertController(title: title, message: alert, preferredStyle: UIAlertControllerStyle.alert)
         //override
@@ -106,7 +106,7 @@ class TimeTablePopUpViewController: UIViewController {
        present(alert,animated: true, completion: nil)
     
     }
-    
+    /* when user hits submit */
     @IBAction func submit(_ sender: Any) {
         
 
@@ -173,7 +173,7 @@ class TimeTablePopUpViewController: UIViewController {
         self.removeAnimate()
         NotificationCenter.default.post(name: .reload, object: nil)
     }
-    
+    /* a object which enables user to select a date rather than inputing it */
     func createDatePicker()
     {
         //format picker
@@ -191,6 +191,7 @@ class TimeTablePopUpViewController: UIViewController {
         //assigning date picker to text field
         startTime.inputView = datePicker
     }
+    /* when user finished selecting a date then they press done to put the date to the text field */
     func donePressed() {
         //format date
         let dateFormatter = DateFormatter()
@@ -200,7 +201,7 @@ class TimeTablePopUpViewController: UIViewController {
         startTime.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
-    
+    /* everytime the TimeTablePopUpViewController is called */
     override func viewDidLoad() {
         super.viewDidLoad()
         UITextField.appearance().tintColor = .black
@@ -210,13 +211,15 @@ class TimeTablePopUpViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    /* check if it received any warnings */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    //github.com/awseeley/Swift-Pop-Up-View-Tutorial/blob/master/PopUp/PopUpViewController.swift
+    /* a function to specify the animation process
+       reference:github.com/awseeley/Swift-Pop-Up-View-Tutorial/blob/master/PopUp/PopUpViewController.swift
+    */
     func showAnimate()
     {
         self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
@@ -226,7 +229,7 @@ class TimeTablePopUpViewController: UIViewController {
             self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         });
     }
-    
+    /* a function to remove Animation */
     func removeAnimate()
     {
         UIView.animate(withDuration: 0.25, animations: {

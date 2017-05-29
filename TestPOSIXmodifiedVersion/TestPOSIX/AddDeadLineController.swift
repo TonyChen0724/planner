@@ -80,7 +80,6 @@ class AddDeadLineController: UIViewController {
         //toolbar
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        
         //bar button item
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([doneButton], animated:false)

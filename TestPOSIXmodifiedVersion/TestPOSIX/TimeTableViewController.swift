@@ -1,11 +1,9 @@
-//
-//  TimeTableViewController.swift
-//  PlannerUI
-//
-//  Created by Molly Patterson on 22/05/17.
-//  Copyright © 2017 Molly Patterson. All rights reserved.
-//
-
+/**
+ Cosc345 Asn 2, TimeTableViewController.swift
+ Purpose: allocate items inside TimeTableViewController
+ @author Xinru Chen, Luke Falvey, Molly Patterson
+ @version 1.0 5/29/17
+ */
 import UIKit
 
 var schedule = ["TestCell","","class"]
@@ -29,7 +27,7 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
     
     fileprivate let itemsPerRow: CGFloat = 6
     
-    //add class popup
+    /* add class TimeTablePopUp */
 
     @IBAction func addClass(_ sender: Any) {
         let popOverVC = UIStoryboard(name: "MainSwift", bundle:
@@ -40,27 +38,19 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
         popOverVC.didMove(toParentViewController: self)
     }
     
-    // MARK: - UICollectionViewDataSource protocol
-    // tell the collection view how many cells to make
+    /* tell the collection view how many cells to make */
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
         // return(schedule.count)
     }
     
-    // make a cell for each cell index path
+    /* make a cell for each cell index path */
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-            // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as!MyCollectionViewCell
-            
-            // Use the outlet in our custom class to get a reference to the UILabel in the cell
-          //  cell.myLabel.text = schedule[indexPath.row]
+        
         cell.myLabel.text = items[indexPath.item]
-           
-            //cell.myLabel.text = self.items[indexPath.item]
-            //colour the cells with events
-      
-    
+
         if (cell.myLabel.text != ""){
             cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
             let index = cell.myLabel.text!.index(cell.myLabel.text!.startIndex, offsetBy: 4)
@@ -79,8 +69,7 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
         return cell
     }
     
-    // MARK: - UICollectionViewDelegate protocol
-    
+    /* add delete function to TimeTable UI. */
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         if (items[indexPath.item] != "") {
@@ -100,20 +89,19 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
         
     }
     
-    
+    /* specify how the view works */
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
     
-    // 4
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
-    
+    /* everytime the TimeTableViewController is called */
     override func viewDidLoad() {
         super.viewDidLoad()
         timeTableCollection.reloadData()
@@ -121,16 +109,16 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .reload, object: nil)
     }
     
-    
+    /* reload data of the timeTableCollection. */
     func reloadTableData (_notification: Notification) {
         timeTableCollection.reloadData()
     }
-    
+    /* check if the view appears or not */
     override func viewDidAppear(_ animated: Bool) {
         timeTableCollection.reloadData()
         
     }
-    
+    /* check if it received any memory warnings */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
