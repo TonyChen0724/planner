@@ -90,12 +90,26 @@ class TimeTablePopUpViewController: UIViewController {
         self.removeAnimate()
     }
     
+    func alertMessage (title: String, alert: String, location: Int, content: String){
+        let alert = UIAlertController(title: title, message: alert, preferredStyle: UIAlertControllerStyle.alert)
+        //override
+       let override = UIAlertAction(title: "Over ride", style: .default) {
+            (action) in
+             items[location] = content
+        
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
+           (alert) in
+        }
+        alert.addAction(override)
+       alert.addAction(cancel)
+       present(alert,animated: true, completion: nil)
+    
+    }
+    
     @IBAction func submit(_ sender: Any) {
         
-    
-     
-        
-        
+
         if (classText.text != "" && locationText.text != "" && startTime.text != "")
      {
         
@@ -117,43 +131,43 @@ class TimeTablePopUpViewController: UIViewController {
         
         if (monday == true){
             column = 0
-                 items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+            if(items[column+row*5] != ""){
+            alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+            }else{
+            
+            items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+        }
         }
         if (tuesday == true){
             column = 1
+            if(items[column+row*5] != ""){
+                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+            }
                  items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
         }
         if (wednesday == true){
             column = 2
+            if(items[column+row*5] != ""){
+                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
                  items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+            }
         }
         if (thursday == true){
             column = 3
+            if(items[column+row*5] != ""){
+                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
                  items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+            }
         }
         if (friday == true){
             column = 4
+            if(items[column+row*5] != ""){
+                alertMessage(title: "Override Error", alert: "There is already an event at this time", location: column+row*5, content: classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+            }
                  items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
         }
         
    
-      
-        
-        
-        
-        
-//        print (schedule)
-//        //        print(column)
-//        print(row)
-//        if (row>0 && row<9){
-//            row = row + 4
-//            items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column + (row*5))
-//        }
-//        else{
-//            row = row - 8
-//            items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column + (row*5))
-//        }
-//        }
         }
         self.view.removeFromSuperview()
         self.removeAnimate()
