@@ -76,9 +76,23 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
-        print("hello")
-        print("You selected cell #\(indexPath.item)!")
+        if (items[indexPath.item] != "") {
+            let alert = UIAlertController(title: "", message: "Do you want to delete this?", preferredStyle: .alert)
+            let delete = UIAlertAction(title: "Delete", style: .default) {
+                (action) in
+                items[indexPath.row] = ""
+                self.timeTableCollection.reloadData()
+            }
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
+            (alert) in
+            }
+            alert.addAction(delete)
+            alert.addAction(cancel)
+            present(alert,animated: true, completion: nil)
+        }
+        
     }
+    
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,

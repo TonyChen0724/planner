@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Wn-QP-Wza" id="Zcz-gj-1Jr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbU-fa-ylv">
@@ -219,7 +219,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HMm-Uw-5G2" id="nMw-EX-rAf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -355,52 +355,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="38"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdA-ru-wDO">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdA-ru-wDO">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="38"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHF-el-1h8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="38"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                </button>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="UdA-ru-wDO" firstAttribute="top" secondItem="E9J-Ro-Wm8" secondAttribute="top" id="2Oj-WR-BFi"/>
-                                            <constraint firstItem="NHF-el-1h8" firstAttribute="top" secondItem="UdA-ru-wDO" secondAttribute="top" id="5Rc-Sh-FFr"/>
-                                            <constraint firstAttribute="bottom" secondItem="UdA-ru-wDO" secondAttribute="bottom" id="M9P-HI-nfs"/>
-                                            <constraint firstItem="NHF-el-1h8" firstAttribute="bottom" secondItem="UdA-ru-wDO" secondAttribute="bottom" id="QBz-lN-QRn"/>
-                                            <constraint firstItem="NHF-el-1h8" firstAttribute="trailing" secondItem="UdA-ru-wDO" secondAttribute="trailing" id="QoJ-0X-yCH"/>
-                                            <constraint firstAttribute="trailing" secondItem="UdA-ru-wDO" secondAttribute="trailing" id="h9Y-Gp-GQU"/>
-                                            <constraint firstItem="UdA-ru-wDO" firstAttribute="leading" secondItem="NHF-el-1h8" secondAttribute="leading" id="kB8-hC-Q6x"/>
-                                            <constraint firstItem="NHF-el-1h8" firstAttribute="leading" secondItem="E9J-Ro-Wm8" secondAttribute="leading" id="tF2-fC-EaI"/>
+                                            <constraint firstAttribute="bottom" secondItem="UdA-ru-wDO" secondAttribute="bottom" id="7N1-zd-N78"/>
+                                            <constraint firstAttribute="trailing" secondItem="UdA-ru-wDO" secondAttribute="trailing" id="adv-ZS-bTZ"/>
+                                            <constraint firstItem="UdA-ru-wDO" firstAttribute="leading" secondItem="E9J-Ro-Wm8" secondAttribute="leading" id="skY-eV-ehy"/>
+                                            <constraint firstItem="UdA-ru-wDO" firstAttribute="top" secondItem="E9J-Ro-Wm8" secondAttribute="top" id="xlm-EG-3cM"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="5Rc-Sh-FFr"/>
-                                                <exclude reference="QBz-lN-QRn"/>
-                                                <exclude reference="QoJ-0X-yCH"/>
-                                                <exclude reference="tF2-fC-EaI"/>
-                                                <exclude reference="2Oj-WR-BFi"/>
-                                                <exclude reference="M9P-HI-nfs"/>
-                                                <exclude reference="h9Y-Gp-GQU"/>
-                                                <exclude reference="kB8-hC-Q6x"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="5Rc-Sh-FFr"/>
-                                                <include reference="QBz-lN-QRn"/>
-                                                <include reference="QoJ-0X-yCH"/>
-                                                <include reference="tF2-fC-EaI"/>
-                                                <include reference="2Oj-WR-BFi"/>
-                                                <include reference="M9P-HI-nfs"/>
-                                                <include reference="h9Y-Gp-GQU"/>
-                                                <include reference="kB8-hC-Q6x"/>
-                                            </mask>
-                                        </variation>
                                         <connections>
                                             <outlet property="myLabel" destination="UdA-ru-wDO" id="Bhs-HX-SOr"/>
                                         </connections>
@@ -938,7 +906,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7JF-7B-8Zr" id="gRc-6y-hws" customClass="MeetingsTableViewCell" customModule="TestPOSIX" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMj-ZZ-qvA">
