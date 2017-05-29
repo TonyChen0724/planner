@@ -137,6 +137,7 @@ class TimeTablePopUpViewController: UIViewController {
         }
         
         items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column + row*5)
+     //   items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
         items.remove(at: 60)
         
         
