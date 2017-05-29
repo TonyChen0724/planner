@@ -22,8 +22,10 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
     
     
         
-        let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
+    let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
   
+    
+    
     
     fileprivate let itemsPerRow: CGFloat = 6
     
@@ -38,59 +40,46 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
         popOverVC.didMove(toParentViewController: self)
     }
     
-        // MARK: - UICollectionViewDataSource protocol
-        // tell the collection view how many cells to make
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return items.count
-           // return(schedule.count)
-        }
+    // MARK: - UICollectionViewDataSource protocol
+    // tell the collection view how many cells to make
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+        // return(schedule.count)
+    }
+    
+    // make a cell for each cell index path
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        // make a cell for each cell index path
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            
             // get a reference to our storyboard cell
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as!MyCollectionViewCell
             
             // Use the outlet in our custom class to get a reference to the UILabel in the cell
           //  cell.myLabel.text = schedule[indexPath.row]
-            cell.myLabel.text = items[indexPath.item]
+        cell.myLabel.text = items[indexPath.item]
            
             //cell.myLabel.text = self.items[indexPath.item]
             //colour the cells with events
-            if (cell.myLabel.text != ""){
-                cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
-
-            }
-            else {
-                cell.backgroundColor = UIColor.white
-            }
-            cell.myLabel.font = UIFont(name: cell.myLabel.font.fontName, size: 7)
-            cell.layer.borderColor = UIColor.black.cgColor
-            cell.layer.borderWidth = 0.5
-            
-            return cell
+        if (cell.myLabel.text != ""){
+            cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
         }
-        
-        // MARK: - UICollectionViewDelegate protocol
-        
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            // handle tap events
-            print("You selected cell #\(indexPath.item)!")
+        else {
+            cell.backgroundColor = UIColor.white
         }
-    
-  
-    /*
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //2
-         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
+        cell.myLabel.font = UIFont(name: cell.myLabel.font.fontName, size: 7)
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 0.5
         
-        return CGSize(width: widthPerItem, height: widthPerItem)
+        return cell
     }
- */
+    
+    // MARK: - UICollectionViewDelegate protocol
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // handle tap events
+        print("hello")
+        print("You selected cell #\(indexPath.item)!")
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -108,10 +97,9 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
         super.viewDidLoad()
         timeTableCollection.reloadData()
         UITextField.appearance().tintColor = .black
-        
-        // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .reload, object: nil)
     }
+    
     
     func reloadTableData (_notification: Notification) {
         timeTableCollection.reloadData()
@@ -126,20 +114,6 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
 }
 
 
