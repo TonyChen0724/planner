@@ -59,6 +59,7 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         listTableView.dataSource = self
+        UITextField.appearance().tintColor = .black 
 
         // Do any additional setup after loading the view.
     }

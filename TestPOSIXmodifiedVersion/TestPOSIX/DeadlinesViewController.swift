@@ -52,6 +52,7 @@ class DeadlinesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UITextField.appearance().tintColor = .black 
 
         // Do any additional setup after loading the view.
     }

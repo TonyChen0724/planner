@@ -37,6 +37,7 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         meetingsList.reloadData()
+        UITextField.appearance().tintColor = .black 
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .reload, object: nil)
         
 

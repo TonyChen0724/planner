@@ -103,6 +103,7 @@ class AddDeadLineController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
+        UITextField.appearance().tintColor = .black 
         self.navigationController?.isNavigationBarHidden = true
 
         // Do any additional setup after loading the view.

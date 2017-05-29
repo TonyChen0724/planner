@@ -107,6 +107,7 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         timeTableCollection.reloadData()
+        UITextField.appearance().tintColor = .black
         
         // Do any additional setup after loading the view.
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .reload, object: nil)

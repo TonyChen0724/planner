@@ -190,6 +190,7 @@ class TimeTablePopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UITextField.appearance().tintColor = .black
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
         self.showAnimate()
         createDatePicker()
