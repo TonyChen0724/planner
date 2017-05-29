@@ -132,13 +132,13 @@ class TimeTablePopUpViewController: UIViewController {
         var restArr = rest.components(separatedBy: " ")
         var afterevening = restArr[1]
         
-        if (afterevening == "PM") {
+        if (afterevening == "PM" && Int(clock) != 12) {
             row = row + 12
         }
         
-        items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column + row*5)
-     //   items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
-        items.remove(at: 60)
+        //items.insert(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!, at: column + row*5)
+        items[column+row*5] = classText.text! + "\n" + locationText.text! + "\n" + startTime.text!
+        //items.remove(at: 60)
         
         
         
