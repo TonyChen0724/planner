@@ -103,7 +103,7 @@ class AddDeadLineController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
-        self.navigationController?.navigationBar.tintColor = UIColor.blue;
+        self.navigationController?.isNavigationBarHidden = true
 
         // Do any additional setup after loading the view.
     }
