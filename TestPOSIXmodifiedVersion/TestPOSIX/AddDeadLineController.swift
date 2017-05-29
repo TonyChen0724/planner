@@ -19,24 +19,24 @@ class AddDeadLineController: UIViewController {
         if (input.text != "" && deadlineTime.text != "")
         {
             let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: input.text!, time: deadlineTime.text!, position: "");
-            var timer = deadlineTime.text!;
+            let timer = deadlineTime.text!;
             var timerArr = timer.components(separatedBy: "/")
-            var day = timerArr[1]
-            var substitution = Int(day)! - 21;
-            var remainder = substitution % 7
-            var restInfo = timerArr[2]
+            let day = timerArr[1]
+            let substitution = Int(day)! - 21;
+            let remainder = substitution % 7
+            let restInfo = timerArr[2]
             var restArr = restInfo.components(separatedBy: ", ")
-            var specificTime = restArr[1]
+            let specificTime = restArr[1]
             var stimeArr = specificTime.components(separatedBy: ":")
             var clock = Int(stimeArr[0])!
             var stimeArrArr = stimeArr[1].components(separatedBy: " ")
-            var afterevening = stimeArrArr[1]
+            let afterevening = stimeArrArr[1]
             
-            var month = timerArr[0]
-            var year = restArr[0]
+            let month = timerArr[0]
+            let year = restArr[0]
             
-            var total = "20" + year + "-" + month + "-" + day;
-            var week = getDayOfWeek(today: total)
+            let total = "20" + year + "-" + month + "-" + day;
+            let week = getDayOfWeek(today: total)
             
             
             

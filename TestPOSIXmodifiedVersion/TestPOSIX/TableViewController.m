@@ -40,7 +40,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
+    // Incomplete implementation, return the number of sections
     return 0;
 }
 

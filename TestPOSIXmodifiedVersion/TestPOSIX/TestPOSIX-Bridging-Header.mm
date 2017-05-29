@@ -63,9 +63,9 @@ using namespace std;
     return [Bridging convertToCalendarObjcArrayWithCalendarCppVector:calVec];
 }
 
-/*+ (void)insertNewCalendarCpp:(CalendarCpp)calcpp {
-    insertNewCalendarCpp(calcpp);
-}*/
++ (void)insertNewCalendarCpp:(CalendarCpp)calcpp {
+    //insertNewCalendarCpp(calcpp);
+}
 
 + (void)insertNewCalendarObjc:(CalendarObjc *)calobjc {
     [Bridging insertNewCalendarCpp:calendarCppFromCalendarObjc(calobjc)];

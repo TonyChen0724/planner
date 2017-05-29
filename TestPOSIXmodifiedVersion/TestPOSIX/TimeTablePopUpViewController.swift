@@ -117,13 +117,13 @@ class TimeTablePopUpViewController: UIViewController {
         schedule.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
         
         
-        var ttime = startTime.text
+        let ttime = startTime.text
         var ttimeArr = ttime!.components(separatedBy: ":")
-        var clock = ttimeArr[0]
+        let clock = ttimeArr[0]
         var row = Int(clock)! - 8
-        var rest = ttimeArr[1]
+        let rest = ttimeArr[1]
         var restArr = rest.components(separatedBy: " ")
-        var afterevening = restArr[1]
+        let afterevening = restArr[1]
         
         if (afterevening == "PM" && Int(clock) != 12) {
             row = row + 12

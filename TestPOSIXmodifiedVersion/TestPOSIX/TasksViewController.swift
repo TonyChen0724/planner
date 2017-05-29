@@ -40,8 +40,10 @@ class TasksViewController: UIViewController, UITableViewDataSource {
         let add = UIAlertAction(title: "Add", style: .default) {
             (action) in
             let textfield = alert.textFields![0]
-            self.tasks.append(textfield.text!)
-            self.listTableView.reloadData()
+            if (textfield.text != "") {
+                self.tasks.append(textfield.text!)
+                self.listTableView.reloadData()
+            }
             
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
