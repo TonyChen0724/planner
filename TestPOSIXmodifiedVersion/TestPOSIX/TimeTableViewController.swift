@@ -59,8 +59,15 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
            
             //cell.myLabel.text = self.items[indexPath.item]
             //colour the cells with events
+      
+    
         if (cell.myLabel.text != ""){
             cell.backgroundColor = UIColor.cyan // make cell more visible in our example project
+            let index = cell.myLabel.text!.index(cell.myLabel.text!.startIndex, offsetBy: 4)
+            if( cell.myLabel.text!.substring(to: index) == "Due:"){
+               
+                cell.backgroundColor = UIColor.red
+            }
         }
         else {
             cell.backgroundColor = UIColor.white
