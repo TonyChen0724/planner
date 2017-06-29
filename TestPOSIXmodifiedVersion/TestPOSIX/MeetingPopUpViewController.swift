@@ -26,30 +26,66 @@ class MeetingPopUpViewController: UIViewController {
     action after user hits the submit.
 */
     @IBAction func submit(_ sender: Any) {
+        print("time =" + timeAndDate.text!)
+        let timer = timeAndDate.text!;
+        var timerArr = timer.components(separatedBy: "/")
+        let day = timerArr[1]
+        let substitution = Int(day)! - 21;
+        let remainder = substitution % 7
+        let restInfo = timerArr[2]
+        var restArr = restInfo.components(separatedBy: ", ")
+        let specificTime = restArr[1]
+        var stimeArr = specificTime.components(separatedBy: ":")
+        var clock = Int(stimeArr[0])!
+        var stimeArrArr = stimeArr[1].components(separatedBy: " ")
+        let afterevening = stimeArrArr[1]
+        
+        let month = timerArr[0]
+        let year = restArr[0]
+        
+        let total = "20" + year + "-" + month + "-" + day;
+        let week = getDayOfWeek(today: total)
+        if (afterevening == "PM" && clock != 12) {
+            clock = clock + 12
+        }
         if (groupText.text != "" && timeAndDate.text != "" && locationText.text != "")
         {
             meetings.append(groupText.text!)
-            //groupText.text = ""
-            print(groupText.text!)
             meetingTimes.append(timeAndDate.text!)
-            //timeAndDate.text = ""
-            print (timeAndDate.text!)
             meetingLoc.append(locationText.text!)
-            //locationText.text = ""
-            print(locationText.text!)
+            
+            
+            
+            items[(week-2) + (clock-8) * 5] = "Meeting: " + groupText.text! + "\n" + timeAndDate.text! +
+                "\n" + locationText.text!
+            
+            
         }
-    
+        
+        
         self.view.removeFromSuperview()
         self.removeAnimate()
         NotificationCenter.default.post(name: .reload, object: nil)
     }
-/*
-    a small object which enable users to pick a date instead of inputing one.
-*/
+    
+    func getDayOfWeek(today:String)->Int {
+        
+        let formatter  = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let todayDate = formatter.date(from: today)!
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
+        let myComponents = myCalendar.components(.weekday, from: todayDate)
+        let weekDay = myComponents.weekday
+        return weekDay!
+    }
+    
+    /*
+     a small object which enable users to pick a date instead of inputing one.
+     */
     func createDatePicker()
     {
         //format picker
-        datePicker.datePickerMode = .time
+        datePicker.datePickerMode = .dateAndTime
         //toolbar
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -63,19 +99,20 @@ class MeetingPopUpViewController: UIViewController {
         //assigning date picker to text field
         timeAndDate.inputView = datePicker
     }
-/*
-    actions after the user pressed done
-*/
+    /*
+     actions after the user pressed done
+     */
     
     func donePressed() {
         //format date
         let dateFormatter = DateFormatter()
-       // dateFormatter.dateStyle = .short
+        dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
-        
+        //
         timeAndDate.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
+
     
 /*
     close the MeetingPopUI.
