@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0349AF4B1ED16CE200CF3FC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0349AF4A1ED16CE200CF3FC7 /* main.m */; };
-		0349AF511ED16CE200CF3FC7 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0349AF501ED16CE200CF3FC7 /* ViewController.mm */; };
 		0349AF561ED16CE200CF3FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0349AF551ED16CE200CF3FC7 /* Assets.xcassets */; };
 		0349AF591ED16CE200CF3FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0349AF571ED16CE200CF3FC7 /* LaunchScreen.storyboard */; };
 		0349AF641ED1898D00CF3FC7 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0349AF631ED1898D00CF3FC7 /* AppDelegate.mm */; };
@@ -49,7 +48,6 @@
 		0349AF4A1ED16CE200CF3FC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0349AF4C1ED16CE200CF3FC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0349AF4F1ED16CE200CF3FC7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0349AF501ED16CE200CF3FC7 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		0349AF551ED16CE200CF3FC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0349AF581ED16CE200CF3FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0349AF5A1ED16CE200CF3FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				0349AF631ED1898D00CF3FC7 /* AppDelegate.mm */,
 				0349AF4C1ED16CE200CF3FC7 /* AppDelegate.h */,
 				0349AF4F1ED16CE200CF3FC7 /* ViewController.h */,
-				0349AF501ED16CE200CF3FC7 /* ViewController.mm */,
 				0349AF551ED16CE200CF3FC7 /* Assets.xcassets */,
 				0349AF571ED16CE200CF3FC7 /* LaunchScreen.storyboard */,
 				0349AF5A1ED16CE200CF3FC7 /* Info.plist */,
@@ -337,7 +334,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				03C7882A1ED6B51D00C643A9 /* SecondViewController.swift in Sources */,
-				0349AF511ED16CE200CF3FC7 /* ViewController.mm in Sources */,
 				03C788251ED6B51D00C643A9 /* DeadlinesTableCell.swift in Sources */,
 				0349AF4B1ED16CE200CF3FC7 /* main.m in Sources */,
 				0349AF641ED1898D00CF3FC7 /* AppDelegate.mm in Sources */,
