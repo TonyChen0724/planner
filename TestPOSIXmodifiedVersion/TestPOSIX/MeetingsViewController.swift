@@ -11,7 +11,7 @@ import UIKit
 var meetings: [String] = []
 var meetingTimes: [String] = []
 var meetingLoc: [String] = []
-
+var assignmentArry : NSMutableArray = [];
 
 class MeetingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -22,17 +22,27 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
      get the number of items inside meetings array.
      */
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return(meetings.count)
+        return (assignmentArry.count)
+
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    /*public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MeetingsTableViewCell
         cell.meetingLabel.text = meetings[indexPath.row]
         cell.dateAndTime.text = meetingTimes[indexPath.row]
         cell.location.text = meetingLoc[indexPath.row]
         return (cell)
-    }
+    }*/
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MeetingsTableViewCell
+        
+        cell.meetingLabel.text = (assignmentArry[indexPath.row] as! AssignmentObjc).lecture;
+        cell.location.text = (assignmentArry[indexPath.row] as! AssignmentObjc).time;
+        
+        return (cell)
+    } // MARK THE CHANGE!
     
     /*
      everytime the MeetingViewController shows.
@@ -44,6 +54,7 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .reload, object: nil)
 
     }
+    
     /* part of code to solve tab view disappearing problem. */
  
     func reloadTableData(_ notification: Notification) {
@@ -54,22 +65,39 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             // remove the item from the data model
-            meetings.remove(at: indexPath.row)
-            meetingTimes.remove(at: indexPath.row)
-            meetingLoc.remove(at: indexPath.row)
-            
-            // delete the table view row
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let target: AssignmentObjc = assignmentArr[indexPath.row] as! AssignmentObjc;
+            assignmentArry.remove(at: indexPath.row)
+            assignmentArry = NSMutableArray(array:Bridging.queryForAllAssignments());
+            Bridging.deleteAssignment(byId: target.pkid);
 
             
         }
         meetingsList.reloadData() // FIXME
     }
-    /* reload data of meetingList */
+    
+    /*
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            let target: AssignmentObjc = assignmentArr[indexPath.row] as! AssignmentObjc;
+            assignmentArr.remove(at: indexPath.row)
+            assignmentArr = NSMutableArray(array:Bridging.queryForAllAssignments());
+            Bridging.deleteAssignment(byId: target.pkid);
+        }
+        deadLineList.reloadData() // FIXME
+    }*/
+    
+    /* reload data of meetingList
     override func viewDidAppear(_ animated: Bool) {
         meetingsList.reloadData()
         
     }
+ */
+    /* check if the view appears or not */
+    override func viewDidAppear(_ animated: Bool) {
+        assignmentArry = NSMutableArray(array:Bridging.queryForAllAssignments());
+        meetingsList.reloadData()
+    }
+
     /* check if it received memory warning */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
