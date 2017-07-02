@@ -26,7 +26,8 @@ class MeetingPopUpViewController: UIViewController {
     action after user hits the submit.
 */
     @IBAction func submit(_ sender: Any) {
-        print("time =" + timeAndDate.text!)
+        //print("time =" + timeAndDate.text!)
+        let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: groupText.text!, time: timeAndDate.text!, position: "");
         let timer = timeAndDate.text!;
         var timerArr = timer.components(separatedBy: "/")
         let day = timerArr[1]
@@ -54,7 +55,9 @@ class MeetingPopUpViewController: UIViewController {
             meetingTimes.append(timeAndDate.text!)
             meetingLoc.append(locationText.text!)
             
-            
+            groupText.text = ""
+            timeAndDate.text = ""
+            Bridging.insertNewAssignmentObjc(ass);
             
             items[(week-2) + (clock-8) * 5] = "Meeting: " + groupText.text! + "\n" + timeAndDate.text! +
                 "\n" + locationText.text!
