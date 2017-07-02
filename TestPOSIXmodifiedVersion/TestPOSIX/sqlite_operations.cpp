@@ -169,6 +169,25 @@ void insertAssignment(const char* lectures, const char* times, const char* posit
     
 }
 
+void insertAssignmenter(const char* lectures, const char* times, const char* positions) {
+    string insertInto = "INSERT INTO newuser (lecture, time, position) VALUES ('";
+    string topcomma = "'";
+    string comma = ",";
+    string bracelet = "); ";
+    
+    string sqlinfo = insertInto + lectures + topcomma + comma + topcomma + times + topcomma + comma + topcomma + positions + topcomma + bracelet;
+    sql = &sqlinfo[0u];
+    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ){
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    }else{
+        fprintf(stdout, "Records created successfully\n");
+    }
+    
+    
+}
+
 /* 
  a new sqlite query for conenct with the swift code. 
  */
