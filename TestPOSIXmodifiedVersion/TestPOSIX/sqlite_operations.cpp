@@ -201,10 +201,27 @@ long rowNumberInAssignmentsTable() {
     }, NULL, NULL) == SQLITE_OK ? t_rowNum : -1;
 }
 
+long rowNumberInNewAssignmentsTable() {
+    return sqlite3_exec(db, "SELECT id FROM newusers", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
+        t_rowNum++;
+        return 0;
+    }, NULL, NULL) == SQLITE_OK ? t_rowNum : -1;
+}
+
 vector<AssignmentCpp> t_assres{};
 vector<AssignmentCpp> queryForAllAssignments() {
     t_assres.clear();
     sqlite3_exec(db, "SELECT * FROM users", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
+        auto vec = vector<string>{columnTexts, columnTexts + columnNum};
+        t_assres.push_back(AssignmentCpp{stoi(vec[0]), vec[1], vec[2], vec[3]});
+        return 0;
+    }, NULL, NULL);
+    return t_assres;
+}
+
+vector<AssignmentCpp> queryForAllNewAssignments() {
+    t_assres.clear();
+    sqlite3_exec(db, "SELECT * FROM newusers", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
         auto vec = vector<string>{columnTexts, columnTexts + columnNum};
         t_assres.push_back(AssignmentCpp{stoi(vec[0]), vec[1], vec[2], vec[3]});
         return 0;
@@ -216,6 +233,10 @@ vector<AssignmentCpp> queryForAllAssignments() {
  */
 void insertNewAssignmentCpp(AssignmentCpp asscpp) {
     insertAssignment(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
+}
+
+void insertNewNewAssignmentCpp(AssignmentCpp asscpp) {
+    insertAssignmenter(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
 /*
  delete assignment by pkid.

@@ -29,6 +29,7 @@ extern void insertAssignment(const char* lectures, const char* times, const char
 extern void insertCalendar(const char *row, const char *col, const char *content, const char *color); // TODO: Mr. Chen, I will leave this to you. You'll implement it in sqlite_operations.cpp file, just like insertAssignment. I'm too lazy to write those boilerplate codes. -- Yutong Zhang
 
 extern long rowNumberInAssignmentsTable();
+extern long rowNumberInNewAssignmentsTable();
 class AssignmentCpp {
 public:
     int pkid;
@@ -39,7 +40,10 @@ public:
     AssignmentCpp(int pkid, std::string lecture, std::string time, std::string position);
 };
 extern std::vector<AssignmentCpp> queryForAllAssignments();
+extern std::vector<AssignmentCpp> queryForAllNewAssignments();
+
 extern void insertNewAssignmentCpp(AssignmentCpp asscpp);
+extern void insertNewNewAssignmentCpp(AssignmentCpp asscpp);
 extern bool deleteAssignmentById(int pkid);
 class CalendarCpp {
 public:
