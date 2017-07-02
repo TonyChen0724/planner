@@ -247,6 +247,14 @@ bool deleteAssignmentById(int pkid) {
     return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
 }
 
+bool deleteNewAssignmentById(int pkid) {
+    ostringstream os;
+    os << "DELETE FROM newusers WHERE id = " << pkid;
+    return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
+}
+
+
+
 CalendarCpp::CalendarCpp(int pkid, std::string row, std::string col, std::string content, std::string color): pkid(pkid), row(row), col(col), content(content), color(color) {}
 
 vector<CalendarCpp> t_calres{};

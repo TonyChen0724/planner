@@ -40,12 +40,24 @@ using namespace std;
     insertNewAssignmentCpp(asscpp);
 }
 
++ (void)insertNewNewAssignmentCpp:(AssignmentCpp)asscpp {
+    insertNewNewAssignmentCpp(asscpp);
+}
+
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc {
     [Bridging insertNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
 
++ (void)insertNewNewAssignmentObjc:(AssignmentObjc *)assobjc {
+    [Bridging insertNewNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
+}
+
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid {
     return deleteAssignmentById([pkid intValue]);
+}
+
++ (BOOL)deleteNewAssignmentById:(NSNumber *)pkid {
+    return deleteNewAssignmentById([pkid intValue]);
 }
 
 + (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(std::vector<CalendarCpp>)vcalcpp {
