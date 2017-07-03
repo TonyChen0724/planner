@@ -25,6 +25,8 @@ CalendarCpp calendarCppFromCalendarObjc(CalendarObjc *calobjc);
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
 
++ (void)insertNewNewAssignmentObjc:(AssignmentObjc *)assobjc;
+
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid;
 
 + (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(std::vector<CalendarCpp>)vcalcpp;
