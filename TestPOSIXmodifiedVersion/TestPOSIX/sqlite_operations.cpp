@@ -219,15 +219,20 @@ vector<AssignmentCpp> queryForAllAssignments() {
     return t_assres;
 }
 
+vector<AssignmentCpp> t_newassres{};
 vector<AssignmentCpp> queryForAllNewAssignments() {
     t_assres.clear();
-    sqlite3_exec(db, "SELECT * FROM newusers", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
+    sqlite3_exec(db, "SELECT * FROM newuser", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
         auto vec = vector<string>{columnTexts, columnTexts + columnNum};
-        t_assres.push_back(AssignmentCpp{stoi(vec[0]), vec[1], vec[2], vec[3]});
+        t_newassres.push_back(AssignmentCpp{stoi(vec[0]), vec[1], vec[2], vec[3]});
         return 0;
     }, NULL, NULL);
-    return t_assres;
+    return t_newassres;
 }
+
+
+
+
 /*
  add new assignment to the app.
  */

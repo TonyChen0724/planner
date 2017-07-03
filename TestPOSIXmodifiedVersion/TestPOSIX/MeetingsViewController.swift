@@ -94,7 +94,7 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
  */
     /* check if the view appears or not */
     override func viewDidAppear(_ animated: Bool) {
-        assignmentArry = NSMutableArray(array:Bridging.queryForAllAssignments());
+        assignmentArry = NSMutableArray(array:Bridging.queryForAllNewAssignments());
         meetingsList.reloadData()
     }
 

@@ -11,6 +11,8 @@
 
 + (NSArray *)queryForAllAssignments;
 
++ (NSArray *)queryForAllNewAssignments;
+
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
 
 + (void)insertNewNewAssignmentObjc:(AssignmentObjc *)assobjc;
