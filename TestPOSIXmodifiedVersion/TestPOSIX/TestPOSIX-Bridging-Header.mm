@@ -36,6 +36,13 @@ using namespace std;
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
 
++ (NSArray *)queryForAllNewAssignments {
+    auto assVec = queryForAllNewAssignments();
+    return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
+}
+
+
+
 + (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp {
     insertNewAssignmentCpp(asscpp);
 }

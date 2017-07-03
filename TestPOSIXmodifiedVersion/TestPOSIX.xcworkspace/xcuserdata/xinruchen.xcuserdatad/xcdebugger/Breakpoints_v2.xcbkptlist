@@ -209,11 +209,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPOSIX/sqlite_operations.cpp"
-            timestampString = "520686496.440109"
+            timestampString = "520813108.76769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "insertAssignment(const char* lectures, const char* times, const char* positions)"
             landmarkType = "9">
          </BreakpointContent>
@@ -225,11 +225,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TestPOSIX/sqlite_operations.cpp"
-            timestampString = "520686499.085425"
+            timestampString = "520813108.76769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "insertAssignment(const char* lectures, const char* times, const char* positions)"
             landmarkType = "9">
          </BreakpointContent>

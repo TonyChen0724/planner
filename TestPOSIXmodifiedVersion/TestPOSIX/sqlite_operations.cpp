@@ -20,6 +20,7 @@ sqlite3 *db;
 char *zErrMsg = 0;
 int rc;
 const char *sql;
+const char *debugsql;
 const char* data = "Callback function called";
 
 /*
@@ -158,6 +159,15 @@ void insertAssignment(const char* lectures, const char* times, const char* posit
     
     string sqlinfo = insertInto + lectures + topcomma + comma + topcomma + times + topcomma + comma + topcomma + positions + topcomma + bracelet;
     sql = &sqlinfo[0u];
+    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ){
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    }else{
+        fprintf(stdout, "Records created successfully\n");
+    }
+    string debug = "SELECT * FROM formalData;";
+    debugsql = &debug[0u];
     rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
     if( rc != SQLITE_OK ){
         fprintf(stderr, "SQL error: %s\n", zErrMsg);

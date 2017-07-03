@@ -21,6 +21,8 @@ CalendarCpp calendarCppFromCalendarObjc(CalendarObjc *calobjc);
 
 + (NSArray *)queryForAllAssignments;
 
++ (NSArray *)queryForAllNewAssignments;
+
 + (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp;
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
