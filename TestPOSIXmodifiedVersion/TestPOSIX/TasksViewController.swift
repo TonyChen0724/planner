@@ -35,10 +35,15 @@ class TasksViewController: UIViewController, UITableViewDataSource {
         }
         
         let add = UIAlertAction(title: "Add", style: .default) {
+            
             (action) in
             let textfield = alert.textFields![0]
+            let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: textfield.text!, time: "", position: "");
+
             self.tasks.append(textfield.text!)
+            Bridging.insertNewAssignmentObjc(ass);
             self.listTableView.reloadData()
+            
             
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
@@ -66,6 +71,7 @@ class TasksViewController: UIViewController, UITableViewDataSource {
         assignmentArryy = NSMutableArray(array:Bridging.queryForAllAssignments());
 
         self.navigationItem.title = "Tasks"
+        listTableView.reloadData()
         
     }
     /* add delete function to tasks UI */
