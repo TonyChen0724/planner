@@ -20,6 +20,7 @@ sqlite3 *db;
 char *zErrMsg = 0;
 int rc;
 const char *sql;
+const char *debugsql;
 const char* data = "Callback function called";
 
 /*
@@ -169,6 +170,25 @@ void insertAssignment(const char* lectures, const char* times, const char* posit
     
 }
 
+void insertAssignmenter(const char* lectures, const char* times, const char* positions) {
+    string insertInto = "INSERT INTO newuser (lecture, time, position) VALUES ('";
+    string topcomma = "'";
+    string comma = ",";
+    string bracelet = "); ";
+    
+    string sqlinfo = insertInto + lectures + topcomma + comma + topcomma + times + topcomma + comma + topcomma + positions + topcomma + bracelet;
+    sql = &sqlinfo[0u];
+    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ){
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    }else{
+        fprintf(stdout, "Records created successfully\n");
+    }
+    
+    
+}
+
 /* 
  a new sqlite query for conenct with the swift code. 
  */
@@ -177,6 +197,13 @@ AssignmentCpp::AssignmentCpp(int pkid, string lecture, string time, string posit
 static long t_rowNum;
 long rowNumberInAssignmentsTable() {
     return sqlite3_exec(db, "SELECT id FROM users", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
+        t_rowNum++;
+        return 0;
+    }, NULL, NULL) == SQLITE_OK ? t_rowNum : -1;
+}
+
+long rowNumberInNewAssignmentsTable() {
+    return sqlite3_exec(db, "SELECT id FROM newusers", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
         t_rowNum++;
         return 0;
     }, NULL, NULL) == SQLITE_OK ? t_rowNum : -1;
@@ -192,11 +219,30 @@ vector<AssignmentCpp> queryForAllAssignments() {
     }, NULL, NULL);
     return t_assres;
 }
+
+//vector<AssignmentCpp> t_assres{};
+vector<AssignmentCpp> queryForAllNewAssignments() {
+    t_assres.clear();
+    sqlite3_exec(db, "SELECT * FROM newuser", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
+        auto vec = vector<string>{columnTexts, columnTexts + columnNum};
+        t_assres.push_back(AssignmentCpp{stoi(vec[0]), vec[1], vec[2], vec[3]});
+        return 0;
+    }, NULL, NULL);
+    return t_assres;
+}
+
+
+
+
 /*
  add new assignment to the app.
  */
 void insertNewAssignmentCpp(AssignmentCpp asscpp) {
     insertAssignment(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
+}
+
+void insertNewNewAssignmentCpp(AssignmentCpp asscpp) {
+    insertAssignmenter(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
 /*
  delete assignment by pkid.
@@ -206,6 +252,14 @@ bool deleteAssignmentById(int pkid) {
     os << "DELETE FROM users WHERE id = " << pkid;
     return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
 }
+
+bool deleteNewAssignmentById(int pkid) {
+    ostringstream os;
+    os << "DELETE FROM newusers WHERE id = " << pkid;
+    return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
+}
+
+
 
 CalendarCpp::CalendarCpp(int pkid, std::string row, std::string col, std::string content, std::string color): pkid(pkid), row(row), col(col), content(content), color(color) {}
 

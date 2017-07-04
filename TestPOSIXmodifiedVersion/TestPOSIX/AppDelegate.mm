@@ -22,11 +22,11 @@ using namespace std;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    NSString *dbFilePathInDocDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"formalData.db"];
+    NSString *dbFilePathInDocDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"newdata.db"];
     NSLog(@"%@", dbFilePathInDocDir);
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:dbFilePathInDocDir]) {
-        NSData *dbData = [[[NSDataAsset alloc] initWithName:@"formalData"] data];
+        NSData *dbData = [[[NSDataAsset alloc] initWithName:@"newdata"] data];
         BOOL res = [dbData writeToFile:dbFilePathInDocDir atomically:YES];
         if (res) {
             NSLog(@"First time initiation. Database file extraction confirmed");
