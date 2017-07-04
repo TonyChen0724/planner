@@ -6,7 +6,7 @@
  */
 import UIKit
 
-
+var assignmentArryy : NSMutableArray = [];
 class TasksViewController: UIViewController, UITableViewDataSource {
     
     var tasks: [String] = []
@@ -18,13 +18,13 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     /* shows tasks in Tasks UI. */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "taskItem")
-        cell.textLabel?.text = tasks[indexPath.row]
+        cell.textLabel?.text = (assignmentArryy[indexPath.row] as! AssignmentObjc).lecture;
         
         return cell
     }
     /* get the number of items in tasks array */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (tasks.count)
+        return (assignmentArryy.count)
     }
     /* the pop up window that user uses to create task records */
     func alert() {
@@ -56,11 +56,17 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         listTableView.dataSource = self
+        assignmentArryy = NSMutableArray(array:Bridging.queryForAllAssignments());
         UITextField.appearance().tintColor = .black
+        listTableView.reloadData()
+
     }
     /* check if the view will appear or not */
     override func viewWillAppear(_ animated: Bool) {
+        assignmentArryy = NSMutableArray(array:Bridging.queryForAllAssignments());
+
         self.navigationItem.title = "Tasks"
+        
     }
     /* add delete function to tasks UI */
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
