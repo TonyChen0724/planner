@@ -78,9 +78,12 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
-            tasks.remove(at: indexPath.row)
-            listTableView.reloadData()
+            let target: AssignmentObjc = assignmentArryy[indexPath.row] as! AssignmentObjc;
+            assignmentArryy.remove(at: indexPath.row)
+            assignmentArryy = NSMutableArray(array:Bridging.queryForAllAssignments());
+            Bridging.deleteAssignment(byId: target.pkid);
         }
+        listTableView.reloadData()
 
     }
 
