@@ -166,15 +166,6 @@ void insertAssignment(const char* lectures, const char* times, const char* posit
     }else{
         fprintf(stdout, "Records created successfully\n");
     }
-    string debug = "SELECT * FROM formalData;";
-    debugsql = &debug[0u];
-    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-    if( rc != SQLITE_OK ){
-        fprintf(stderr, "SQL error: %s\n", zErrMsg);
-        sqlite3_free(zErrMsg);
-    }else{
-        fprintf(stdout, "Records created successfully\n");
-    }
     
     
 }
@@ -229,15 +220,15 @@ vector<AssignmentCpp> queryForAllAssignments() {
     return t_assres;
 }
 
-vector<AssignmentCpp> t_newassres{};
+//vector<AssignmentCpp> t_assres{};
 vector<AssignmentCpp> queryForAllNewAssignments() {
     t_assres.clear();
     sqlite3_exec(db, "SELECT * FROM newuser", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
         auto vec = vector<string>{columnTexts, columnTexts + columnNum};
-        t_newassres.push_back(AssignmentCpp{stoi(vec[0]), vec[1], vec[2], vec[3]});
+        t_assres.push_back(AssignmentCpp{stoi(vec[0]), vec[1], vec[2], vec[3]});
         return 0;
     }, NULL, NULL);
-    return t_newassres;
+    return t_assres;
 }
 
 

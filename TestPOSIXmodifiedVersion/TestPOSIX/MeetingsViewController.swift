@@ -40,7 +40,7 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         cell.meetingLabel.text = (assignmentArry[indexPath.row] as! AssignmentObjc).lecture;
         cell.location.text = (assignmentArry[indexPath.row] as! AssignmentObjc).time;
-        
+        print("hi");
         return (cell)
     } // MARK THE CHANGE!
     
@@ -65,10 +65,10 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             // remove the item from the data model
-            let target: AssignmentObjc = assignmentArr[indexPath.row] as! AssignmentObjc;
+            let target: AssignmentObjc = assignmentArry[indexPath.row] as! AssignmentObjc;
             assignmentArry.remove(at: indexPath.row)
-            assignmentArry = NSMutableArray(array:Bridging.queryForAllAssignments());
-            Bridging.deleteAssignment(byId: target.pkid);
+            assignmentArry = NSMutableArray(array:Bridging.queryForAllNewAssignments());
+            Bridging.deleteNewAssignment(byId: target.pkid);
 
             
         }
@@ -95,6 +95,7 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
     /* check if the view appears or not */
     override func viewDidAppear(_ animated: Bool) {
         assignmentArry = NSMutableArray(array:Bridging.queryForAllNewAssignments());
+        print("called");
         meetingsList.reloadData()
     }
 

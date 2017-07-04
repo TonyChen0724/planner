@@ -49,8 +49,8 @@ class AddDeadLineController: UIViewController {
                 
             } else {
                 print((remainder-1) * 5 + (clock-8))
-                //items.insert(input.text!, at: (week-2) + (clock-8) * 5);
-                //items[(week-2) + (clock-8) * 5] = input.text!
+                items.insert(input.text!, at: (week-2) + (clock-8) * 5);
+                items[(week-2) + (clock-8) * 5] = input.text!
                 // DELETED FOR DEBUGGING!!!!!!!!
             }
                 
