@@ -255,9 +255,11 @@ bool deleteAssignmentById(int pkid) {
 
 bool deleteNewAssignmentById(int pkid) {
     ostringstream os;
-    os << "DELETE FROM newusers WHERE id = " << pkid;
+    os << "DELETE FROM newuser WHERE id = " << pkid;
     return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
 }
+
+
 
 
 
