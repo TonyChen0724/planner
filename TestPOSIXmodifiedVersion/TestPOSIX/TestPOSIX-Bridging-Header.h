@@ -17,9 +17,13 @@
 
 + (void)insertNewNewAssignmentObjc:(AssignmentObjc *)assobjc;
 
++ (void)insertNewNewNewAssignmentObjc:(AssignmentObjc *)assobjc;
+
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid;
 
 + (BOOL)deleteNewAssignmentById:(NSNumber *)pkid;
+
++ (BOOL)deleteNewNewAssignmentById:(NSNumber *)pkid;
 
 
 + (NSArray *)queryForAllCalendars;

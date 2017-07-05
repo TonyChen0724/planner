@@ -41,11 +41,14 @@ public:
 };
 extern std::vector<AssignmentCpp> queryForAllAssignments();
 extern std::vector<AssignmentCpp> queryForAllNewAssignments();
+extern std::vector<AssignmentCpp> queryForAllNewNewAssignments();
 
 extern void insertNewAssignmentCpp(AssignmentCpp asscpp);
 extern void insertNewNewAssignmentCpp(AssignmentCpp asscpp);
+extern void insertNewNewNewAssignmentCpp(AssignmentCpp asscpp);
 extern bool deleteAssignmentById(int pkid);
 extern bool deleteNewAssignmentById(int pkid);
+extern bool deleteNewNewAssignmentById(int pkid);
 
 class CalendarCpp {
 public:

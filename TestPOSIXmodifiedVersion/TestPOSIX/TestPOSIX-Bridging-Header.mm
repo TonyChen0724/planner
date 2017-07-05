@@ -41,6 +41,11 @@ using namespace std;
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
 
++ (NSArray *)queryForAllNewNewAssignments {
+    auto assVec = queryForAllNewNewAssignments();
+    return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
+}
+
 
 
 + (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp {
@@ -51,11 +56,19 @@ using namespace std;
     insertNewNewAssignmentCpp(asscpp);
 }
 
++ (void)insertNewNewNewAssignmentCpp:(AssignmentCpp)asscpp {
+    insertNewNewNewAssignmentCpp(asscpp);
+}
+
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc {
     [Bridging insertNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
 
 + (void)insertNewNewAssignmentObjc:(AssignmentObjc *)assobjc {
+    [Bridging insertNewNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
+}
+
++ (void)insertNewNewNewAssignmentObjc:(AssignmentObjc *)assobjc {
     [Bridging insertNewNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
 
@@ -65,6 +78,10 @@ using namespace std;
 
 + (BOOL)deleteNewAssignmentById:(NSNumber *)pkid {
     return deleteNewAssignmentById([pkid intValue]);
+}
+
++ (BOOL)deleteNewNewAssignmentById:(NSNumber *)pkid {
+    return deleteNewNewAssignmentById([pkid intValue]);
 }
 
 + (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(std::vector<CalendarCpp>)vcalcpp {

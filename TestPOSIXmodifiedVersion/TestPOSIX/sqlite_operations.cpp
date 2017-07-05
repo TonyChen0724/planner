@@ -189,6 +189,26 @@ void insertAssignmenter(const char* lectures, const char* times, const char* pos
     
 }
 
+
+void insertNewAssignmenter(const char* lectures, const char* times, const char* positions) {
+    string insertInto = "INSERT INTO thirduser (lecture, time, position) VALUES ('";
+    string topcomma = "'";
+    string comma = ",";
+    string bracelet = "); ";
+    
+    string sqlinfo = insertInto + lectures + topcomma + comma + topcomma + times + topcomma + comma + topcomma + positions + topcomma + bracelet;
+    sql = &sqlinfo[0u];
+    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
+    if( rc != SQLITE_OK ){
+        fprintf(stderr, "SQL error: %s\n", zErrMsg);
+        sqlite3_free(zErrMsg);
+    }else{
+        fprintf(stdout, "Records created successfully\n");
+    }
+    
+    
+}
+
 /* 
  a new sqlite query for conenct with the swift code. 
  */
@@ -209,6 +229,13 @@ long rowNumberInNewAssignmentsTable() {
     }, NULL, NULL) == SQLITE_OK ? t_rowNum : -1;
 }
 
+
+long rowNumberInNewNewAssignmentsTable() {
+    return sqlite3_exec(db, "SELECT id FROM thirduser", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
+        t_rowNum++;
+        return 0;
+    }, NULL, NULL) == SQLITE_OK ? t_rowNum : -1;
+}
 vector<AssignmentCpp> t_assres{};
 vector<AssignmentCpp> queryForAllAssignments() {
     t_assres.clear();
@@ -231,6 +258,16 @@ vector<AssignmentCpp> queryForAllNewAssignments() {
     return t_assres;
 }
 
+vector<AssignmentCpp> queryForAllNewNewAssignments() {
+    t_assres.clear();
+    sqlite3_exec(db, "SELECT * FROM thirduser", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
+        auto vec = vector<string>{columnTexts, columnTexts + columnNum};
+        t_assres.push_back(AssignmentCpp{stoi(vec[0]), vec[1], vec[2], vec[3]});
+        return 0;
+    }, NULL, NULL);
+    return t_assres;
+}
+
 
 
 
@@ -244,6 +281,12 @@ void insertNewAssignmentCpp(AssignmentCpp asscpp) {
 void insertNewNewAssignmentCpp(AssignmentCpp asscpp) {
     insertAssignmenter(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
+
+void insertNewNewNewAssignmentCpp(AssignmentCpp asscpp) {
+    insertNewAssignmenter(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
+}
+
+
 /*
  delete assignment by pkid.
  */
@@ -256,6 +299,12 @@ bool deleteAssignmentById(int pkid) {
 bool deleteNewAssignmentById(int pkid) {
     ostringstream os;
     os << "DELETE FROM newuser WHERE id = " << pkid;
+    return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
+}
+
+bool deleteNewNewAssignmentById(int pkid) {
+    ostringstream os;
+    os << "DELETE FROM thirduser WHERE id = " << pkid;
     return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
 }
 
