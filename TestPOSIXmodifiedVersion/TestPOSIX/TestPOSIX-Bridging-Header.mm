@@ -69,7 +69,7 @@ using namespace std;
 }
 
 + (void)insertNewNewNewAssignmentObjc:(AssignmentObjc *)assobjc {
-    [Bridging insertNewNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
+    [Bridging insertNewNewNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
 
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid {
