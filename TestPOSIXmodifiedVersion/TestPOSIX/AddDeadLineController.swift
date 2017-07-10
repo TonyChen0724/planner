@@ -7,6 +7,7 @@
  */
 
 import UIKit
+import UserNotifications
 
 class AddDeadLineController: UIViewController {
 
@@ -58,6 +59,16 @@ class AddDeadLineController: UIViewController {
             input.text = ""
             deadlineTime.text = ""
             Bridging.insertNewAssignmentObjc(ass);
+            let content = UNMutableNotificationContent()
+            content.title = "This assignment is due"
+            content.subtitle = "check this out"
+            content.body = "click to go back to the app"
+            content.badge = 1
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            
         }
     }
     /* get day (in a week) from the time input in a form(yyyy-MM-dd) */

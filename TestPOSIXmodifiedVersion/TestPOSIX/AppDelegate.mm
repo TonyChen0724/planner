@@ -42,14 +42,14 @@ using namespace std;
      
     sqlite3_open([dbFilePathInDocDir cStringUsingEncoding:NSASCIIStringEncoding], &db);
     
-    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+    /*UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
     [center requestAuthorizationWithOptions:UNAuthorizationOptionAlert completionHandler:^(BOOL granted, NSError * _Nullable error) {
         NSLog(@"Granted: %d", granted);
     }];
     UNNotificationAction* checkAction = [UNNotificationAction actionWithIdentifier:@"CHECK_ACTION" title:@"Check" options:UNNotificationActionOptionForeground];
     UNNotificationCategory* deadCat = [UNNotificationCategory categoryWithIdentifier:@"DEADLINE_APPROACHING" actions:@[] intentIdentifiers:@[] options:UNNotificationCategoryOptionCustomDismissAction];
     [center setNotificationCategories:[NSSet setWithObjects:deadCat, nil]];
-    
+    */
     return YES;
 }
 
