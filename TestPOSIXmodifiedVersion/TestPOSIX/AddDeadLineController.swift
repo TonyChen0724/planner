@@ -22,6 +22,7 @@ class AddDeadLineController: UIViewController {
         {
             let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: input.text!, time: deadlineTime.text!, position: "");
             let timer = deadlineTime.text!;
+            print(timer)
             var timerArr = timer.components(separatedBy: "/")
             let day = timerArr[1]
             let substitution = Int(day)! - 21;
@@ -31,6 +32,7 @@ class AddDeadLineController: UIViewController {
             let specificTime = restArr[1]
             var stimeArr = specificTime.components(separatedBy: ":")
             var clock = Int(stimeArr[0])!
+            var minute = Int(stimeArr[1])!
             var stimeArrArr = stimeArr[1].components(separatedBy: " ")
             let afterevening = stimeArrArr[1]
             
@@ -65,7 +67,21 @@ class AddDeadLineController: UIViewController {
             content.body = "click to go back to the app"
             content.badge = 1
             
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+            
+            let date = Date()
+            let calendar = Calendar.current
+            let currenthour = calendar.component(.hour, from: date)
+            let currentminute = calendar.component(.minute, from: date)
+            let currentday = calendar.component(.day, from: date)
+            let currentmonth = calendar.component(.month, from: date)
+            
+            if (Int(month)! == currentmonth) {
+                var intervalint = (Int(day)! * 86400 + clock * 3600 + minute * 60 - currentday * 86400 - currenthour * 3600 - currentminute * 60
+                
+            }
+            
+            let interval = Double(intervalint)!;
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
             let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             
