@@ -14,7 +14,7 @@ class AddDeadLineController: UIViewController {
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var deadlineTime: UITextField!
     let datePicker = UIDatePicker()
-    
+    let i = 0;
     /* when user add a deadline record to the list, we store it in the database */
     @IBAction func addDeadLine(_ sender: Any)
     {
@@ -84,9 +84,14 @@ class AddDeadLineController: UIViewController {
            }
             
             let interval = Double(intervalint);
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
-            let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+            var triggers = [UNTimeIntervalNotificationTrigger]()
+            
+            triggers.append(UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: true))
+            
+            var requests = [UNNotificationRequest]()
+            requests.append(UNNotificationRequest(identifier: "timerDone", content: content, trigger: triggers[i]))
+            //var centers = [UNUserNotificationCenter]();
+            UNUserNotificationCenter.current().add(requests[i], withCompletionHandler: nil)
             
         }
     }
