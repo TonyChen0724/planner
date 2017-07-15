@@ -31,8 +31,10 @@ class AddDeadLineController: UIViewController {
             var restArr = restInfo.components(separatedBy: ", ")
             let specificTime = restArr[1]
             var stimeArr = specificTime.components(separatedBy: ":")
+            let morespacificTime = stimeArr[1]
+            var spacesplit = morespacificTime.components(separatedBy: " ")
             var clock = Int(stimeArr[0])!
-            var minute = Int(stimeArr[1])!
+            var minute = Int(spacesplit[0])! // minute is wrong.
             var stimeArrArr = stimeArr[1].components(separatedBy: " ")
             let afterevening = stimeArrArr[1]
             
@@ -57,7 +59,7 @@ class AddDeadLineController: UIViewController {
                 // DELETED FOR DEBUGGING!!!!!!!!
             }
                 
-            // items.insert(input.text!, at: deadlineTime.text!(days) * 5 + (oclock - 8))
+           // items.insert(input.text!, at: deadlineTime.text!(days) * 5 + (clock - 8)) // there is something wrong here, so what i should do is go back to old commit and change the previous statement based on this version.
             input.text = ""
             deadlineTime.text = ""
             Bridging.insertNewAssignmentObjc(ass);
@@ -74,13 +76,14 @@ class AddDeadLineController: UIViewController {
             let currentminute = calendar.component(.minute, from: date)
             let currentday = calendar.component(.day, from: date)
             let currentmonth = calendar.component(.month, from: date)
+            var intervalint = 0;
             
-            if (Int(month)! == currentmonth) {
-                var intervalint = (Int(day)! * 86400 + clock * 3600 + minute * 60 - currentday * 86400 - currenthour * 3600 - currentminute * 60
-                
-            }
+          if (Int(month)! == currentmonth) {
+                intervalint = Int(day)! * 86400 + clock * 3600 + minute * 60 - currentday * 86400 - currenthour * 3600 - currentminute * 60
             
-            let interval = Double(intervalint)!;
+           }
+            
+            let interval = Double(intervalint);
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
             let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)

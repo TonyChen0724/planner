@@ -77,6 +77,7 @@ class TimeTableViewController: UIViewController, UICollectionViewDataSource, UIC
             let delete = UIAlertAction(title: "Delete", style: .default) {
                 (action) in
                 items[indexPath.row] = ""
+                // delete assignmentArr
                 self.timeTableCollection.reloadData()
             }
             let cancel = UIAlertAction(title: "Cancel", style: .cancel) {
