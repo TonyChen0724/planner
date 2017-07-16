@@ -14,8 +14,10 @@ class AddDeadLineController: UIViewController {
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var deadlineTime: UITextField!
     let datePicker = UIDatePicker()
-    let i = 0;
+    var indexer = 0;
     /* when user add a deadline record to the list, we store it in the database */
+    var triggers = [UNTimeIntervalNotificationTrigger]()
+    var requests = [UNNotificationRequest]()
     @IBAction func addDeadLine(_ sender: Any)
     {
         if (input.text != "" && deadlineTime.text != "")
@@ -64,7 +66,8 @@ class AddDeadLineController: UIViewController {
             deadlineTime.text = ""
             Bridging.insertNewAssignmentObjc(ass);
             let content = UNMutableNotificationContent()
-            content.title = "This assignment is due"
+            content.title = "There is an assignment named " + String(input.text!) + "is due"
+            print(String(input.text!))
             content.subtitle = "check this out"
             content.body = "click to go back to the app"
             content.badge = 1
@@ -84,15 +87,16 @@ class AddDeadLineController: UIViewController {
            }
             
             let interval = Double(intervalint);
-            var triggers = [UNTimeIntervalNotificationTrigger]()
             
-            triggers.append(UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: true))
             
-            var requests = [UNNotificationRequest]()
-            requests.append(UNNotificationRequest(identifier: "timerDone", content: content, trigger: triggers[i]))
+            triggers.append(UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false))
+            
+            
+            var identifier = String(indexer);
+            requests.append(UNNotificationRequest(identifier: identifier, content: content, trigger: triggers[indexer]))
             //var centers = [UNUserNotificationCenter]();
-            UNUserNotificationCenter.current().add(requests[i], withCompletionHandler: nil)
-            
+            UNUserNotificationCenter.current().add(requests[indexer], withCompletionHandler: nil)
+            indexer = indexer + 1
         }
     }
     /* get day (in a week) from the time input in a form(yyyy-MM-dd) */
