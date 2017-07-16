@@ -24,7 +24,9 @@ class AddDeadLineController: UIViewController {
         {
             let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: input.text!, time: deadlineTime.text!, position: "");
             let timer = deadlineTime.text!;
+            let name = input.text!;
             print(timer)
+            print(name)
             var timerArr = timer.components(separatedBy: "/")
             let day = timerArr[1]
             let substitution = Int(day)! - 21;
@@ -66,7 +68,7 @@ class AddDeadLineController: UIViewController {
             deadlineTime.text = ""
             Bridging.insertNewAssignmentObjc(ass);
             let content = UNMutableNotificationContent()
-            content.title = "There is an assignment named " + String(input.text!) + "is due"
+            content.title = "There is an assignment named " + name + " is due at " + timer;
             print(String(input.text!))
             content.subtitle = "check this out"
             content.body = "click to go back to the app"
