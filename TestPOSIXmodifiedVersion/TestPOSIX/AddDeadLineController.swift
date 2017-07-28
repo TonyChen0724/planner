@@ -95,6 +95,7 @@ class AddDeadLineController: UIViewController {
             
             
             var identifier = String(indexer);
+            print(indexer);
             requests.append(UNNotificationRequest(identifier: identifier, content: content, trigger: triggers[indexer]))
             //var centers = [UNUserNotificationCenter]();
             UNUserNotificationCenter.current().add(requests[indexer], withCompletionHandler: nil)
