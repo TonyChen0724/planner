@@ -39,7 +39,6 @@
 		03CE8BD81EDA6B6A0004A336 /* MeetingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CE8BD61EDA6B6A0004A336 /* MeetingsTableViewCell.swift */; };
 		03D5B7801ED494D50024740C /* AssignmentCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03D5B77F1ED494D50024740C /* AssignmentCell.mm */; };
 		6429A2AE2D4859363B840DEC /* libPods-TestPOSIX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 388500103F1737A9058A9A4F /* libPods-TestPOSIX.a */; };
-		FDBFAF5B1ED87AAE00C33278 /* CalendarObjc.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDBFAF5A1ED87AAE00C33278 /* CalendarObjc.mm */; };
 		FDBFAF5D1ED8890400C33278 /* CalendarObjc.hm in Resources */ = {isa = PBXBuildFile; fileRef = FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */; };
 /* End PBXBuildFile section */
 
@@ -90,8 +89,6 @@
 		388500103F1737A9058A9A4F /* libPods-TestPOSIX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestPOSIX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F73A8DF3069A7F8C13FAA40 /* Pods-TestPOSIX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPOSIX.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestPOSIX/Pods-TestPOSIX.release.xcconfig"; sourceTree = "<group>"; };
 		C1A5B0ACD6CDFED638BDCD17 /* Pods-TestPOSIX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPOSIX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPOSIX/Pods-TestPOSIX.debug.xcconfig"; sourceTree = "<group>"; };
-		FDBFAF591ED87AAE00C33278 /* CalendarObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarObjc.h; sourceTree = "<group>"; };
-		FDBFAF5A1ED87AAE00C33278 /* CalendarObjc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CalendarObjc.mm; sourceTree = "<group>"; };
 		FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CalendarObjc.hm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,8 +168,6 @@
 				03C788371ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm */,
 				03C788391ED6BCA500C643A9 /* TestPOSIX-Bridging-Header.hpp */,
 				03C7883A1ED6BE5E00C643A9 /* AssignmentObjc.hm */,
-				FDBFAF591ED87AAE00C33278 /* CalendarObjc.h */,
-				FDBFAF5A1ED87AAE00C33278 /* CalendarObjc.mm */,
 			);
 			path = TestPOSIX;
 			sourceTree = "<group>";
@@ -343,7 +338,6 @@
 				03C788381ED6B94800C643A9 /* TestPOSIX-Bridging-Header.mm in Sources */,
 				03A25C5C1ED3133F00B9332B /* TableViewController.m in Sources */,
 				03C7882C1ED6B51D00C643A9 /* TimeTableViewController.swift in Sources */,
-				FDBFAF5B1ED87AAE00C33278 /* CalendarObjc.mm in Sources */,
 				03D5B7801ED494D50024740C /* AssignmentCell.mm in Sources */,
 				03C788231ED6B51D00C643A9 /* AddDeadLineController.swift in Sources */,
 				03A25C641ED45F3D00B9332B /* AssignmentObjc.mm in Sources */,

@@ -29,7 +29,6 @@
 + (BOOL)deleteNewNewAssignmentById:(NSNumber *)pkid;
 
 
-+ (NSArray *)queryForAllCalendars;
 
 + (void)insertNewCalendarObjc:(CalendarObjc *)calobjc;
 

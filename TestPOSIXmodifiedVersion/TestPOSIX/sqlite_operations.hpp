@@ -26,10 +26,24 @@ extern void view();
 extern void updateName(char* timer, char* name);
 extern void updatePosition(char* timer, char* positioner);
 extern void insertAssignment(const char* lectures, const char* times, const char* positions);
+extern void insertCalendarInfo(const char* classes, const char* starttimes, const char* days, const char* weekly, const char* fortnightly, const char* location);
 extern void insertCalendar(const char *row, const char *col, const char *content, const char *color); // TODO: Mr. Chen, I will leave this to you. You'll implement it in sqlite_operations.cpp file, just like insertAssignment. I'm too lazy to write those boilerplate codes. -- Yutong Zhang
 
 extern long rowNumberInAssignmentsTable();
 extern long rowNumberInNewAssignmentsTable();
+
+class CalendarCpp {
+public:
+    int pkid;
+    std::string classes;
+    std::string starttimes;
+    std::string days;
+    std::string weekly;
+    std::string fortnightly;
+    std::string location;
+    
+    CalendarCpp(int pkid, std::string classes, std::string starttimes, std::string days, std::string weekly, std::string fortnightly, std::string location);
+};
 class AssignmentCpp {
 public:
     int pkid;
@@ -50,16 +64,7 @@ extern bool deleteAssignmentById(int pkid);
 extern bool deleteNewAssignmentById(int pkid);
 extern bool deleteNewNewAssignmentById(int pkid);
 
-class CalendarCpp {
-public:
-    int pkid;
-    std::string row;
-    std::string col;
-    std::string content;
-    std::string color;
-    
-    CalendarCpp(int pkid, std::string row, std::string col, std::string content, std::string color);
-};
+
 extern std::vector<CalendarCpp> queryForAllCalendarCpp();
 //extern void insertNewCalendarCpp(CalendarCpp calcpp);
 extern bool deleteCalendarById(int pkid);

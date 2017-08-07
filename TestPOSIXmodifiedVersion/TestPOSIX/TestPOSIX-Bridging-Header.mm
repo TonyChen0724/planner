@@ -84,27 +84,15 @@ using namespace std;
     return deleteNewNewAssignmentById([pkid intValue]);
 }
 
-+ (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(std::vector<CalendarCpp>)vcalcpp {
-    vector<CalendarObjc *> outVec;
-    outVec.resize(vcalcpp.size());
-    transform(vcalcpp.begin(), vcalcpp.end(), outVec.begin(), [](CalendarCpp calcpp){
-        return [CalendarObjc calendarObjcWithCalendarCpp:calcpp];
-    });
-    return [NSArray arrayWithObjects:&outVec[0] count:outVec.size()];
-}
 
-+ (NSArray *)queryForAllCalendars {
-    auto calVec = queryForAllCalendarCpp();
-    return [Bridging convertToCalendarObjcArrayWithCalendarCppVector:calVec];
-}
+
+
 
 /*+ (void)insertNewCalendarCpp:(CalendarCpp)calcpp {
     insertNewCalendarCpp(calcpp);
 }*/
 
-+ (void)insertNewCalendarObjc:(CalendarObjc *)calobjc {
-    [Bridging insertNewCalendarCpp:calendarCppFromCalendarObjc(calobjc)];
-}
+
 
 + (BOOL)deleteCalendarById:(NSNumber *)pkid {
     return deleteCalendarById([pkid intValue]);
