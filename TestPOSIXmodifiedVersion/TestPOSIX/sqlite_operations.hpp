@@ -64,9 +64,4 @@ extern bool deleteAssignmentById(int pkid);
 extern bool deleteNewAssignmentById(int pkid);
 extern bool deleteNewNewAssignmentById(int pkid);
 
-
-extern std::vector<CalendarCpp> queryForAllCalendarCpp();
-//extern void insertNewCalendarCpp(CalendarCpp calcpp);
-extern bool deleteCalendarById(int pkid);
-
 #endif /* sqlite_operations_hpp */

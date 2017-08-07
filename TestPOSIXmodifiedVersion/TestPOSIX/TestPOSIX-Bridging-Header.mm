@@ -94,9 +94,6 @@ using namespace std;
 
 
 
-+ (BOOL)deleteCalendarById:(NSNumber *)pkid {
-    return deleteCalendarById([pkid intValue]);
-}
 
 
 
