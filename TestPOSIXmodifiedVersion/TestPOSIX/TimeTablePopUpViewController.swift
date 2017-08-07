@@ -115,6 +115,7 @@ class TimeTablePopUpViewController: UIViewController {
         
    
         schedule.append(classText.text! + "\n" + locationText.text! + "\n" + startTime.text!)
+        print(startTime.text!);
         
         
         let ttime = startTime.text
