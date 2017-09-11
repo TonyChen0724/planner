@@ -307,7 +307,7 @@ void insertMeetingsCpp(AssignmentCpp asscpp) {
     insertMeetings(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
 
-void insertNewNewNewAssignmentCpp(AssignmentCpp asscpp) {
+void insertTasksCpp(AssignmentCpp asscpp) {
     insertTasks(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
 
