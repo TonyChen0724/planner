@@ -303,7 +303,7 @@ void insertCalendarInfoCpp(AssignmentCpp asscpp) {
     /*insertCalendarInfo(asscpp.classes.c_str(), <#const char *starttimes#>, <#const char *days#>, <#const char *weekly#>, <#const char *fortnightly#>, <#const char *location#>)*/
 }
 
-void insertNewNewAssignmentCpp(AssignmentCpp asscpp) {
+void insertMeetingsCpp(AssignmentCpp asscpp) {
     insertMeetings(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
 
