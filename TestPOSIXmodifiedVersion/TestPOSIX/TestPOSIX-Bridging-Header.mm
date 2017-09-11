@@ -64,7 +64,7 @@ using namespace std;
     [Bridging insertNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
 
-+ (void)insertNewNewAssignmentObjc:(AssignmentObjc *)assobjc {
++ (void)insertMeetingsObjc:(AssignmentObjc *)assobjc {
     [Bridging insertMeetingsCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
 
