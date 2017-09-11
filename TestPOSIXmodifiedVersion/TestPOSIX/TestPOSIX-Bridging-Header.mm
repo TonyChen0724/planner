@@ -80,8 +80,8 @@ using namespace std;
     return deleteMeetingsById([pkid intValue]);
 }
 
-+ (BOOL)deleteNewNewAssignmentById:(NSNumber *)pkid {
-    return deleteNewNewAssignmentById([pkid intValue]);
++ (BOOL)deleteTasksById:(NSNumber *)pkid {
+    return deleteTasksById([pkid intValue]);
 }
 
 

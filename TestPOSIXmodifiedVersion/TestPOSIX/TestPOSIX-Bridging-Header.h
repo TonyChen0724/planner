@@ -26,7 +26,7 @@
 
 + (BOOL)deleteMeetingsById:(NSNumber *)pkid;
 
-+ (BOOL)deleteNewNewAssignmentById:(NSNumber *)pkid;
++ (BOOL)deleteTasksById:(NSNumber *)pkid;
 
 
 

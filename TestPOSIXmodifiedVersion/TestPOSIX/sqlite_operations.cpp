@@ -327,7 +327,7 @@ bool deleteMeetingsById(int pkid) {
     return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
 }
 
-bool deleteNewNewAssignmentById(int pkid) {
+bool deleteTasksById(int pkid) {
     ostringstream os;
     os << "DELETE FROM thirduser WHERE id = " << pkid;
     return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;

@@ -62,6 +62,6 @@ extern void insertMeetingsCpp(AssignmentCpp asscpp);
 extern void insertTasksCpp(AssignmentCpp asscpp);
 extern bool deleteAssignmentById(int pkid);
 extern bool deleteMeetingsById(int pkid);
-extern bool deleteNewNewAssignmentById(int pkid);
+extern bool deleteTasksById(int pkid);
 
 #endif /* sqlite_operations_hpp */

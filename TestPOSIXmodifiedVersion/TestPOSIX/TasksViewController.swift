@@ -81,7 +81,7 @@ class TasksViewController: UIViewController, UITableViewDataSource {
             let target: AssignmentObjc = assignmentArryy[indexPath.row] as! AssignmentObjc;
             assignmentArryy.remove(at: indexPath.row)
             assignmentArryy = NSMutableArray(array:Bridging.queryForAllNewNewAssignments());
-            Bridging.deleteNewNewAssignment(byId: target.pkid);
+            Bridging.deleteTasks(byId: target.pkid);
         }
         listTableView.reloadData()
 
