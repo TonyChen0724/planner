@@ -68,7 +68,7 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
             let target: AssignmentObjc = assignmentArry[indexPath.row] as! AssignmentObjc;
             assignmentArry.remove(at: indexPath.row)
             assignmentArry = NSMutableArray(array:Bridging.queryForAllNewAssignments());
-            Bridging.deleteNewAssignment(byId: target.pkid);
+            Bridging.deleteMeetings(byId: target.pkid);
 
             
         }

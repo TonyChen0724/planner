@@ -76,8 +76,8 @@ using namespace std;
     return deleteAssignmentById([pkid intValue]);
 }
 
-+ (BOOL)deleteNewAssignmentById:(NSNumber *)pkid {
-    return deleteNewAssignmentById([pkid intValue]);
++ (BOOL)deleteMeetingsById:(NSNumber *)pkid {
+    return deleteMeetingsById([pkid intValue]);
 }
 
 + (BOOL)deleteNewNewAssignmentById:(NSNumber *)pkid {
