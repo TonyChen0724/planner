@@ -191,7 +191,7 @@ void insertCalendarInfo(const char* classes, const char* starttimes, const char*
 }
 
 
-void insertAssignmenter(const char* lectures, const char* times, const char* positions) {
+void insertMeetings(const char* lectures, const char* times, const char* positions) {
     string insertInto = "INSERT INTO newuser (lecture, time, position) VALUES ('";
     string topcomma = "'";
     string comma = ",";
@@ -304,7 +304,7 @@ void insertCalendarInfoCpp(AssignmentCpp asscpp) {
 }
 
 void insertNewNewAssignmentCpp(AssignmentCpp asscpp) {
-    insertAssignmenter(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
+    insertMeetings(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
 
 void insertNewNewNewAssignmentCpp(AssignmentCpp asscpp) {
