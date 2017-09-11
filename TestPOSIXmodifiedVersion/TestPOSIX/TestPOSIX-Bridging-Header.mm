@@ -41,8 +41,8 @@ using namespace std;
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
 
-+ (NSArray *)queryForAllNewNewAssignments {
-    auto assVec = queryForAllNewNewAssignments();
++ (NSArray *)queryForAllTasks {
+    auto assVec = queryForAllTasks();
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
 

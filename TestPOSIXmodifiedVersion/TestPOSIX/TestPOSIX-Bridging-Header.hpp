@@ -21,7 +21,7 @@ AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc);
 
 + (NSArray *)queryForAllMeetings;
 
-+ (NSArray *)queryForAllNewNewAssignments;
++ (NSArray *)queryForAllTasks;
 
 + (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp;
 

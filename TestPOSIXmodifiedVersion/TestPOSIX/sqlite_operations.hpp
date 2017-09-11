@@ -55,7 +55,7 @@ public:
 };
 extern std::vector<AssignmentCpp> queryForAllAssignments();
 extern std::vector<AssignmentCpp> queryForAllMeetings();
-extern std::vector<AssignmentCpp> queryForAllNewNewAssignments();
+extern std::vector<AssignmentCpp> queryForAllTasks();
 
 extern void insertNewAssignmentCpp(AssignmentCpp asscpp);
 extern void insertMeetingsCpp(AssignmentCpp asscpp);

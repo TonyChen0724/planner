@@ -61,14 +61,14 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         listTableView.dataSource = self
-        assignmentArryy = NSMutableArray(array:Bridging.queryForAllNewNewAssignments());
+        assignmentArryy = NSMutableArray(array:Bridging.queryForAllTasks());
         UITextField.appearance().tintColor = .black
         listTableView.reloadData()
 
     }
     /* check if the view will appear or not */
     override func viewWillAppear(_ animated: Bool) {
-        assignmentArryy = NSMutableArray(array:Bridging.queryForAllNewNewAssignments());
+        assignmentArryy = NSMutableArray(array:Bridging.queryForAllTasks());
 
         self.navigationItem.title = "Tasks"
         listTableView.reloadData()
@@ -80,7 +80,7 @@ class TasksViewController: UIViewController, UITableViewDataSource {
         {
             let target: AssignmentObjc = assignmentArryy[indexPath.row] as! AssignmentObjc;
             assignmentArryy.remove(at: indexPath.row)
-            assignmentArryy = NSMutableArray(array:Bridging.queryForAllNewNewAssignments());
+            assignmentArryy = NSMutableArray(array:Bridging.queryForAllTasks());
             Bridging.deleteTasks(byId: target.pkid);
         }
         listTableView.reloadData()

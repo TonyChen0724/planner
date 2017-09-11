@@ -13,7 +13,7 @@
 
 + (NSArray *)queryForAllMeetings;
 
-+ (NSArray *)queryForAllNewNewAssignments;
++ (NSArray *)queryForAllTasks;
 
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
