@@ -27,7 +27,7 @@ AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc);
 
 + (void)insertMeetingsObjc:(AssignmentObjc *)assobjc;
 
-+ (void)insertNewNewAssignmentObjc:(AssignmentObjc *)assobjc;
++ (void)insertTasksObjc:(AssignmentObjc *)assobjc;
 
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid;
 

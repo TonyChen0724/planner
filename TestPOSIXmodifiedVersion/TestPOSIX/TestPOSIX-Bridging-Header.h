@@ -20,7 +20,7 @@
 
 + (void)insertMeetingsObjc:(AssignmentObjc *)assobjc;
 
-+ (void)insertNewNewNewAssignmentObjc:(AssignmentObjc *)assobjc;
++ (void)insertTasksObjc:(AssignmentObjc *)assobjc;
 
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid;
 

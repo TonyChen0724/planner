@@ -41,7 +41,7 @@ class TasksViewController: UIViewController, UITableViewDataSource {
             let ass: AssignmentObjc = AssignmentObjc.init(pkid: -1, lecture: textfield.text!, time: "", position: "");
 
             self.tasks.append(textfield.text!)
-            Bridging.insertNewNewNewAssignmentObjc(ass);
+            Bridging.insertTasksObjc(ass);
             self.listTableView.reloadData()
             
             
