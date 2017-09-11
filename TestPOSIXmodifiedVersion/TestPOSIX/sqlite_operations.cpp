@@ -269,7 +269,7 @@ vector<AssignmentCpp> queryForAllAssignments() {
 }
 
 //vector<AssignmentCpp> t_assres{};
-vector<AssignmentCpp> queryForAllNewAssignments() {
+vector<AssignmentCpp> queryForAllMeetings() {
     t_assres.clear();
     sqlite3_exec(db, "SELECT * FROM newuser", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
         auto vec = vector<string>{columnTexts, columnTexts + columnNum};

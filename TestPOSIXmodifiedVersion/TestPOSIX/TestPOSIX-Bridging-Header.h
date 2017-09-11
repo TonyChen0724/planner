@@ -11,7 +11,7 @@
 
 + (NSArray *)queryForAllAssignments;
 
-+ (NSArray *)queryForAllNewAssignments;
++ (NSArray *)queryForAllMeetings;
 
 + (NSArray *)queryForAllNewNewAssignments;
 

@@ -19,7 +19,7 @@ AssignmentCpp assignmentCppFromAssignmentObjc(AssignmentObjc *assobjc);
 
 + (NSArray *)queryForAllAssignments;
 
-+ (NSArray *)queryForAllNewAssignments;
++ (NSArray *)queryForAllMeetings;
 
 + (NSArray *)queryForAllNewNewAssignments;
 

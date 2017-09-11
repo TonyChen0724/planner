@@ -67,7 +67,7 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
             // remove the item from the data model
             let target: AssignmentObjc = assignmentArry[indexPath.row] as! AssignmentObjc;
             assignmentArry.remove(at: indexPath.row)
-            assignmentArry = NSMutableArray(array:Bridging.queryForAllNewAssignments());
+            assignmentArry = NSMutableArray(array:Bridging.queryForAllMeetings());
             Bridging.deleteMeetings(byId: target.pkid);
 
             
@@ -75,26 +75,10 @@ class MeetingsViewController: UIViewController, UITableViewDelegate, UITableView
         meetingsList.reloadData() // FIXME
     }
     
-    /*
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
-            let target: AssignmentObjc = assignmentArr[indexPath.row] as! AssignmentObjc;
-            assignmentArr.remove(at: indexPath.row)
-            assignmentArr = NSMutableArray(array:Bridging.queryForAllAssignments());
-            Bridging.deleteAssignment(byId: target.pkid);
-        }
-        deadLineList.reloadData() // FIXME
-    }*/
-    
-    /* reload data of meetingList
-    override func viewDidAppear(_ animated: Bool) {
-        meetingsList.reloadData()
-        
-    }
- */
+  
     /* check if the view appears or not */
     override func viewDidAppear(_ animated: Bool) {
-        assignmentArry = NSMutableArray(array:Bridging.queryForAllNewAssignments());
+        assignmentArry = NSMutableArray(array:Bridging.queryForAllMeetings());
         print("called");
         meetingsList.reloadData()
     }

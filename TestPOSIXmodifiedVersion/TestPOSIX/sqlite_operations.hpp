@@ -54,7 +54,7 @@ public:
     AssignmentCpp(int pkid, std::string lecture, std::string time, std::string position);
 };
 extern std::vector<AssignmentCpp> queryForAllAssignments();
-extern std::vector<AssignmentCpp> queryForAllNewAssignments();
+extern std::vector<AssignmentCpp> queryForAllMeetings();
 extern std::vector<AssignmentCpp> queryForAllNewNewAssignments();
 
 extern void insertNewAssignmentCpp(AssignmentCpp asscpp);
