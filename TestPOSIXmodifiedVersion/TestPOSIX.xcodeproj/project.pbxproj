@@ -40,6 +40,8 @@
 		03D5B7801ED494D50024740C /* AssignmentCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03D5B77F1ED494D50024740C /* AssignmentCell.mm */; };
 		6429A2AE2D4859363B840DEC /* libPods-TestPOSIX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 388500103F1737A9058A9A4F /* libPods-TestPOSIX.a */; };
 		C73014D01F6FA4FE007F4AA9 /* CalendarObjc.mm in Sources */ = {isa = PBXBuildFile; fileRef = C73014CF1F6FA4FE007F4AA9 /* CalendarObjc.mm */; };
+		C73014D61F6FB17A007F4AA9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73014D51F6FB17A007F4AA9 /* TestViewController.swift */; };
+		C73014D81F6FB56B007F4AA9 /* Test2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73014D71F6FB56B007F4AA9 /* Test2ViewController.swift */; };
 		FDBFAF5D1ED8890400C33278 /* CalendarObjc.hm in Resources */ = {isa = PBXBuildFile; fileRef = FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +94,8 @@
 		C1A5B0ACD6CDFED638BDCD17 /* Pods-TestPOSIX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestPOSIX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestPOSIX/Pods-TestPOSIX.debug.xcconfig"; sourceTree = "<group>"; };
 		C73014CE1F6FA11E007F4AA9 /* CalendarObjc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarObjc.h; sourceTree = "<group>"; };
 		C73014CF1F6FA4FE007F4AA9 /* CalendarObjc.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CalendarObjc.mm; sourceTree = "<group>"; };
+		C73014D51F6FB17A007F4AA9 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		C73014D71F6FB56B007F4AA9 /* Test2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test2ViewController.swift; sourceTree = "<group>"; };
 		FDBFAF5C1ED8890400C33278 /* CalendarObjc.hm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CalendarObjc.hm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +140,8 @@
 		0349AF481ED16CE200CF3FC7 /* TestPOSIX */ = {
 			isa = PBXGroup;
 			children = (
+				C73014D51F6FB17A007F4AA9 /* TestViewController.swift */,
+				C73014D71F6FB56B007F4AA9 /* Test2ViewController.swift */,
 				03CE8BD51EDA6B6A0004A336 /* MeetingPopUpViewController.swift */,
 				03CE8BD61EDA6B6A0004A336 /* MeetingsTableViewCell.swift */,
 				03C7881E1ED6B51D00C643A9 /* MeetingsViewController.swift */,
@@ -336,6 +342,7 @@
 			files = (
 				03C7882A1ED6B51D00C643A9 /* SecondViewController.swift in Sources */,
 				03C788251ED6B51D00C643A9 /* DeadlinesTableCell.swift in Sources */,
+				C73014D61F6FB17A007F4AA9 /* TestViewController.swift in Sources */,
 				0349AF4B1ED16CE200CF3FC7 /* main.m in Sources */,
 				0349AF641ED1898D00CF3FC7 /* AppDelegate.mm in Sources */,
 				03CE8BD81EDA6B6A0004A336 /* MeetingsTableViewCell.swift in Sources */,
@@ -350,6 +357,7 @@
 				03C788281ED6B51D00C643A9 /* MeetingsViewController.swift in Sources */,
 				03CE8BCE1EDA61640004A336 /* TimeTablePopUpViewController.swift in Sources */,
 				03C7882B1ED6B51D00C643A9 /* TasksViewController.swift in Sources */,
+				C73014D81F6FB56B007F4AA9 /* Test2ViewController.swift in Sources */,
 				03CE8BCD1EDA61640004A336 /* TableSectionHeader.swift in Sources */,
 				03C788291ED6B51D00C643A9 /* MyCollectionViewCell.swift in Sources */,
 				03A25C591ED2BE0300B9332B /* sqlite_operations.cpp in Sources */,
@@ -471,10 +479,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TestPOSIX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = COSC345.TestPOSIX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "TestPOSIX/TestPOSIX-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -487,10 +497,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TestPOSIX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = COSC345.TestPOSIX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "TestPOSIX/TestPOSIX-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

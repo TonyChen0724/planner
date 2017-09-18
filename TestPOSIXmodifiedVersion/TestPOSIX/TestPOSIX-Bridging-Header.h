@@ -15,12 +15,16 @@
 
 + (NSArray *)queryForAllTasks;
 
++ (NSArray *)queryForAllCalendar;
+
 
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc;
 
 + (void)insertMeetingsObjc:(AssignmentObjc *)assobjc;
 
 + (void)insertTasksObjc:(AssignmentObjc *)assobjc;
+
++ (void)insertCalendarObjc:(CalendarObjc *)calobjc;
 
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid;
 
@@ -30,7 +34,6 @@
 
 
 
-+ (void)insertNewCalendarObjc:(CalendarObjc *)calobjc;
 
 + (BOOL)deleteCalendarById:(NSNumber *)pkid;
 

@@ -6,8 +6,8 @@
 //  Copyright © 2017 Xinru Chen. All rights reserved.
 //
 
-#ifndef AssignmentObjc_hm_h
-#define AssignmentObjc_hm_h
+#ifndef CalendarObjc_hm_h
+#define CalendarObjc_hm_h
 
 
 #import <Foundation/Foundation.h>

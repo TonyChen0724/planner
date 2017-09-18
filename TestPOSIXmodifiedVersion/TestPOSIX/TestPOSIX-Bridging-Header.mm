@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "TestPOSIX-Bridging-Header.hpp"
 #import "AssignmentObjc.h"
+#import "CalendarObjc.h"
 #import "sqlite_operations.hpp"
 
 #import "vector"
@@ -31,6 +32,18 @@ using namespace std;
     return [NSArray arrayWithObjects:&outVec[0] count:outVec.size()];
 }
 
++ (NSArray *)convertToCalendarObjcArrayWithCalendarCppVector:(vector<CalendarCpp>)vcalcpp {
+    vector<CalendarObjc *> outcalVec;
+    outcalVec.resize(vcalcpp.size());
+    transform(vcalcpp.begin(), vcalcpp.end(), outcalVec.begin(), [](CalendarCpp calcpp){
+        return [CalendarObjc calendarObjcWithCalendarCpp:calcpp];
+    });
+    return [NSArray arrayWithObjects:&outcalVec[0] count:outcalVec.size()];
+}
+
+
+
+
 + (NSArray *)queryForAllAssignments {
     auto assVec = queryForAllAssignments();
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
@@ -46,6 +59,14 @@ using namespace std;
     return [Bridging convertToAssignmentObjcArrayWithAssignmentCppVector:assVec];
 }
 
++ (NSArray *)queryForAllCalendars {
+    auto calVec = queryForAllCalendar();
+    return [Bridging convertToCalendarObjcArrayWithCalendarCppVector:calVec];
+}
+
+
+
+
 
 
 + (void)insertNewAssignmentCpp:(AssignmentCpp)asscpp {
@@ -60,6 +81,10 @@ using namespace std;
     insertTasksCpp(asscpp);
 }
 
++ (void)insertCalendarCpp:(CalendarCpp)calcpp {
+    insertCalendarCpp(calcpp);
+}
+
 + (void)insertNewAssignmentObjc:(AssignmentObjc *)assobjc {
     [Bridging insertNewAssignmentCpp:assignmentCppFromAssignmentObjc(assobjc)];
 }
@@ -70,6 +95,10 @@ using namespace std;
 
 + (void)insertTasksObjc:(AssignmentObjc *)assobjc {
     [Bridging insertTasksCpp:assignmentCppFromAssignmentObjc(assobjc)];
+}
+
++ (void)insertCalendarObjc:(CalendarObjc *)calobjc {
+    [Bridging insertCalendarCpp:calendarCppFromCalendarObjc(calobjc)];
 }
 
 + (BOOL)deleteAssignmentById:(NSNumber *)pkid {
@@ -84,6 +113,9 @@ using namespace std;
     return deleteTasksById([pkid intValue]);
 }
 
++ (BOOL)deleteCalendarById:(NSNumber *)pkid {
+    return deleteCalendarById([pkid intValue]);
+}
 
 
 

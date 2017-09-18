@@ -269,7 +269,7 @@ void insertNewAssignmentCpp(AssignmentCpp asscpp) {
     insertAssignment(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
 
-void insertCalendarInfoCpp(CalendarCpp calcpp) {
+void insertCalendarCpp(CalendarCpp calcpp) {
     insertCalendarInfo(calcpp.classes.c_str(), calcpp.starttimes.c_str(), calcpp.days.c_str(), calcpp.weekly.c_str(), calcpp.fortnightly.c_str(), calcpp.location.c_str());
 }
 

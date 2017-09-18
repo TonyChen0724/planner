@@ -56,12 +56,16 @@ public:
 extern std::vector<AssignmentCpp> queryForAllAssignments();
 extern std::vector<AssignmentCpp> queryForAllMeetings();
 extern std::vector<AssignmentCpp> queryForAllTasks();
+extern std::vector<CalendarCpp> queryForAllCalendar();
+
 
 extern void insertNewAssignmentCpp(AssignmentCpp asscpp);
 extern void insertMeetingsCpp(AssignmentCpp asscpp);
 extern void insertTasksCpp(AssignmentCpp asscpp);
+extern void insertCalendarCpp(CalendarCpp calcpp);
 extern bool deleteAssignmentById(int pkid);
 extern bool deleteMeetingsById(int pkid);
 extern bool deleteTasksById(int pkid);
+extern bool deleteCalendarById(int pkid);
 
 #endif /* sqlite_operations_hpp */
