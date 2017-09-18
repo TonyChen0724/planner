@@ -147,29 +147,13 @@ void updatePosition(char* timer, char* positioner) {
     
 }
 
-void insert(const char* table, const char* lectures, const char* times, const char* positions) {
-    
-}
 
 
 /*
  insert a record to the database.
  */
 void insertAssignment(const char* lectures, const char* times, const char* positions) {
-//    string insertInto = "INSERT INTO users (lecture, time, position) VALUES ('";
-//    string topcomma = "'";
-//    string comma = ",";
-//    string bracelet = "); ";
-//    
-//    string sqlinfo = insertInto + lectures + topcomma + comma + topcomma + times + topcomma + comma + topcomma + positions + topcomma + bracelet;
-//    sql = &sqlinfo[0u];
-//    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-//    if( rc != SQLITE_OK ){
-//        fprintf(stderr, "SQL error: %s\n", zErrMsg);
-//        sqlite3_free(zErrMsg);
-//    }else{
-//        fprintf(stdout, "Records created successfully\n");
-//    }
+
     ostringstream os;
     os << "INSERT INTO users (lecture, time, position) VALUES ('" << lectures << "','"<< times << "','" << positions << "')";
     sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
@@ -179,40 +163,16 @@ void insertAssignment(const char* lectures, const char* times, const char* posit
 
 // doubt it's going to work cuz may have error concanating sqlinfo
 void insertCalendarInfo(const char* classes, const char* starttimes, const char* days, const char* weekly, const char* fortnightly, const char* location) {
-//    string insertInto = "INSERT INTO calendar (class, starttime, days, weekly, fortnightly, location) VALUES ('";
-//    string topcomma = "'";
-//    string comma = ",";
-//    string bracelet = "); ";
-//    
-//    string sqlinfo = insertInto + classes + topcomma + comma + topcomma + starttimes + topcomma + comma + topcomma + days + topcomma + comma + topcomma + weekly + topcomma + comma + topcomma + fortnightly + topcomma + comma + topcomma + location + topcomma + bracelet;
-//    sql = &sqlinfo[0u];
-//    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-//    if( rc != SQLITE_OK ){
-//        fprintf(stderr, "SQL error: %s\n", zErrMsg);
-//        sqlite3_free(zErrMsg);
-//    }else{
-//        fprintf(stdout, "Records created successfully\n");
-//    }
+    ostringstream os;
+    os << "INSERT INTO calendar (classes, starttimes, days, weekly, fortnightly, location) VALUES ('" << classes << "','"<< starttimes << "','" << days << "','" << weekly << "','" << fortnightly << "','" << location << "')";
+    sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
 
     
 }
 
 
 void insertMeetings(const char* lectures, const char* times, const char* positions) {
-//    string insertInto = "INSERT INTO newuser (lecture, time, position) VALUES ('";
-//    string topcomma = "'";
-//    string comma = ",";
-//    string bracelet = "); ";
-//    
-//    string sqlinfo = insertInto + lectures + topcomma + comma + topcomma + times + topcomma + comma + topcomma + positions + topcomma + bracelet;
-//    sql = &sqlinfo[0u];
-//    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-//    if( rc != SQLITE_OK ){
-//        fprintf(stderr, "SQL error: %s\n", zErrMsg);
-//        sqlite3_free(zErrMsg);
-//    }else{
-//        fprintf(stdout, "Records created successfully\n");
-//    }
+
     ostringstream os;
     os << "INSERT INTO newuser (lecture, time, position) VALUES ('" << lectures << "','"<< times << "','" << positions << "')";
     sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
@@ -222,20 +182,7 @@ void insertMeetings(const char* lectures, const char* times, const char* positio
 
 
 void insertTasks(const char* lectures, const char* times, const char* positions) {
-//    string insertInto = "INSERT INTO thirduser (lecture, time, position) VALUES ('";
-//    string topcomma = "'";
-//    string comma = ",";
-//    string bracelet = "); ";
-//    
-//    string sqlinfo = insertInto + lectures + topcomma + comma + topcomma + times + topcomma + comma + topcomma + positions + topcomma + bracelet;
-//    sql = &sqlinfo[0u];
-//    rc = sqlite3_exec(db, sql, callback, 0, &zErrMsg);
-//    if( rc != SQLITE_OK ){
-//        fprintf(stderr, "SQL error: %s\n", zErrMsg);
-//        sqlite3_free(zErrMsg);
-//    }else{
-//        fprintf(stdout, "Records created successfully\n");
-//    }
+
     ostringstream os;
     os << "INSERT INTO thirduser (lecture, time, position) VALUES ('" << lectures << "','"<< times << "','" << positions << "')";
     sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
@@ -301,6 +248,17 @@ vector<AssignmentCpp> queryForAllTasks() {
     return t_assres;
 }
 
+vector<CalendarCpp> t_calres{};
+vector<CalendarCpp> queryForAllCalendar() {
+    t_calres.clear();
+    sqlite3_exec(db, "SELECT * FROM calendar", [](void *foo, int columnNum, char **columnTexts, char **columnNames){
+        auto vec = vector<string>{columnTexts, columnTexts + columnNum};
+        t_calres.push_back(CalendarCpp{stoi(vec[0]), vec[1], vec[2], vec[3], vec[4], vec[5], vec[6]});
+        return 0;
+    }, NULL, NULL);
+    return t_calres;
+}
+
 
 
 
@@ -311,8 +269,8 @@ void insertNewAssignmentCpp(AssignmentCpp asscpp) {
     insertAssignment(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
 
-void insertCalendarInfoCpp(AssignmentCpp asscpp) {
-    /*insertCalendarInfo(asscpp.classes.c_str(), <#const char *starttimes#>, <#const char *days#>, <#const char *weekly#>, <#const char *fortnightly#>, <#const char *location#>)*/
+void insertCalendarInfoCpp(CalendarCpp calcpp) {
+    insertCalendarInfo(calcpp.classes.c_str(), calcpp.starttimes.c_str(), calcpp.days.c_str(), calcpp.weekly.c_str(), calcpp.fortnightly.c_str(), calcpp.location.c_str());
 }
 
 void insertMeetingsCpp(AssignmentCpp asscpp) {
@@ -323,6 +281,12 @@ void insertTasksCpp(AssignmentCpp asscpp) {
     insertTasks(asscpp.lecture.c_str(), asscpp.time.c_str(), asscpp.position.c_str());
 }
 
+
+bool deleteById(int pkid, string table) {
+    ostringstream os;
+    os << "DELETE FROM " << table << " WHERE id = " << pkid;
+    return sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL) == SQLITE_OK;
+}
 
 /*
  delete assignment by pkid.
