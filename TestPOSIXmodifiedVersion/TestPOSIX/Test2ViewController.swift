@@ -19,7 +19,7 @@ class Test2ViewController: UIViewController {
     
     @IBAction func addEvent(_ sender: UIButton)
     {
-        let cal: CalendarObjc = CalendarObjc.init(pkid: -1, classes: classes.text!, starttimes: starttime.text!, days: days.text!, weekly: week.text!, fortnightly: fortnight.text!, location: location.text!);
+        let cal: CalendarObjc = CalendarObjc.init(pkid: -1, classes: classes.text!, starttime: starttime.text!, days: days.text!, weekly: week.text!, fortnightly: fortnight.text!, location: location.text!);
         Bridging.insert(cal);
         
         

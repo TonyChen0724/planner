@@ -162,9 +162,9 @@ void insertAssignment(const char* lectures, const char* times, const char* posit
 }
 
 // doubt it's going to work cuz may have error concanating sqlinfo
-void insertCalendarInfo(const char* classes, const char* starttimes, const char* days, const char* weekly, const char* fortnightly, const char* location) {
+void insertCalendarInfo(const char* classes, const char* starttime, const char* days, const char* weekly, const char* fortnightly, const char* location) {
     ostringstream os;
-    os << "INSERT INTO calendar (classes, starttimes, days, weekly, fortnightly, location) VALUES ('" << classes << "','"<< starttimes << "','" << days << "','" << weekly << "','" << fortnightly << "','" << location << "')";
+    os << "INSERT INTO calendar (classes, starttime, days, weekly, fortnightly, location) VALUES ('" << classes << "','"<< starttime << "','" << days << "','" << weekly << "','" << fortnightly << "','" << location << "')";
     sqlite3_exec(db, os.str().c_str(), [](void *foo, int columnNum, char **columnTexts, char **columnNames){return 0;}, NULL, NULL);
 
     
@@ -193,6 +193,8 @@ void insertTasks(const char* lectures, const char* times, const char* positions)
  a new sqlite query for conenct with the swift code. 
  */
 AssignmentCpp::AssignmentCpp(int pkid, string lecture, string time, string position): pkid(pkid), lecture(lecture), time(time), position(position) {}
+
+CalendarCpp::CalendarCpp(int pkid, string classes, string starttime, string days, string weekly, string fortnightly, string location): pkid(pkid), classes(classes), starttime(starttime), days(days), weekly(weekly), fortnightly(fortnightly), location(location) {}
 
 static long t_rowNum;
 long rowNumberInAssignmentsTable() {
@@ -270,7 +272,7 @@ void insertNewAssignmentCpp(AssignmentCpp asscpp) {
 }
 
 void insertCalendarCpp(CalendarCpp calcpp) {
-    insertCalendarInfo(calcpp.classes.c_str(), calcpp.starttimes.c_str(), calcpp.days.c_str(), calcpp.weekly.c_str(), calcpp.fortnightly.c_str(), calcpp.location.c_str());
+    insertCalendarInfo(calcpp.classes.c_str(), calcpp.starttime.c_str(), calcpp.days.c_str(), calcpp.weekly.c_str(), calcpp.fortnightly.c_str(), calcpp.location.c_str());
 }
 
 void insertMeetingsCpp(AssignmentCpp asscpp) {

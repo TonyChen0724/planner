@@ -12,18 +12,18 @@
 
 @property (readonly) NSNumber *pkid;
 @property (readonly) NSString *classes;
-@property (readonly) NSString *starttimes;
+@property (readonly) NSString *starttime;
 @property (readonly) NSString *days;
 @property (readonly) NSString *weekly;
 @property (readonly) NSString *fortnightly;
 @property (readonly) NSString *location;
 
 
-- (instancetype)initWithPkid:(NSNumber *)pkid classes:(NSString *)classes starttimes:(NSString *)starttimes days:(NSString *)days weekly:(NSString *)weekly fortnightly:(NSString *)fortnightly location:(NSString *)location;
+- (instancetype)initWithPkid:(NSNumber *)pkid classes:(NSString *)classes starttime:(NSString *)starttime days:(NSString *)days weekly:(NSString *)weekly fortnightly:(NSString *)fortnightly location:(NSString *)location;
 
 - (instancetype)initWithCalendarCpp:(CalendarCpp)calCpp;
 
-+ (instancetype)calendarObjcWithPkid:(NSNumber *)pkid classes:(NSString *)classes starttimes:(NSString *)starttimes days:(NSString *)days weekly:(NSString *)weekly fortnightly:(NSString *)fortnightly location:(NSString *)location;
++ (instancetype)calendarObjcWithPkid:(NSNumber *)pkid classes:(NSString *)classes starttime:(NSString *)starttime days:(NSString *)days weekly:(NSString *)weekly fortnightly:(NSString *)fortnightly location:(NSString *)location;
 
 + (instancetype)calendarObjcWithCalendarCpp:(CalendarCpp)calCpp;
 

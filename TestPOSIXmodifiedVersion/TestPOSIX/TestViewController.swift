@@ -29,14 +29,14 @@ class TestViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if editingStyle == UITableViewCellEditingStyle.delete {
             let target: CalendarObjc = CalendarArray[indexPath.row] as! CalendarObjc;
             CalendarArray.remove(at: indexPath.row)
-            CalendarArray = NSMutableArray(array: Bridging.queryForAllAssignments());
-            Bridging.deleteAssignment(byId: target.pkid);
+            CalendarArray = NSMutableArray(array: Bridging.queryForAllCalendar());
+            Bridging.deleteCalendar(byId: target.pkid);
         }
         calendarTable.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        CalendarArray = NSMutableArray(array: Bridging.queryForAllAssignments());
+        CalendarArray = NSMutableArray(array: Bridging.queryForAllCalendar());
         calendarTable.reloadData()
     }
 
